@@ -8,8 +8,8 @@
 #include <vector>
 #include <memory>
 #include "Poller.h"
-
-class Channel;
+#include "../lock/Mutex.h"
+#include "Channel.h"
 
 /*
  * one loop per thread
@@ -18,8 +18,10 @@ class Channel;
 class EventLoop
 {
 public:
+    typedef std::function<void()> Functor;
+
     EventLoop(); 
-    ~EventLoop() {}
+    ~EventLoop();
     
     void loop();
     void assertInLoopThread()
@@ -41,19 +43,36 @@ public:
     void quit()
     {
         quit_ = true;
+        if(!isInLoopThread())
+        {
+            wakeup();
+        }
     }
 
     void updateChannel(Channel* channel);
 
+    void runInLoop(const Functor& cb);
+
 private:
     typedef std::vector<Channel*> ChannelList;
+
     std::unique_ptr<Poller> poller_;
 
     bool quit_;
     const pid_t threadId_;
     ChannelList activeChannels_;
     bool looping_;
+    bool callingPendingFunctors_;
+    int wakeupFd_;
+    std::unique_ptr<Channel> wakeupChannel_;
+    MutexLock mutex_;
+    std::vector<Functor> pendingFunctors_;
 
+    void handleRead();
+    void doPendingFunctors();
+    void queueInLoop(const Functor& cb);
+    void wakeup();
+    
 };
 
 #endif
