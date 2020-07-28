@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/EventLoop_test2.dir/test/EventLoop_test2.cc.o  -o EventLoop_test2 base/libThread.a net/libnet.a -lpthread 
