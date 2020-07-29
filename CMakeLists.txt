@@ -11,3 +11,6 @@ target_link_libraries(EventLoop_test2 Thread net pthread)
 
 add_executable(EventLoop_test3 test/EventLoop_test3.cc)
 target_link_libraries(EventLoop_test3 net)
+
+add_executable(Acceptor_test1 test/Acceptor_test1.cc)
+target_link_libraries(Acceptor_test1 net)
