@@ -1,0 +1,25 @@
+# The set of languages for which implicit dependencies are needed:
+SET(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+SET(CMAKE_DEPENDS_CHECK_CXX
+  "/root/WebServer/net/Acceptor.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/Acceptor.cc.o"
+  "/root/WebServer/net/Channel.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/Channel.cc.o"
+  "/root/WebServer/net/CurrentThread.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/CurrentThread.cc.o"
+  "/root/WebServer/net/EventLoop.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/EventLoop.cc.o"
+  "/root/WebServer/net/Poller.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/Poller.cc.o"
+  "/root/WebServer/net/Socket.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/Socket.cc.o"
+  )
+SET(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Targets to which this target links.
+SET(CMAKE_TARGET_LINKED_INFO_FILES
+  )
+
+# The include file search paths:
+SET(CMAKE_C_TARGET_INCLUDE_PATH
+  )
+SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
+SET(CMAKE_ASM_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

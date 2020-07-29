@@ -7,6 +7,17 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <arpa/inet.h>
+#include <netinet/tcp.h>
+
+int createNonblockingSocket()
+{
+    int sockfd = ::socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK |SOCK_CLOEXEC, IPPROTO_TCP);
+    if(sockfd < 0)
+    {
+        printf("error : createNonblockingSocket()\n");
+        exit(1);
+    }
+}
 
 void Socket::bind(const struct sockaddr_in &addr)
 {
@@ -45,7 +56,7 @@ int Socket::accept(struct sockaddr_in* addr)
         case EPROTO:
         case EPERM:
         case EMFILE:
-            errno = savenErrno;
+            errno = savedErrno;
             break;
 
         case EBADF:

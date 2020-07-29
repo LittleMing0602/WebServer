@@ -8,7 +8,7 @@
 Acceptor::Acceptor(EventLoop* loop, const struct sockaddr_in& addr):
     loop_(loop),
     socket_(createNonblockingSocket()),
-    channel_(loop, socket_),
+    channel_(loop, socket_.fd()),
     newConnectionCallback_(),
     listening_(false)
 {

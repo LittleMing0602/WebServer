@@ -10,6 +10,7 @@
 #include "Poller.h"
 #include "../lock/Mutex.h"
 #include "Channel.h"
+#include <functional>
 
 /*
  * one loop per thread

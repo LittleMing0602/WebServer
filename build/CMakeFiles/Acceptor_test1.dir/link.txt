@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -std=gnu++0x    CMakeFiles/Acceptor_test1.dir/test/Acceptor_test1.cc.o  -o Acceptor_test1 -rdynamic net/libnet.a 

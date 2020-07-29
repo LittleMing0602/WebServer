@@ -3,9 +3,9 @@
 
 #include "Channel.h"
 #include <functional>
+#include "Socket.h"
 
 class EventLoop;
-class Socket;
 
 class Acceptor{
 public:

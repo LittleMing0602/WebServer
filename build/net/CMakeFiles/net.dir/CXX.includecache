@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/WebServer/net/Socket.cc
+errno.h
+-
+errno.h
+-
+Socket.h
+/root/WebServer/net/Socket.h
+sys/types.h
+-
+sys/socket.h
+-
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+arpa/inet.h
+-
+netinet/tcp.h
+-
+
+/root/WebServer/net/Socket.h
+
