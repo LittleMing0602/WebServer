@@ -20,6 +20,12 @@ int createNonblockingSocket()
     }
 }
 
+// Socket负责管理，一定要在析构函数中关闭所管理socket描述符
+void Socket::~Socket()
+{
+    close(sockfd_);
+}
+
 void Socket::bind(const InetAdress& addr)
 {
     const struct sockaddr_in& addr_in = addr.getAddrInet();

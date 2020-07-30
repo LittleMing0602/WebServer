@@ -9,7 +9,7 @@ class Socket
 {
 public:
     Socket(int fd):sockfd_(fd) {}
-    ~Socket() {}
+    ~Socket();
 
     int fd() const { return sockfd_; }
     void bind(const InetAdress& addr);
