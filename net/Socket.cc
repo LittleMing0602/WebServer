@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <arpa/inet.h>
+#include <string.h>
 #include <netinet/tcp.h>
 
 int createNonblockingSocket()
@@ -19,9 +20,10 @@ int createNonblockingSocket()
     }
 }
 
-void Socket::bind(const struct sockaddr_in &addr)
+void Socket::bind(const InetAdress& addr)
 {
-    int ret = ::bind(sockfd_, static_cast<const struct sockaddr*>((const void*)&addr), sizeof addr);
+    const struct sockaddr_in& addr_in = addr.getAddrInet();
+    int ret = ::bind(sockfd_, static_cast<const struct sockaddr*>((const void*)&addr_in), sizeof addr_in);
     if(ret < 0)
     {
         printf("bind error\n");
@@ -39,10 +41,12 @@ void Socket::listen()
     }
 }
 
-int Socket::accept(struct sockaddr_in* addr)
+int Socket::accept(InetAdress* addr)
 {
-    socklen_t addrlen = sizeof *addr;
-    int connfd = accept4(sockfd_, static_cast<struct sockaddr*>((void*)addr), &addrlen,
+    struct sockaddr_in addr_in;
+    bzero(&addr_in, sizeof addr_in);
+    socklen_t addrlen = sizeof addr_in;
+    int connfd = accept4(sockfd_, static_cast<struct sockaddr*>((void*)&addr_in), &addrlen,
                          SOCK_NONBLOCK | SOCK_CLOEXEC);
 
     if(connfd < 0)
@@ -76,6 +80,7 @@ int Socket::accept(struct sockaddr_in* addr)
 
         }
     }
+    addr->setAddrInet(addr_in);
     return connfd;
 }
 

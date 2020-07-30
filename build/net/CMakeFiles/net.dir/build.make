@@ -144,9 +144,32 @@ net/CMakeFiles/net.dir/Poller.cc.o.provides: net/CMakeFiles/net.dir/Poller.cc.o.
 
 net/CMakeFiles/net.dir/Poller.cc.o.provides.build: net/CMakeFiles/net.dir/Poller.cc.o
 
+net/CMakeFiles/net.dir/InetAdress.cc.o: net/CMakeFiles/net.dir/flags.make
+net/CMakeFiles/net.dir/InetAdress.cc.o: ../net/InetAdress.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object net/CMakeFiles/net.dir/InetAdress.cc.o"
+	cd /root/WebServer/build/net && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/net.dir/InetAdress.cc.o -c /root/WebServer/net/InetAdress.cc
+
+net/CMakeFiles/net.dir/InetAdress.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/net.dir/InetAdress.cc.i"
+	cd /root/WebServer/build/net && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/WebServer/net/InetAdress.cc > CMakeFiles/net.dir/InetAdress.cc.i
+
+net/CMakeFiles/net.dir/InetAdress.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/net.dir/InetAdress.cc.s"
+	cd /root/WebServer/build/net && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/WebServer/net/InetAdress.cc -o CMakeFiles/net.dir/InetAdress.cc.s
+
+net/CMakeFiles/net.dir/InetAdress.cc.o.requires:
+.PHONY : net/CMakeFiles/net.dir/InetAdress.cc.o.requires
+
+net/CMakeFiles/net.dir/InetAdress.cc.o.provides: net/CMakeFiles/net.dir/InetAdress.cc.o.requires
+	$(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/InetAdress.cc.o.provides.build
+.PHONY : net/CMakeFiles/net.dir/InetAdress.cc.o.provides
+
+net/CMakeFiles/net.dir/InetAdress.cc.o.provides.build: net/CMakeFiles/net.dir/InetAdress.cc.o
+
 net/CMakeFiles/net.dir/Socket.cc.o: net/CMakeFiles/net.dir/flags.make
 net/CMakeFiles/net.dir/Socket.cc.o: ../net/Socket.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object net/CMakeFiles/net.dir/Socket.cc.o"
 	cd /root/WebServer/build/net && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/net.dir/Socket.cc.o -c /root/WebServer/net/Socket.cc
 
@@ -169,7 +192,7 @@ net/CMakeFiles/net.dir/Socket.cc.o.provides.build: net/CMakeFiles/net.dir/Socket
 
 net/CMakeFiles/net.dir/Acceptor.cc.o: net/CMakeFiles/net.dir/flags.make
 net/CMakeFiles/net.dir/Acceptor.cc.o: ../net/Acceptor.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object net/CMakeFiles/net.dir/Acceptor.cc.o"
 	cd /root/WebServer/build/net && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/net.dir/Acceptor.cc.o -c /root/WebServer/net/Acceptor.cc
 
@@ -196,6 +219,7 @@ net_OBJECTS = \
 "CMakeFiles/net.dir/CurrentThread.cc.o" \
 "CMakeFiles/net.dir/EventLoop.cc.o" \
 "CMakeFiles/net.dir/Poller.cc.o" \
+"CMakeFiles/net.dir/InetAdress.cc.o" \
 "CMakeFiles/net.dir/Socket.cc.o" \
 "CMakeFiles/net.dir/Acceptor.cc.o"
 
@@ -206,6 +230,7 @@ net/libnet.a: net/CMakeFiles/net.dir/Channel.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/CurrentThread.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/EventLoop.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/Poller.cc.o
+net/libnet.a: net/CMakeFiles/net.dir/InetAdress.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/Socket.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/Acceptor.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/build.make
@@ -222,6 +247,7 @@ net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/Channel.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/CurrentThread.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/EventLoop.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/Poller.cc.o.requires
+net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/InetAdress.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/Socket.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/Acceptor.cc.o.requires
 .PHONY : net/CMakeFiles/net.dir/requires

@@ -8,6 +8,7 @@ net/CMakeFiles/net.dir/Acceptor.cc.o
  /root/WebServer/net/Channel.h
  /root/WebServer/net/CurrentThread.h
  /root/WebServer/net/EventLoop.h
+ /root/WebServer/net/InetAdress.h
  /root/WebServer/net/Poller.h
  /root/WebServer/net/Socket.h
 net/CMakeFiles/net.dir/Channel.cc.o
@@ -27,10 +28,14 @@ net/CMakeFiles/net.dir/EventLoop.cc.o
  /root/WebServer/net/EventLoop.cc
  /root/WebServer/net/EventLoop.h
  /root/WebServer/net/Poller.h
+net/CMakeFiles/net.dir/InetAdress.cc.o
+ /root/WebServer/net/InetAdress.cc
+ /root/WebServer/net/InetAdress.h
 net/CMakeFiles/net.dir/Poller.cc.o
  /root/WebServer/net/Channel.h
  /root/WebServer/net/Poller.cc
  /root/WebServer/net/Poller.h
 net/CMakeFiles/net.dir/Socket.cc.o
+ /root/WebServer/net/InetAdress.h
  /root/WebServer/net/Socket.cc
  /root/WebServer/net/Socket.h

@@ -19,6 +19,8 @@ functional
 -
 Socket.h
 /root/WebServer/net/Socket.h
+InetAdress.h
+/root/WebServer/net/InetAdress.h
 
 /root/WebServer/net/Channel.h
 functional
@@ -48,6 +50,12 @@ Channel.h
 functional
 -
 
+/root/WebServer/net/InetAdress.h
+arpa/inet.h
+-
+string
+-
+
 /root/WebServer/net/Poller.h
 vector
 -
@@ -57,6 +65,8 @@ poll.h
 -
 
 /root/WebServer/net/Socket.h
+InetAdress.h
+/root/WebServer/net/InetAdress.h
 
 /root/WebServer/test/Acceptor_test1.cc
 iostream
@@ -71,4 +81,6 @@ unistd.h
 /root/WebServer/net/Acceptor.h
 ../net/EventLoop.h
 /root/WebServer/net/EventLoop.h
+../net/InetAdress.h
+/root/WebServer/net/InetAdress.h
 

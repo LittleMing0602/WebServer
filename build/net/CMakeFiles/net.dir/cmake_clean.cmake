@@ -3,6 +3,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/net.dir/CurrentThread.cc.o"
   "CMakeFiles/net.dir/EventLoop.cc.o"
   "CMakeFiles/net.dir/Poller.cc.o"
+  "CMakeFiles/net.dir/InetAdress.cc.o"
   "CMakeFiles/net.dir/Socket.cc.o"
   "CMakeFiles/net.dir/Acceptor.cc.o"
   "libnet.pdb"

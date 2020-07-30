@@ -211,6 +211,30 @@ EventLoop.cc.s:
 	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EventLoop.cc.s
 .PHONY : EventLoop.cc.s
 
+InetAdress.o: InetAdress.cc.o
+.PHONY : InetAdress.o
+
+# target to build an object file
+InetAdress.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/InetAdress.cc.o
+.PHONY : InetAdress.cc.o
+
+InetAdress.i: InetAdress.cc.i
+.PHONY : InetAdress.i
+
+# target to preprocess a source file
+InetAdress.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/InetAdress.cc.i
+.PHONY : InetAdress.cc.i
+
+InetAdress.s: InetAdress.cc.s
+.PHONY : InetAdress.s
+
+# target to generate assembly for a file
+InetAdress.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/InetAdress.cc.s
+.PHONY : InetAdress.cc.s
+
 Poller.o: Poller.cc.o
 .PHONY : Poller.o
 
@@ -280,6 +304,9 @@ help:
 	@echo "... EventLoop.o"
 	@echo "... EventLoop.i"
 	@echo "... EventLoop.s"
+	@echo "... InetAdress.o"
+	@echo "... InetAdress.i"
+	@echo "... InetAdress.s"
 	@echo "... Poller.o"
 	@echo "... Poller.i"
 	@echo "... Poller.s"

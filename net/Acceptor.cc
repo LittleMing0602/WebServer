@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 
-Acceptor::Acceptor(EventLoop* loop, const struct sockaddr_in& addr):
+Acceptor::Acceptor(EventLoop* loop, const InetAdress& addr):
     loop_(loop),
     socket_(createNonblockingSocket()),
     channel_(loop, socket_.fd()),
@@ -29,7 +29,7 @@ void Acceptor::listen()
 void Acceptor::handleRead()
 {
     loop_->assertInLoopThread();
-    struct sockaddr_in addr;
+    InetAdress addr(0);
     int connfd = socket_.accept(&addr);
     if(connfd >= 0)
     {

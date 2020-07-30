@@ -4,14 +4,15 @@
 #include "Channel.h"
 #include <functional>
 #include "Socket.h"
+#include "InetAdress.h"
 
 class EventLoop;
 
 class Acceptor{
 public:
-    typedef std::function<void(int, struct sockaddr_in&)> NewConnectionCallback;
+    typedef std::function<void(int, InetAdress& addr)> NewConnectionCallback;
 
-    Acceptor(EventLoop* loop, const struct sockaddr_in& addr);
+    Acceptor(EventLoop* loop, const InetAdress& addr);
 
     void setNewConnectionCallback(const NewConnectionCallback& cb)
     { newConnectionCallback_ = cb; }

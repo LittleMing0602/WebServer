@@ -43,7 +43,13 @@ public:
     bool isNoneEvent() const { return events_ == kNoneEvent; }
 
 private:
+    /* 
+    * 被enableReading()调用，表示channel状态改变，需要更新。
+    * update让所属的EventLoop去更新channel
+    * （当然EventLoop又是让Poller去更新的）
+    */
     void update();
+    
     static const int kNoneEvent;
     static const int kReadEvent;
     static const int kWriteEvent;

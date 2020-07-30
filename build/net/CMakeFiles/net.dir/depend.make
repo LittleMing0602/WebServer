@@ -7,6 +7,7 @@ net/CMakeFiles/net.dir/Acceptor.cc.o: ../net/Acceptor.h
 net/CMakeFiles/net.dir/Acceptor.cc.o: ../net/Channel.h
 net/CMakeFiles/net.dir/Acceptor.cc.o: ../net/CurrentThread.h
 net/CMakeFiles/net.dir/Acceptor.cc.o: ../net/EventLoop.h
+net/CMakeFiles/net.dir/Acceptor.cc.o: ../net/InetAdress.h
 net/CMakeFiles/net.dir/Acceptor.cc.o: ../net/Poller.h
 net/CMakeFiles/net.dir/Acceptor.cc.o: ../net/Socket.h
 
@@ -27,10 +28,14 @@ net/CMakeFiles/net.dir/EventLoop.cc.o: ../net/EventLoop.cc
 net/CMakeFiles/net.dir/EventLoop.cc.o: ../net/EventLoop.h
 net/CMakeFiles/net.dir/EventLoop.cc.o: ../net/Poller.h
 
+net/CMakeFiles/net.dir/InetAdress.cc.o: ../net/InetAdress.cc
+net/CMakeFiles/net.dir/InetAdress.cc.o: ../net/InetAdress.h
+
 net/CMakeFiles/net.dir/Poller.cc.o: ../net/Channel.h
 net/CMakeFiles/net.dir/Poller.cc.o: ../net/Poller.cc
 net/CMakeFiles/net.dir/Poller.cc.o: ../net/Poller.h
 
+net/CMakeFiles/net.dir/Socket.cc.o: ../net/InetAdress.h
 net/CMakeFiles/net.dir/Socket.cc.o: ../net/Socket.cc
 net/CMakeFiles/net.dir/Socket.cc.o: ../net/Socket.h
 

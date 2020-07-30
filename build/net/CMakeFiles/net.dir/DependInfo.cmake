@@ -8,6 +8,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/root/WebServer/net/Channel.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/Channel.cc.o"
   "/root/WebServer/net/CurrentThread.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/CurrentThread.cc.o"
   "/root/WebServer/net/EventLoop.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/EventLoop.cc.o"
+  "/root/WebServer/net/InetAdress.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/InetAdress.cc.o"
   "/root/WebServer/net/Poller.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/Poller.cc.o"
   "/root/WebServer/net/Socket.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/Socket.cc.o"
   )
