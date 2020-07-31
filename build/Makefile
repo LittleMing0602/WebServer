@@ -154,6 +154,19 @@ EventLoop_test3/fast:
 .PHONY : EventLoop_test3/fast
 
 #=============================================================================
+# Target rules for targets named TcpConnection_test1
+
+# Build rule for target.
+TcpConnection_test1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 TcpConnection_test1
+.PHONY : TcpConnection_test1
+
+# fast build rule for target.
+TcpConnection_test1/fast:
+	$(MAKE) -f CMakeFiles/TcpConnection_test1.dir/build.make CMakeFiles/TcpConnection_test1.dir/build
+.PHONY : TcpConnection_test1/fast
+
+#=============================================================================
 # Target rules for targets named net
 
 # Build rule for target.
@@ -275,6 +288,30 @@ test/EventLoop_test3.cc.s:
 	$(MAKE) -f CMakeFiles/EventLoop_test3.dir/build.make CMakeFiles/EventLoop_test3.dir/test/EventLoop_test3.cc.s
 .PHONY : test/EventLoop_test3.cc.s
 
+test/TcpConnection_test1.o: test/TcpConnection_test1.cc.o
+.PHONY : test/TcpConnection_test1.o
+
+# target to build an object file
+test/TcpConnection_test1.cc.o:
+	$(MAKE) -f CMakeFiles/TcpConnection_test1.dir/build.make CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o
+.PHONY : test/TcpConnection_test1.cc.o
+
+test/TcpConnection_test1.i: test/TcpConnection_test1.cc.i
+.PHONY : test/TcpConnection_test1.i
+
+# target to preprocess a source file
+test/TcpConnection_test1.cc.i:
+	$(MAKE) -f CMakeFiles/TcpConnection_test1.dir/build.make CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.i
+.PHONY : test/TcpConnection_test1.cc.i
+
+test/TcpConnection_test1.s: test/TcpConnection_test1.cc.s
+.PHONY : test/TcpConnection_test1.s
+
+# target to generate assembly for a file
+test/TcpConnection_test1.cc.s:
+	$(MAKE) -f CMakeFiles/TcpConnection_test1.dir/build.make CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.s
+.PHONY : test/TcpConnection_test1.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -285,6 +322,7 @@ help:
 	@echo "... EventLoop_test1"
 	@echo "... EventLoop_test2"
 	@echo "... EventLoop_test3"
+	@echo "... TcpConnection_test1"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... net"
@@ -301,6 +339,9 @@ help:
 	@echo "... test/EventLoop_test3.o"
 	@echo "... test/EventLoop_test3.i"
 	@echo "... test/EventLoop_test3.s"
+	@echo "... test/TcpConnection_test1.o"
+	@echo "... test/TcpConnection_test1.i"
+	@echo "... test/TcpConnection_test1.s"
 .PHONY : help
 
 

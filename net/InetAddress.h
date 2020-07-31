@@ -4,15 +4,15 @@
 #include <arpa/inet.h>
 #include <string>
 
-class InetAdress
+class InetAddress
 {
 public:
-    explicit InetAdress(uint16_t port);
+    explicit InetAddress(uint16_t port);
     //InetAdress(const char* ip, uint16_t port);
-    InetAdress(const struct sockaddr_in& addr):
+    InetAddress(const struct sockaddr_in& addr):
         addr_(addr)
     {}
-    ~InetAdress() {}
+    ~InetAddress() {}
 
     std::string toIp() const;
     const struct sockaddr_in& getAddrInet() const { return addr_; }

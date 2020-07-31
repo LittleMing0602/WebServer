@@ -211,29 +211,29 @@ EventLoop.cc.s:
 	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EventLoop.cc.s
 .PHONY : EventLoop.cc.s
 
-InetAdress.o: InetAdress.cc.o
-.PHONY : InetAdress.o
+InetAddress.o: InetAddress.cc.o
+.PHONY : InetAddress.o
 
 # target to build an object file
-InetAdress.cc.o:
-	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/InetAdress.cc.o
-.PHONY : InetAdress.cc.o
+InetAddress.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/InetAddress.cc.o
+.PHONY : InetAddress.cc.o
 
-InetAdress.i: InetAdress.cc.i
-.PHONY : InetAdress.i
+InetAddress.i: InetAddress.cc.i
+.PHONY : InetAddress.i
 
 # target to preprocess a source file
-InetAdress.cc.i:
-	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/InetAdress.cc.i
-.PHONY : InetAdress.cc.i
+InetAddress.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/InetAddress.cc.i
+.PHONY : InetAddress.cc.i
 
-InetAdress.s: InetAdress.cc.s
-.PHONY : InetAdress.s
+InetAddress.s: InetAddress.cc.s
+.PHONY : InetAddress.s
 
 # target to generate assembly for a file
-InetAdress.cc.s:
-	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/InetAdress.cc.s
-.PHONY : InetAdress.cc.s
+InetAddress.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/InetAddress.cc.s
+.PHONY : InetAddress.cc.s
 
 Poller.o: Poller.cc.o
 .PHONY : Poller.o
@@ -283,6 +283,54 @@ Socket.cc.s:
 	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/Socket.cc.s
 .PHONY : Socket.cc.s
 
+TcpConnection.o: TcpConnection.cc.o
+.PHONY : TcpConnection.o
+
+# target to build an object file
+TcpConnection.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/TcpConnection.cc.o
+.PHONY : TcpConnection.cc.o
+
+TcpConnection.i: TcpConnection.cc.i
+.PHONY : TcpConnection.i
+
+# target to preprocess a source file
+TcpConnection.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/TcpConnection.cc.i
+.PHONY : TcpConnection.cc.i
+
+TcpConnection.s: TcpConnection.cc.s
+.PHONY : TcpConnection.s
+
+# target to generate assembly for a file
+TcpConnection.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/TcpConnection.cc.s
+.PHONY : TcpConnection.cc.s
+
+TcpServer.o: TcpServer.cc.o
+.PHONY : TcpServer.o
+
+# target to build an object file
+TcpServer.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/TcpServer.cc.o
+.PHONY : TcpServer.cc.o
+
+TcpServer.i: TcpServer.cc.i
+.PHONY : TcpServer.i
+
+# target to preprocess a source file
+TcpServer.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/TcpServer.cc.i
+.PHONY : TcpServer.cc.i
+
+TcpServer.s: TcpServer.cc.s
+.PHONY : TcpServer.s
+
+# target to generate assembly for a file
+TcpServer.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/TcpServer.cc.s
+.PHONY : TcpServer.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -304,15 +352,21 @@ help:
 	@echo "... EventLoop.o"
 	@echo "... EventLoop.i"
 	@echo "... EventLoop.s"
-	@echo "... InetAdress.o"
-	@echo "... InetAdress.i"
-	@echo "... InetAdress.s"
+	@echo "... InetAddress.o"
+	@echo "... InetAddress.i"
+	@echo "... InetAddress.s"
 	@echo "... Poller.o"
 	@echo "... Poller.i"
 	@echo "... Poller.s"
 	@echo "... Socket.o"
 	@echo "... Socket.i"
 	@echo "... Socket.s"
+	@echo "... TcpConnection.o"
+	@echo "... TcpConnection.i"
+	@echo "... TcpConnection.s"
+	@echo "... TcpServer.o"
+	@echo "... TcpServer.i"
+	@echo "... TcpServer.s"
 .PHONY : help
 
 

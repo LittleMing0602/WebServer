@@ -4,9 +4,9 @@
 #include <unistd.h>
 #include "../net/Acceptor.h"
 #include "../net/EventLoop.h"
-#include "../net/InetAdress.h"
+#include "../net/InetAddress.h"
 
-void newConnectionCallback(int connfd, InetAdress& addr)
+void newConnectionCallback(int connfd, InetAddress& addr)
 {
     char host[INET_ADDRSTRLEN] = {0};
     char buf[1024] = {0};
@@ -27,7 +27,7 @@ int main()
     //addr.sin_family = AF_INET;
     //addr.sin_port = htons(9981);
     //inet_aton("127.0.0.1", &(addr.sin_addr));
-    InetAdress addr(9981);
+    InetAddress addr(9981);
     EventLoop loop;
 
     Acceptor acceptor(&loop, addr);

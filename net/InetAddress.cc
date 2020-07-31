@@ -1,7 +1,7 @@
-#include "InetAdress.h"
+#include "InetAddress.h"
 #include <string.h>
 
-InetAdress::InetAdress(uint16_t port)
+InetAddress::InetAddress(uint16_t port)
 {
     bzero(&addr_, sizeof addr_);
     addr_.sin_family = AF_INET;
@@ -9,7 +9,7 @@ InetAdress::InetAdress(uint16_t port)
     addr_.sin_port = htons(port);
 }
 
-std::string InetAdress::toIp() const
+std::string InetAddress::toIp() const
 {
     char buf[32];
     size_t size = sizeof buf;
@@ -17,7 +17,7 @@ std::string InetAdress::toIp() const
     return buf;
 }
 
-void InetAdress::setAddrInet(const struct sockaddr_in& addr)
+void InetAddress::setAddrInet(const struct sockaddr_in& addr)
 {
     addr_ = addr;
 }

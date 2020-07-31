@@ -47,6 +47,7 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/EventLoop_test1.dir/DependInfo.cmake"
   "CMakeFiles/EventLoop_test2.dir/DependInfo.cmake"
   "CMakeFiles/EventLoop_test3.dir/DependInfo.cmake"
+  "CMakeFiles/TcpConnection_test1.dir/DependInfo.cmake"
   "net/CMakeFiles/net.dir/DependInfo.cmake"
   "base/CMakeFiles/Thread.dir/DependInfo.cmake"
   )

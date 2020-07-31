@@ -5,11 +5,10 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 
-Acceptor::Acceptor(EventLoop* loop, const InetAdress& addr):
+Acceptor::Acceptor(EventLoop* loop, const InetAddress& addr):
     loop_(loop),
     socket_(createNonblockingSocket()),
     channel_(loop, socket_.fd()),
-    newConnectionCallback_(),
     listening_(false)
 {
     socket_.setReuseAddr(true);
@@ -29,7 +28,7 @@ void Acceptor::listen()
 void Acceptor::handleRead()
 {
     loop_->assertInLoopThread();
-    InetAdress addr(0);
+    InetAddress addr(0);
     int connfd = socket_.accept(&addr);
     if(connfd >= 0)
     {

@@ -9,7 +9,7 @@
 class TcpServer
 {
 public:
-    TcpServer(EventLoop* loop, const InetAdress& addr);
+    TcpServer(EventLoop* loop, const InetAddress& addr);
     ~TcpServer() {}
 
     void setMessageCallback(const MessageCallback& cb)
@@ -23,7 +23,7 @@ public:
 private:
     typedef std::map<std::string, TcpConnectionPtr> ConnectionMap; 
 
-    void newConnection(int sockfd, InetAdress& addr);
+    void newConnection(int sockfd, InetAddress& addr);
     std::unique_ptr<Acceptor> acceptor_;
     EventLoop* loop_;
     ConnectionMap connections_;
