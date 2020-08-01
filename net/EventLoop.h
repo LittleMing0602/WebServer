@@ -53,6 +53,10 @@ public:
     void updateChannel(Channel* channel);
 
     void runInLoop(const Functor& cb);
+    
+    void queueInLoop(const Functor& cb);
+    
+    void removeChannel(Channel* channel);
 
 private:
     typedef std::vector<Channel*> ChannelList;
@@ -71,7 +75,6 @@ private:
 
     void handleRead();
     void doPendingFunctors();
-    void queueInLoop(const Functor& cb);
     void wakeup();
     
 };

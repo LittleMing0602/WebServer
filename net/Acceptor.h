@@ -23,10 +23,10 @@ private:
     EventLoop* loop_;
     Socket socket_;
     Channel channel_;
-    NewConnectionCallback newConnectionCallback_;
+    NewConnectionCallback newConnectionCallback_;  // 绑定的是TcpServer的newConnection
     bool listening_;
 
-    void handleRead();
+    void handleRead();  // 调用accept接受连接, 调用newConnectionCallback_;
 };
 
 #endif

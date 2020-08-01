@@ -21,6 +21,8 @@ public:
     
     //维护poll的套接字数组，添加和修改或删除channel代表的fd，由EventLoop调用
     void updateChannel(Channel* channel);
+    
+    void removeChannel(Channel* channel);
 
 private:
     //将激活的套接字添加到activeChannels中

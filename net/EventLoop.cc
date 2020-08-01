@@ -132,3 +132,8 @@ void EventLoop::handleRead()
     }
 }
 
+void EventLoop::removeChannel(Channel* channel)
+{
+    assertInLoopThread();
+    poller_->removeChannel(channel);
+}

@@ -2,13 +2,12 @@
 #define CHANNEL_H
 
 #include <functional>
+#include "Callback.h"
 
 class EventLoop;
 
 class Channel
 {
-public:
-    typedef std::function<void()> EventCallback;
 public:
     Channel(EventLoop* loop, int fd):
         loop_(loop), 
@@ -26,11 +25,14 @@ public:
     { readCallback_ = cb; }
 
     void setErrorCallback(const EventCallback& cb)
-    {
-        errorCallback_ = cb;
-    }
+    { errorCallback_ = cb; }
+        
+    void setCloseCallback(const EventCallback& cb)
+    { closeCallback_ = cb; }
     
-    void enableReading(){ events_ |= kReadEvent; update();}
+    void enableReading() { events_ |= kReadEvent; update();}
+    
+    void disableAll() { events_ = kNoneEvent; update();}
 
     void handleEvent();
 
@@ -41,6 +43,7 @@ public:
     int events() const { return events_; }
     void setIndex(int index) { index_ = index; }
     bool isNoneEvent() const { return events_ == kNoneEvent; }
+    void remove();
 
 private:
     /* 
@@ -59,6 +62,7 @@ private:
     EventCallback readCallback_;
     EventCallback writeCallback_;
     EventCallback errorCallback_;
+    EventCallback closeCallback_;
     EventLoop* loop_;
     int index_; //标示自己在pollfds数组中的下标，以便快速通过channel找到pollfd
 };

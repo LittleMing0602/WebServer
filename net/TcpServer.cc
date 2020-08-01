@@ -25,6 +25,19 @@ TcpServer::TcpServer(EventLoop* loop, const InetAddress& addr):
     acceptor_->setNewConnectionCallback(std::bind(&TcpServer::newConnection, this,std::placeholders::_1,std::placeholders:: _2));
 }
 
+TcpServer::~TcpServer()
+{
+    loop_->assertInLoopThread();
+    
+    for(ConnectionMap::iterator it = connections_.begin(); it != connections_.end(); ++it)
+    {
+        TcpConnectionPtr conn = it->second;
+        it->second.reset();
+        conn->getLoop()->runInLoop(std::bind(&TcpConnection::connectDestroyed, conn));
+        conn.reset();
+    }
+}
+
 void TcpServer::start()
 {
     if(!acceptor_->listening())
@@ -43,6 +56,14 @@ void TcpServer::newConnection(int sockfd, InetAddress& peerAddr)
     TcpConnectionPtr conn(new TcpConnection(connName, loop_, sockfd, localAddr, peerAddr));
     connections_[connName] = conn;
     conn->setConnectionCallback(connectionCallback_);
-    conn->setMessageCallback_(messagesCallback_);
+    conn->setMessageCallback(messageCallback_);
+    conn->setCloseCallback(std::bind(&TcpServer::removeConnection, this, std::placeholders::_1));
     loop_->runInLoop(std::bind(&TcpConnection::connectEstablished, conn));
+}
+
+void TcpServer::removeConnection(const TcpConnectionPtr& conn)
+{
+    loop_->assertInLoopThread();
+    size_t n = connections_.erase(conn->name());
+    loop_->queueInLoop(std::bind(&TcpConnection::connectDestroyed, conn));
 }

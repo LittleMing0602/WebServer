@@ -77,3 +77,26 @@ void Poller::updateChannel(Channel* channel)
         }
     }
 }
+
+
+void Poller::removeChannel(Channel* channel)
+{
+    int index = channel->index();
+    const struct pollfd& pfd = pollfds_[index];
+    ssize_t n = channels_.erase(channel->fd());
+    if(index == pollfds_.size() - 1)
+    {
+        pollfds_.pop_back();
+    }
+    else
+    {
+        int fdAtEnd = pollfds_.back().fd;
+        iter_swap(pollfds_.begin() + index, pollfds_.end() - 1);
+        if(fdAtEnd < 0)
+        {
+            fdAtEnd = -fdAtEnd - 1;
+        }
+        channels_[fdAtEnd]->setIndex(index);
+        pollfds_.pop_back();
+    }
+}

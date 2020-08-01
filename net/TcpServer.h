@@ -10,10 +10,10 @@ class TcpServer
 {
 public:
     TcpServer(EventLoop* loop, const InetAddress& addr);
-    ~TcpServer() {}
+    ~TcpServer(); 
 
     void setMessageCallback(const MessageCallback& cb)
-    { messagesCallback_ = cb; }
+    { messageCallback_ = cb; }
 
     void setConnectionCallback(const ConnectionCallback& cb)
     { connectionCallback_ = cb; }
@@ -23,13 +23,15 @@ public:
 private:
     typedef std::map<std::string, TcpConnectionPtr> ConnectionMap; 
 
-    void newConnection(int sockfd, InetAddress& addr);
+    void newConnection(int sockfd, InetAddress& addr);  // 与Acceptor的newConnectionCallback绑定，创建TcpConnection对象
+    void removeConnection(const TcpConnectionPtr& conn);    // 与TcpConnection的closeCallback绑定
+    
     std::unique_ptr<Acceptor> acceptor_;
     EventLoop* loop_;
     ConnectionMap connections_;
     int nextConnId_;
 
-    MessageCallback messagesCallback_;
+    MessageCallback messageCallback_;
     ConnectionCallback connectionCallback_;
 };
 
