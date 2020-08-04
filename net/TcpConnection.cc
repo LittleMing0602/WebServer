@@ -68,6 +68,11 @@ void TcpConnection::handleWrite()
             if(outputBuffer_.readableBytes() == 0)
             {
                 channel_->disableWriting();
+                
+                if(writeCompleteCallback_)
+                {
+                    loop_->queueInLoop(std::bind(writeCompleteCallback_, shared_from_this()));
+                }
                 if(state_ == kDisconnecting)
                 {
                     shutdownInLoop();
@@ -146,6 +151,21 @@ void TcpConnection::shutdownInLoop()
     }
 }
 
+void TcpConnection::send(const std::string& message)
+{
+    if(state_ == kConnected)
+    {
+        if(loop_->isInLoopThread())
+        {
+            sendInLoop(message);
+        }
+        else
+        {
+            loop_->runInLoop(std::bind(&TcpConnection::sendInLoop, this, message));
+        }
+    }
+}
+
 void TcpConnection::sendInLoop(const std::string& message)
 {
     loop_->assertInLoopThread();
@@ -161,6 +181,10 @@ void TcpConnection::sendInLoop(const std::string& message)
             {
                 //LOG_TRACE
                 printf("I'm going to write more data\n");
+            }
+            else if(writeCompleteCallback_)
+            {
+                loop_->queueInLoop(std::bind(writeCompleteCallback_, shared_from_this()));
             }
         }
         else
@@ -182,21 +206,6 @@ void TcpConnection::sendInLoop(const std::string& message)
         if(!channel_->isWriting())
         {
             channel_->enableWriting();
-        }
-    }
-}
-
-void TcpConnection::send(const std::string& message)
-{
-    if(state_ == kConnected)
-    {
-        if(loop_->isInLoopThread())
-        {
-            sendInLoop(message);
-        }
-        else
-        {
-            loop_->runInLoop(std::bind(&TcpConnection::sendInLoop, this, message));
         }
     }
 }

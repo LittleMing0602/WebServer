@@ -33,6 +33,7 @@ private:
 
     MessageCallback messageCallback_;
     ConnectionCallback connectionCallback_;
+    WriteCompleteCallback writeCompleteCallback_;
 };
 
 #endif
