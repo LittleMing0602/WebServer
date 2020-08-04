@@ -29,6 +29,10 @@ TcpConnection::TcpConnection(const std::string& name, EventLoop* loop, int sockf
 {
     // connection可读的时候执行的回调函数
     channel_->setReadCallback(std::bind(&TcpConnection::handleRead, this, std::placeholders::_1));
+    channel_->setWriteCallback(std::bind(&TcpConnection::handleWrite, this));
+    channel_->setCloseCallback(std::bind(&TcpConnection::handleClose, this));
+    channel_->setErrorCallback(std::bind(&TcpConnection::handleError, this));
+    socket_->setKeepAlive(true);
 }
 
 void TcpConnection::handleRead(TimeStamp receiveTime)
