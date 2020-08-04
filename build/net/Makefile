@@ -139,6 +139,30 @@ Acceptor.cc.s:
 	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/Acceptor.cc.s
 .PHONY : Acceptor.cc.s
 
+Buffer.o: Buffer.cc.o
+.PHONY : Buffer.o
+
+# target to build an object file
+Buffer.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/Buffer.cc.o
+.PHONY : Buffer.cc.o
+
+Buffer.i: Buffer.cc.i
+.PHONY : Buffer.i
+
+# target to preprocess a source file
+Buffer.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/Buffer.cc.i
+.PHONY : Buffer.cc.i
+
+Buffer.s: Buffer.cc.s
+.PHONY : Buffer.s
+
+# target to generate assembly for a file
+Buffer.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/Buffer.cc.s
+.PHONY : Buffer.cc.s
+
 Channel.o: Channel.cc.o
 .PHONY : Channel.o
 
@@ -343,6 +367,9 @@ help:
 	@echo "... Acceptor.o"
 	@echo "... Acceptor.i"
 	@echo "... Acceptor.s"
+	@echo "... Buffer.o"
+	@echo "... Buffer.i"
+	@echo "... Buffer.s"
 	@echo "... Channel.o"
 	@echo "... Channel.i"
 	@echo "... Channel.s"

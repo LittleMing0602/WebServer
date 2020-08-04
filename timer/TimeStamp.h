@@ -2,6 +2,7 @@
 #define TIMESTAMP_H
 
 #include <stdlib.h>
+#include <string>
 
 /*
  * 为了实现让定时器精确到微妙级，需要实现一个TimeStamp类完成微秒和秒的转换
@@ -27,6 +28,8 @@ public:
     static TimeStamp now();
 
     static TimeStamp invalid();
+
+    std::string toString() const;
     
     static const int kMicrosecondsPerSecond = 1000 * 1000;
 private:

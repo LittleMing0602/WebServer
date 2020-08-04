@@ -1,0 +1,2 @@
+/usr/bin/ar cr libtimer.a  CMakeFiles/timer.dir/TimerQueue.cc.o CMakeFiles/timer.dir/TimeStamp.cc.o
+/usr/bin/ranlib libtimer.a

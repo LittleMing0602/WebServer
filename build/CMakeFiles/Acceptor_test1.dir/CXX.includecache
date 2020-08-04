@@ -23,12 +23,16 @@ InetAddress.h
 /root/WebServer/net/InetAddress.h
 Callback.h
 /root/WebServer/net/Callback.h
+../timer/TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
 
 /root/WebServer/net/Callback.h
 memory
 -
 InetAddress.h
 /root/WebServer/net/InetAddress.h
+../timer/TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
 
 /root/WebServer/net/Channel.h
 functional
@@ -59,6 +63,8 @@ Channel.h
 /root/WebServer/net/Channel.h
 functional
 -
+../timer/TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
 
 /root/WebServer/net/InetAddress.h
 arpa/inet.h
@@ -73,6 +79,8 @@ map
 -
 poll.h
 -
+../timer/TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
 
 /root/WebServer/net/Socket.h
 InetAddress.h
@@ -93,4 +101,12 @@ unistd.h
 /root/WebServer/net/EventLoop.h
 ../net/InetAddress.h
 /root/WebServer/net/InetAddress.h
+
+/root/WebServer/timer/TimeStamp.h
+stdlib.h
+-
+string
+-
+time.h
+-
 

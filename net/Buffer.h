@@ -29,13 +29,14 @@ public:
     size_t prependableBytes() const
     { return readIndex_; }
 
+    // 当前读到的位置
     const char* peek() const
     { return begin() + readIndex_; }
 
 
     void retrieve(int len)
     {
-        assert(len < readableBytes());
+        assert(len <= readableBytes());
         if(len < readableBytes())
         {
             readIndex_ += len;
@@ -52,12 +53,19 @@ public:
         writeIndex_ = kCheapPrePend;
     }
 
+    // 以string格式读出len长度的数据
     std::string retrieveAsString(size_t len)
     {
         std::string result(peek(), len);
         retrieve(len);
         return result;
     }   
+    
+    // 以string格式读出全部数据
+    std::string retrieveAllAsString()
+    {
+        return retrieveAsString(readableBytes());
+    }
 
     void append(const char* data, size_t len)
     {
@@ -88,7 +96,7 @@ public:
 
     void prepend(const void* data, size_t len)
     {
-        assert(lend <= prependableBytes());
+        assert(len <= prependableBytes());
         readIndex_ -= len;
         const char* tmpd = static_cast<const char*>(data);
         std::copy(tmpd, tmpd + len, begin() +  readIndex_);
@@ -116,7 +124,7 @@ private:
         }
         else  // 否则，将readable的数据移到kCheapPrepend处, 就不用分配空间，节省了分配空间的时间
         {   
-            assert(kCheapPrePend < readerIndex_);
+            assert(kCheapPrePend < readIndex_);
             size_t readable = readableBytes();
             std::copy(begin() + readIndex_, begin() + writeIndex_, begin() + kCheapPrePend);
             readIndex_ = kCheapPrePend;

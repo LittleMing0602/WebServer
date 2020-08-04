@@ -11,6 +11,7 @@
 #include "../lock/Mutex.h"
 #include "Channel.h"
 #include <functional>
+#include "../timer/TimeStamp.h"
 
 /*
  * one loop per thread
@@ -62,7 +63,6 @@ private:
     typedef std::vector<Channel*> ChannelList;
 
     std::unique_ptr<Poller> poller_;
-
     bool quit_;
     const pid_t threadId_;
     ChannelList activeChannels_;
@@ -72,6 +72,7 @@ private:
     std::unique_ptr<Channel> wakeupChannel_;
     MutexLock mutex_;
     std::vector<Functor> pendingFunctors_;
+    TimeStamp pollReturnTime_;
 
     void handleRead();
     void doPendingFunctors();

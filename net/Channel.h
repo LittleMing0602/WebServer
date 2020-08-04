@@ -21,7 +21,7 @@ public:
     void setWriteCallback(const EventCallback& cb)
     { writeCallback_ = cb; }
 
-    void setReadCallback(const EventCallback& cb)
+    void setReadCallback(const ReadEventCallback& cb)
     { readCallback_ = cb; }
 
     void setErrorCallback(const EventCallback& cb)
@@ -34,7 +34,7 @@ public:
     
     void disableAll() { events_ = kNoneEvent; update();}
 
-    void handleEvent();
+    void handleEvent(TimeStamp receiveTime);
 
     void setRevents(int events) { revents_ = events; }
 
@@ -59,7 +59,7 @@ private:
     const int fd_;
     int events_;
     int revents_;
-    EventCallback readCallback_;
+    ReadEventCallback readCallback_;
     EventCallback writeCallback_;
     EventCallback errorCallback_;
     EventCallback closeCallback_;

@@ -14,7 +14,7 @@ const int Channel::kWriteEvent = POLLOUT;
 *POLLNVAL : 表示套接字文件描述符未打开，close()它会是一个错误。
 */
 
-void Channel::handleEvent()
+void Channel::handleEvent(TimeStamp receiveTime)
 {
     if(revents_ & POLLNVAL)
     {
@@ -30,7 +30,7 @@ void Channel::handleEvent()
     }
     if(revents_ & (POLLIN | POLLPRI | POLLRDHUP))  // POLLIN普通或优先级带数据可读，POLLPRI高优先级数据可读，POLLEDHUP
     {
-        if(readCallback_) readCallback_();
+        if(readCallback_) readCallback_(receiveTime);
     }
     if(revents_ & POLLOUT)  // 普通数据可写
     {

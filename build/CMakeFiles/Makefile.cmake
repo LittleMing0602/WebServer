@@ -13,6 +13,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/2.8.12.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeSystem.cmake"
   "../net/CMakeLists.txt"
+  "../timer/CMakeLists.txt"
   "/usr/share/cmake/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCommonLanguageInclude.cmake"
@@ -39,6 +40,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "net/CMakeFiles/CMakeDirectoryInformation.cmake"
   "base/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "timer/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -50,4 +52,5 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/TcpConnection_test1.dir/DependInfo.cmake"
   "net/CMakeFiles/net.dir/DependInfo.cmake"
   "base/CMakeFiles/Thread.dir/DependInfo.cmake"
+  "timer/CMakeFiles/timer.dir/DependInfo.cmake"
   )

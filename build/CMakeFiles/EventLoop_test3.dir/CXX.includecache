@@ -17,6 +17,8 @@ memory
 -
 InetAddress.h
 /root/WebServer/net/InetAddress.h
+../timer/TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
 
 /root/WebServer/net/Channel.h
 functional
@@ -47,6 +49,8 @@ Channel.h
 /root/WebServer/net/Channel.h
 functional
 -
+../timer/TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
 
 /root/WebServer/net/InetAddress.h
 arpa/inet.h
@@ -61,6 +65,8 @@ map
 -
 poll.h
 -
+../timer/TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
 
 /root/WebServer/test/EventLoop_test3.cc
 stdio.h
@@ -75,4 +81,14 @@ string.h
 -
 ../net/Poller.h
 /root/WebServer/net/Poller.h
+../timer/TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
+
+/root/WebServer/timer/TimeStamp.h
+stdlib.h
+-
+string
+-
+time.h
+-
 

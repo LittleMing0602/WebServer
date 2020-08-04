@@ -28,16 +28,16 @@ TcpConnection::TcpConnection(const std::string& name, EventLoop* loop, int sockf
     name_(name)
 {
     // connection可读的时候执行的回调函数
-    channel_->setReadCallback(std::bind(&TcpConnection::handleRead, this));
+    channel_->setReadCallback(std::bind(&TcpConnection::handleRead, this, std::placeholders::_1));
 }
 
-void TcpConnection::handleRead()
+void TcpConnection::handleRead(TimeStamp receiveTime)
 {
-    char buf[65535];
-    ssize_t n = read(channel_->fd(), buf, sizeof buf);
+    int savedError = 0;
+    ssize_t n = inputBuffer_.readFd(channel_->fd(), &savedError);
     if(n > 0)
     {
-        messageCallback_(shared_from_this(), buf, n);
+        messageCallback_(shared_from_this(), &inputBuffer_, receiveTime);
     }
     else if(n == 0)
     {
@@ -45,6 +45,8 @@ void TcpConnection::handleRead()
     }
     else
     {
+        errno = savedError;
+        // LOG_SYSERR
         handleError();
     }
     

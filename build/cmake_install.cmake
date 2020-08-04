@@ -36,6 +36,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/root/WebServer/build/net/cmake_install.cmake")
   INCLUDE("/root/WebServer/build/base/cmake_install.cmake")
+  INCLUDE("/root/WebServer/build/timer/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

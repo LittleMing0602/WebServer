@@ -5,6 +5,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/root/WebServer/net/Acceptor.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/Acceptor.cc.o"
+  "/root/WebServer/net/Buffer.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/Buffer.cc.o"
   "/root/WebServer/net/Channel.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/Channel.cc.o"
   "/root/WebServer/net/CurrentThread.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/CurrentThread.cc.o"
   "/root/WebServer/net/EventLoop.cc" "/root/WebServer/build/net/CMakeFiles/net.dir/EventLoop.cc.o"
@@ -18,10 +19,12 @@ SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
+  "/root/WebServer/build/timer/CMakeFiles/timer.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
+  "../net/../timer"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

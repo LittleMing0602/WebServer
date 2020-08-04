@@ -192,6 +192,19 @@ Thread/fast:
 	$(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/build
 .PHONY : Thread/fast
 
+#=============================================================================
+# Target rules for targets named timer
+
+# Build rule for target.
+timer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 timer
+.PHONY : timer
+
+# fast build rule for target.
+timer/fast:
+	$(MAKE) -f timer/CMakeFiles/timer.dir/build.make timer/CMakeFiles/timer.dir/build
+.PHONY : timer/fast
+
 test/Acceptor_test1.o: test/Acceptor_test1.cc.o
 .PHONY : test/Acceptor_test1.o
 
@@ -327,6 +340,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... net"
 	@echo "... Thread"
+	@echo "... timer"
 	@echo "... test/Acceptor_test1.o"
 	@echo "... test/Acceptor_test1.i"
 	@echo "... test/Acceptor_test1.s"

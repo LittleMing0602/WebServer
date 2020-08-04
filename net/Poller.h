@@ -4,6 +4,7 @@
 #include <vector>
 #include <map>
 #include <poll.h>
+#include "../timer/TimeStamp.h"
 
 class Channel;
 class EventLoop;
@@ -17,7 +18,7 @@ public:
     ~Poller() {}
 
     // 调用poll事件循环，然后调用fillActiveChannels将激活的channel传出去
-    void poll(int timeoutMs, ChannelList* activeChannels);
+    TimeStamp poll(int timeoutMs, ChannelList* activeChannels);
     
     //维护poll的套接字数组，添加和修改或删除channel代表的fd，由EventLoop调用
     void updateChannel(Channel* channel);

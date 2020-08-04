@@ -8,9 +8,10 @@ Poller::Poller(EventLoop* loop): loop_(loop)
 
 }
 
-void Poller::poll(int timeoutMs, ChannelList *activeChannels)
+TimeStamp Poller::poll(int timeoutMs, ChannelList *activeChannels)
 {
     int numEvents = ::poll(&*pollfds_.begin(), pollfds_.size(), timeoutMs);
+    TimeStamp now(TimeStamp::now());
     
     if(numEvents > 0)
     {
@@ -24,7 +25,9 @@ void Poller::poll(int timeoutMs, ChannelList *activeChannels)
     {
         printf("error: Poller::poll()\n");
     }
+    return now;
 }
+
 
 void Poller::fillActiveChannels(int numEvents, ChannelList* activeChannels) const
 {

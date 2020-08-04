@@ -4,16 +4,18 @@
 #include <sys/timerfd.h>
 #include <string.h>
 #include "../net/Poller.h"
+#include "../timer/TimeStamp.h"
 
 EventLoop* g_loop;
-void timeout()
+void timeout(TimeStamp receiveTime)
 {
-    printf("timeout\n");
+    printf("%s Timeout!\n", receiveTime.toString().c_str());
     g_loop->quit();
 }
 
 int main()
 {
+    printf("%s started\n", TimeStamp::now().toString().c_str());    
     EventLoop loop;
     g_loop = &loop;
     int timerfd = timerfd_create(CLOCK_MONOTONIC, TFD_NONBLOCK|TFD_CLOEXEC);

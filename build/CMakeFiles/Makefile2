@@ -60,6 +60,7 @@ CMAKE_BINARY_DIR = /root/WebServer/build
 
 # All Build rule for target.
 CMakeFiles/Acceptor_test1.dir/all: net/CMakeFiles/net.dir/all
+CMakeFiles/Acceptor_test1.dir/all: timer/CMakeFiles/timer.dir/all
 	$(MAKE) -f CMakeFiles/Acceptor_test1.dir/build.make CMakeFiles/Acceptor_test1.dir/depend
 	$(MAKE) -f CMakeFiles/Acceptor_test1.dir/build.make CMakeFiles/Acceptor_test1.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles  1
@@ -72,7 +73,7 @@ all: CMakeFiles/Acceptor_test1.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Acceptor_test1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 13
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Acceptor_test1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 0
 .PHONY : CMakeFiles/Acceptor_test1.dir/rule
@@ -96,6 +97,7 @@ clean: CMakeFiles/Acceptor_test1.dir/clean
 # All Build rule for target.
 CMakeFiles/EventLoop_test1.dir/all: net/CMakeFiles/net.dir/all
 CMakeFiles/EventLoop_test1.dir/all: base/CMakeFiles/Thread.dir/all
+CMakeFiles/EventLoop_test1.dir/all: timer/CMakeFiles/timer.dir/all
 	$(MAKE) -f CMakeFiles/EventLoop_test1.dir/build.make CMakeFiles/EventLoop_test1.dir/depend
 	$(MAKE) -f CMakeFiles/EventLoop_test1.dir/build.make CMakeFiles/EventLoop_test1.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles  2
@@ -108,7 +110,7 @@ all: CMakeFiles/EventLoop_test1.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/EventLoop_test1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoop_test1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 0
 .PHONY : CMakeFiles/EventLoop_test1.dir/rule
@@ -132,6 +134,7 @@ clean: CMakeFiles/EventLoop_test1.dir/clean
 # All Build rule for target.
 CMakeFiles/EventLoop_test2.dir/all: net/CMakeFiles/net.dir/all
 CMakeFiles/EventLoop_test2.dir/all: base/CMakeFiles/Thread.dir/all
+CMakeFiles/EventLoop_test2.dir/all: timer/CMakeFiles/timer.dir/all
 	$(MAKE) -f CMakeFiles/EventLoop_test2.dir/build.make CMakeFiles/EventLoop_test2.dir/depend
 	$(MAKE) -f CMakeFiles/EventLoop_test2.dir/build.make CMakeFiles/EventLoop_test2.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles  3
@@ -144,7 +147,7 @@ all: CMakeFiles/EventLoop_test2.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/EventLoop_test2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoop_test2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 0
 .PHONY : CMakeFiles/EventLoop_test2.dir/rule
@@ -167,6 +170,7 @@ clean: CMakeFiles/EventLoop_test2.dir/clean
 
 # All Build rule for target.
 CMakeFiles/EventLoop_test3.dir/all: net/CMakeFiles/net.dir/all
+CMakeFiles/EventLoop_test3.dir/all: timer/CMakeFiles/timer.dir/all
 	$(MAKE) -f CMakeFiles/EventLoop_test3.dir/build.make CMakeFiles/EventLoop_test3.dir/depend
 	$(MAKE) -f CMakeFiles/EventLoop_test3.dir/build.make CMakeFiles/EventLoop_test3.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles  4
@@ -179,7 +183,7 @@ all: CMakeFiles/EventLoop_test3.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/EventLoop_test3.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 13
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/EventLoop_test3.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 0
 .PHONY : CMakeFiles/EventLoop_test3.dir/rule
@@ -202,6 +206,7 @@ clean: CMakeFiles/EventLoop_test3.dir/clean
 
 # All Build rule for target.
 CMakeFiles/TcpConnection_test1.dir/all: net/CMakeFiles/net.dir/all
+CMakeFiles/TcpConnection_test1.dir/all: timer/CMakeFiles/timer.dir/all
 	$(MAKE) -f CMakeFiles/TcpConnection_test1.dir/build.make CMakeFiles/TcpConnection_test1.dir/depend
 	$(MAKE) -f CMakeFiles/TcpConnection_test1.dir/build.make CMakeFiles/TcpConnection_test1.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles  5
@@ -214,7 +219,7 @@ all: CMakeFiles/TcpConnection_test1.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TcpConnection_test1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 13
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/TcpConnection_test1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 0
 .PHONY : CMakeFiles/TcpConnection_test1.dir/rule
@@ -251,10 +256,10 @@ net/preinstall:
 # Target rules for target net/CMakeFiles/net.dir
 
 # All Build rule for target.
-net/CMakeFiles/net.dir/all:
+net/CMakeFiles/net.dir/all: timer/CMakeFiles/timer.dir/all
 	$(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/depend
 	$(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles  7 8 9 10 11 12 13 14 15
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles  7 8 9 10 11 12 13 14 15 16
 	@echo "Built target net"
 .PHONY : net/CMakeFiles/net.dir/all
 
@@ -264,7 +269,7 @@ all: net/CMakeFiles/net.dir/all
 
 # Build rule for subdir invocation for target.
 net/CMakeFiles/net.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 net/CMakeFiles/net.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 0
 .PHONY : net/CMakeFiles/net.dir/rule
@@ -330,6 +335,56 @@ base/CMakeFiles/Thread.dir/clean:
 
 # clean rule for target.
 clean: base/CMakeFiles/Thread.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory timer
+
+# Convenience name for "all" pass in the directory.
+timer/all: timer/CMakeFiles/timer.dir/all
+.PHONY : timer/all
+
+# Convenience name for "clean" pass in the directory.
+timer/clean: timer/CMakeFiles/timer.dir/clean
+.PHONY : timer/clean
+
+# Convenience name for "preinstall" pass in the directory.
+timer/preinstall:
+.PHONY : timer/preinstall
+
+#=============================================================================
+# Target rules for target timer/CMakeFiles/timer.dir
+
+# All Build rule for target.
+timer/CMakeFiles/timer.dir/all:
+	$(MAKE) -f timer/CMakeFiles/timer.dir/build.make timer/CMakeFiles/timer.dir/depend
+	$(MAKE) -f timer/CMakeFiles/timer.dir/build.make timer/CMakeFiles/timer.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles  17 18
+	@echo "Built target timer"
+.PHONY : timer/CMakeFiles/timer.dir/all
+
+# Include target in all.
+all: timer/CMakeFiles/timer.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+timer/CMakeFiles/timer.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 timer/CMakeFiles/timer.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/WebServer/build/CMakeFiles 0
+.PHONY : timer/CMakeFiles/timer.dir/rule
+
+# Convenience name for target.
+timer: timer/CMakeFiles/timer.dir/rule
+.PHONY : timer
+
+# clean rule for target.
+timer/CMakeFiles/timer.dir/clean:
+	$(MAKE) -f timer/CMakeFiles/timer.dir/build.make timer/CMakeFiles/timer.dir/clean
+.PHONY : timer/CMakeFiles/timer.dir/clean
+
+# clean rule for target.
+clean: timer/CMakeFiles/timer.dir/clean
 .PHONY : clean
 
 #=============================================================================

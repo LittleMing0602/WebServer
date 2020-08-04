@@ -3,6 +3,8 @@
 #include "../net/EventLoop.h"
 #include "../net/TcpConnection.h"
 #include "../net/TcpServer.h"
+#include "../net/Buffer.h"
+#include "../timer/TimeStamp.h"
 
 void onConnection(const TcpConnectionPtr& conn)
 {
@@ -19,11 +21,12 @@ void onConnection(const TcpConnectionPtr& conn)
 }
 
 
-void onMessage(const TcpConnectionPtr& conn, const char* data, ssize_t len)
+void onMessage(const TcpConnectionPtr& conn, Buffer* buf, TimeStamp receiveTime)
 {
-    printf("%s", data);
-    printf("onMessage(): received %zd bytes from connection %s\n", 
-           len, conn->name().c_str());
+    printf("onMessage(): received %zd bytes from connection %s at %s\n", 
+            buf->readableBytes(), conn->name().c_str(), receiveTime.toString().c_str());
+    printf("onMessage(): %s\n", buf->retrieveAllAsString().c_str());
+    
 }
 
 int main()

@@ -13,7 +13,7 @@ Acceptor::Acceptor(EventLoop* loop, const InetAddress& addr):
 {
     socket_.setReuseAddr(true);
     socket_.bind(addr);
-    channel_.setReadCallback(std::bind(&Acceptor::handleRead, this));
+    channel_.setReadCallback(std::bind(&Acceptor::handleRead, this, std::placeholders::_1));
 }
 
 void Acceptor::listen()
@@ -25,7 +25,7 @@ void Acceptor::listen()
 }
 
 
-void Acceptor::handleRead()
+void Acceptor::handleRead(TimeStamp receiveTime)
 {
     loop_->assertInLoopThread();
     InetAddress addr(0);

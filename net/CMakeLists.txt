@@ -4,6 +4,7 @@
 # 项目信息 名称
 #project(Demo)
 
+include_directories(../timer)
 # 查找当前目录下的所有文件，
 # 并将文件保存到dir_srcs中
 aux_source_directory(. dir_srcs)
@@ -11,3 +12,4 @@ aux_source_directory(. dir_srcs)
 #set(dir_srcs EventLoop.cc CurrentThread.cc)
 
 add_library(net ${dir_srcs})
+target_link_libraries(net timer)

@@ -3,6 +3,7 @@
 
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../lock/Mutex.h
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/Acceptor.h
+CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/Buffer.h
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/Callback.h
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/Channel.h
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/CurrentThread.h
@@ -13,4 +14,5 @@ CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/Socket.
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/TcpConnection.h
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/TcpServer.h
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../test/TcpConnection_test1.cc
+CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../timer/TimeStamp.h
 

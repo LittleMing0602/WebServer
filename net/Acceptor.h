@@ -6,6 +6,7 @@
 #include "Socket.h"
 #include "InetAddress.h"
 #include "Callback.h"
+#include "../timer/TimeStamp.h"
 
 class EventLoop;
 
@@ -26,7 +27,7 @@ private:
     NewConnectionCallback newConnectionCallback_;  // 绑定的是TcpServer的newConnection
     bool listening_;
 
-    void handleRead();  // 调用accept接受连接, 调用newConnectionCallback_;
+    void handleRead(TimeStamp receiveTime);  // 调用accept接受连接, 调用newConnectionCallback_;
 };
 
 #endif

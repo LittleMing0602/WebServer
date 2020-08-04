@@ -6,6 +6,8 @@
 #include "Channel.h"
 #include "InetAddress.h"
 #include "Callback.h"
+#include "Buffer.h"
+#include "../timer/TimeStamp.h"
 #include <string>
 
 class EventLoop;
@@ -42,7 +44,7 @@ public:
 private:
     enum StateE { kConnecting, kConnected, kDisconnected, };
     void setState(StateE s) { state_ = s; }
-    void handleRead();
+    void handleRead(TimeStamp receiveTime);
     void handleWrite();
     void handleClose();
     void handleError();
@@ -58,6 +60,7 @@ private:
     const std::string name_;
     bool connected_;
     StateE state_;
+    Buffer inputBuffer_;
 };
 
 #endif
