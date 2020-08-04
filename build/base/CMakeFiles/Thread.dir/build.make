@@ -75,14 +75,39 @@ base/CMakeFiles/Thread.dir/Thread.cc.o.provides: base/CMakeFiles/Thread.dir/Thre
 
 base/CMakeFiles/Thread.dir/Thread.cc.o.provides.build: base/CMakeFiles/Thread.dir/Thread.cc.o
 
+base/CMakeFiles/Thread.dir/CurrentThread.cc.o: base/CMakeFiles/Thread.dir/flags.make
+base/CMakeFiles/Thread.dir/CurrentThread.cc.o: ../base/CurrentThread.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object base/CMakeFiles/Thread.dir/CurrentThread.cc.o"
+	cd /root/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Thread.dir/CurrentThread.cc.o -c /root/WebServer/base/CurrentThread.cc
+
+base/CMakeFiles/Thread.dir/CurrentThread.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Thread.dir/CurrentThread.cc.i"
+	cd /root/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/WebServer/base/CurrentThread.cc > CMakeFiles/Thread.dir/CurrentThread.cc.i
+
+base/CMakeFiles/Thread.dir/CurrentThread.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Thread.dir/CurrentThread.cc.s"
+	cd /root/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/WebServer/base/CurrentThread.cc -o CMakeFiles/Thread.dir/CurrentThread.cc.s
+
+base/CMakeFiles/Thread.dir/CurrentThread.cc.o.requires:
+.PHONY : base/CMakeFiles/Thread.dir/CurrentThread.cc.o.requires
+
+base/CMakeFiles/Thread.dir/CurrentThread.cc.o.provides: base/CMakeFiles/Thread.dir/CurrentThread.cc.o.requires
+	$(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/CurrentThread.cc.o.provides.build
+.PHONY : base/CMakeFiles/Thread.dir/CurrentThread.cc.o.provides
+
+base/CMakeFiles/Thread.dir/CurrentThread.cc.o.provides.build: base/CMakeFiles/Thread.dir/CurrentThread.cc.o
+
 # Object files for target Thread
 Thread_OBJECTS = \
-"CMakeFiles/Thread.dir/Thread.cc.o"
+"CMakeFiles/Thread.dir/Thread.cc.o" \
+"CMakeFiles/Thread.dir/CurrentThread.cc.o"
 
 # External object files for target Thread
 Thread_EXTERNAL_OBJECTS =
 
 base/libThread.a: base/CMakeFiles/Thread.dir/Thread.cc.o
+base/libThread.a: base/CMakeFiles/Thread.dir/CurrentThread.cc.o
 base/libThread.a: base/CMakeFiles/Thread.dir/build.make
 base/libThread.a: base/CMakeFiles/Thread.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libThread.a"
@@ -94,6 +119,7 @@ base/CMakeFiles/Thread.dir/build: base/libThread.a
 .PHONY : base/CMakeFiles/Thread.dir/build
 
 base/CMakeFiles/Thread.dir/requires: base/CMakeFiles/Thread.dir/Thread.cc.o.requires
+base/CMakeFiles/Thread.dir/requires: base/CMakeFiles/Thread.dir/CurrentThread.cc.o.requires
 .PHONY : base/CMakeFiles/Thread.dir/requires
 
 base/CMakeFiles/Thread.dir/clean:

@@ -20,7 +20,9 @@ struct sockaddr_in getLocalAddr(int sockfd)
 TcpServer::TcpServer(EventLoop* loop, const InetAddress& addr):
     loop_(loop),
     acceptor_(new Acceptor(loop, addr)),
-    nextConnId_(1)
+    threadPool_(new EventLoopThreadPool(loop)),
+    nextConnId_(1),
+    started_(false)
 {
     acceptor_->setNewConnectionCallback(std::bind(&TcpServer::newConnection, this,std::placeholders::_1,std::placeholders:: _2));
 }
@@ -40,6 +42,11 @@ TcpServer::~TcpServer()
 
 void TcpServer::start()
 {
+    if(!started_)
+    {
+        started_ = true;
+        threadPool_->start(threadInitCallback_);
+    }
     if(!acceptor_->listening())
     {
         loop_->runInLoop(std::bind(&Acceptor::listen, acceptor_.get()));
@@ -53,18 +60,37 @@ void TcpServer::newConnection(int sockfd, InetAddress& peerAddr)
     std::string connName = buf;
     ++nextConnId_;
     InetAddress localAddr(getLocalAddr(sockfd));
-    TcpConnectionPtr conn(new TcpConnection(connName, loop_, sockfd, localAddr, peerAddr));
+    EventLoop* ioLoop = threadPool_->getNextLoop();
+    TcpConnectionPtr conn(new TcpConnection(connName, ioLoop, sockfd, localAddr, peerAddr));
     connections_[connName] = conn;
     conn->setConnectionCallback(connectionCallback_);
     conn->setMessageCallback(messageCallback_);
     conn->setCloseCallback(std::bind(&TcpServer::removeConnection, this, std::placeholders::_1));
     conn->setWriteCompleteCallback(writeCompleteCallback_);
-    loop_->runInLoop(std::bind(&TcpConnection::connectEstablished, conn));
+    ioLoop->runInLoop(std::bind(&TcpConnection::connectEstablished, conn));
 }
 
 void TcpServer::removeConnection(const TcpConnectionPtr& conn)
 {
+    /*
     loop_->assertInLoopThread();
     size_t n = connections_.erase(conn->name());
     loop_->queueInLoop(std::bind(&TcpConnection::connectDestroyed, conn));
+    */
+    loop_->runInLoop(std::bind(&TcpServer::removeConnectionInLoop, this, conn));
+}
+
+void TcpServer::removeConnectionInLoop(const TcpConnectionPtr& conn)
+{
+    loop_->assertInLoopThread();
+    size_t n = connections_.erase(conn->name());
+    assert(n == 1);
+    EventLoop* ioLoop = conn->getLoop();
+    ioLoop->queueInLoop(std::bind(&TcpConnection::connectDestroyed, conn));
+}
+
+void TcpServer::setThreadNum(int numThreads)
+{
+    assert(numThreads >= 0);
+    threadPool_->setThreadNum(numThreads);
 }

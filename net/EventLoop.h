@@ -2,7 +2,7 @@
 #define EVENTLOOP_H
 
 #include <unistd.h>
-#include "CurrentThread.h"
+#include "../base/CurrentThread.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <vector>

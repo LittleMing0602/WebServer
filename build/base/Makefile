@@ -115,6 +115,30 @@ Thread/fast:
 	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/build
 .PHONY : Thread/fast
 
+CurrentThread.o: CurrentThread.cc.o
+.PHONY : CurrentThread.o
+
+# target to build an object file
+CurrentThread.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/CurrentThread.cc.o
+.PHONY : CurrentThread.cc.o
+
+CurrentThread.i: CurrentThread.cc.i
+.PHONY : CurrentThread.i
+
+# target to preprocess a source file
+CurrentThread.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/CurrentThread.cc.i
+.PHONY : CurrentThread.cc.i
+
+CurrentThread.s: CurrentThread.cc.s
+.PHONY : CurrentThread.s
+
+# target to generate assembly for a file
+CurrentThread.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/CurrentThread.cc.s
+.PHONY : CurrentThread.cc.s
+
 Thread.o: Thread.cc.o
 .PHONY : Thread.o
 
@@ -148,6 +172,9 @@ help:
 	@echo "... Thread"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... CurrentThread.o"
+	@echo "... CurrentThread.i"
+	@echo "... CurrentThread.s"
 	@echo "... Thread.o"
 	@echo "... Thread.i"
 	@echo "... Thread.s"

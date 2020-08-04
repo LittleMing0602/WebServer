@@ -1,2 +1,2 @@
-/usr/bin/ar cr libThread.a  CMakeFiles/Thread.dir/Thread.cc.o
+/usr/bin/ar cr libThread.a  CMakeFiles/Thread.dir/Thread.cc.o CMakeFiles/Thread.dir/CurrentThread.cc.o
 /usr/bin/ranlib libThread.a

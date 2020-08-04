@@ -1,3 +1,4 @@
-set(thread Thread.cc)
-add_library(Thread ${thread})
+# set(thread Thread.cc)
+aux_source_directory(. src)
+add_library(Thread ${src})
 

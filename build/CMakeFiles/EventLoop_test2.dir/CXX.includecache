@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+/root/WebServer/base/CurrentThread.h
+
 /root/WebServer/base/Thread.h
 pthread.h
 -
@@ -32,13 +34,11 @@ functional
 Callback.h
 /root/WebServer/net/Callback.h
 
-/root/WebServer/net/CurrentThread.h
-
 /root/WebServer/net/EventLoop.h
 unistd.h
 -
-CurrentThread.h
-/root/WebServer/net/CurrentThread.h
+../base/CurrentThread.h
+/root/WebServer/base/CurrentThread.h
 stdlib.h
 -
 stdio.h

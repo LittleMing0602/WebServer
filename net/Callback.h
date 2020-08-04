@@ -8,6 +8,7 @@
 class TcpConnection;
 class InetAddres;
 class Buffer;
+class EventLoop;
 
 typedef std::shared_ptr<TcpConnection> TcpConnectionPtr; 
 typedef std::function<void()> EventCallback;
@@ -18,6 +19,7 @@ typedef std::function<void (const TcpConnectionPtr&)> CloseCallback;
 typedef std::function<void (const TcpConnectionPtr&, Buffer*, TimeStamp)> MessageCallback;
 typedef std::function<void(int, InetAddress& addr)> NewConnectionCallback;
 typedef std::function<void(const TcpConnectionPtr&)> WriteCompleteCallback;
+typedef std::function<void(EventLoop*)> ThreadInitCallback;
 
 #endif
 

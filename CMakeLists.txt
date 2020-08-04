@@ -15,16 +15,19 @@ add_executable(EventLoop_test2 test/EventLoop_test2.cc)
 target_link_libraries(EventLoop_test2 timer Thread net pthread)
 
 add_executable(EventLoop_test3 test/EventLoop_test3.cc)
-target_link_libraries(EventLoop_test3 net timer)
+target_link_libraries(EventLoop_test3 net timer Thread pthread)
 
 add_executable(Acceptor_test1 test/Acceptor_test1.cc)
-target_link_libraries(Acceptor_test1 net timer)
+target_link_libraries(Acceptor_test1 net timer Thread)
 
 add_executable(TcpConnection_test1 test/TcpConnection_test1.cc)
-target_link_libraries(TcpConnection_test1 timer net)
+target_link_libraries(TcpConnection_test1 timer net Thread pthread)
 
 add_executable(EchoServer test/EchoServer.cc)
-target_link_libraries(EchoServer net timer)
+target_link_libraries(EchoServer net timer Thread pthread)
 
 add_executable(Send_test test/Send_Test.cc)
-target_link_libraries(Send_test net timer)
+target_link_libraries(Send_test net timer Thread pthread)
+
+add_executable(EventLoopThreadPool_test test/EventLoopThreadPool_test.cc)
+target_link_libraries(EventLoopThreadPool_test net Thread pthread timer)

@@ -4,10 +4,10 @@
 timer/CMakeFiles/timer.dir/TimeStamp.cc.o: ../timer/TimeStamp.cc
 timer/CMakeFiles/timer.dir/TimeStamp.cc.o: ../timer/TimeStamp.h
 
+timer/CMakeFiles/timer.dir/TimerQueue.cc.o: ../base/CurrentThread.h
 timer/CMakeFiles/timer.dir/TimerQueue.cc.o: ../lock/Mutex.h
 timer/CMakeFiles/timer.dir/TimerQueue.cc.o: ../net/Callback.h
 timer/CMakeFiles/timer.dir/TimerQueue.cc.o: ../net/Channel.h
-timer/CMakeFiles/timer.dir/TimerQueue.cc.o: ../net/CurrentThread.h
 timer/CMakeFiles/timer.dir/TimerQueue.cc.o: ../net/EventLoop.h
 timer/CMakeFiles/timer.dir/TimerQueue.cc.o: ../net/InetAddress.h
 timer/CMakeFiles/timer.dir/TimerQueue.cc.o: ../net/Poller.h

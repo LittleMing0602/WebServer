@@ -187,30 +187,6 @@ Channel.cc.s:
 	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/Channel.cc.s
 .PHONY : Channel.cc.s
 
-CurrentThread.o: CurrentThread.cc.o
-.PHONY : CurrentThread.o
-
-# target to build an object file
-CurrentThread.cc.o:
-	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/CurrentThread.cc.o
-.PHONY : CurrentThread.cc.o
-
-CurrentThread.i: CurrentThread.cc.i
-.PHONY : CurrentThread.i
-
-# target to preprocess a source file
-CurrentThread.cc.i:
-	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/CurrentThread.cc.i
-.PHONY : CurrentThread.cc.i
-
-CurrentThread.s: CurrentThread.cc.s
-.PHONY : CurrentThread.s
-
-# target to generate assembly for a file
-CurrentThread.cc.s:
-	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/CurrentThread.cc.s
-.PHONY : CurrentThread.cc.s
-
 EventLoop.o: EventLoop.cc.o
 .PHONY : EventLoop.o
 
@@ -234,6 +210,54 @@ EventLoop.s: EventLoop.cc.s
 EventLoop.cc.s:
 	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EventLoop.cc.s
 .PHONY : EventLoop.cc.s
+
+EventLoopThread.o: EventLoopThread.cc.o
+.PHONY : EventLoopThread.o
+
+# target to build an object file
+EventLoopThread.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EventLoopThread.cc.o
+.PHONY : EventLoopThread.cc.o
+
+EventLoopThread.i: EventLoopThread.cc.i
+.PHONY : EventLoopThread.i
+
+# target to preprocess a source file
+EventLoopThread.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EventLoopThread.cc.i
+.PHONY : EventLoopThread.cc.i
+
+EventLoopThread.s: EventLoopThread.cc.s
+.PHONY : EventLoopThread.s
+
+# target to generate assembly for a file
+EventLoopThread.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EventLoopThread.cc.s
+.PHONY : EventLoopThread.cc.s
+
+EventLoopThreadPool.o: EventLoopThreadPool.cc.o
+.PHONY : EventLoopThreadPool.o
+
+# target to build an object file
+EventLoopThreadPool.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EventLoopThreadPool.cc.o
+.PHONY : EventLoopThreadPool.cc.o
+
+EventLoopThreadPool.i: EventLoopThreadPool.cc.i
+.PHONY : EventLoopThreadPool.i
+
+# target to preprocess a source file
+EventLoopThreadPool.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EventLoopThreadPool.cc.i
+.PHONY : EventLoopThreadPool.cc.i
+
+EventLoopThreadPool.s: EventLoopThreadPool.cc.s
+.PHONY : EventLoopThreadPool.s
+
+# target to generate assembly for a file
+EventLoopThreadPool.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EventLoopThreadPool.cc.s
+.PHONY : EventLoopThreadPool.cc.s
 
 InetAddress.o: InetAddress.cc.o
 .PHONY : InetAddress.o
@@ -373,12 +397,15 @@ help:
 	@echo "... Channel.o"
 	@echo "... Channel.i"
 	@echo "... Channel.s"
-	@echo "... CurrentThread.o"
-	@echo "... CurrentThread.i"
-	@echo "... CurrentThread.s"
 	@echo "... EventLoop.o"
 	@echo "... EventLoop.i"
 	@echo "... EventLoop.s"
+	@echo "... EventLoopThread.o"
+	@echo "... EventLoopThread.i"
+	@echo "... EventLoopThread.s"
+	@echo "... EventLoopThreadPool.o"
+	@echo "... EventLoopThreadPool.i"
+	@echo "... EventLoopThreadPool.s"
 	@echo "... InetAddress.o"
 	@echo "... InetAddress.i"
 	@echo "... InetAddress.s"

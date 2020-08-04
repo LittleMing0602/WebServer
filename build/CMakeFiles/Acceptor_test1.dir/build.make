@@ -86,6 +86,7 @@ Acceptor_test1: CMakeFiles/Acceptor_test1.dir/test/Acceptor_test1.cc.o
 Acceptor_test1: CMakeFiles/Acceptor_test1.dir/build.make
 Acceptor_test1: net/libnet.a
 Acceptor_test1: timer/libtimer.a
+Acceptor_test1: base/libThread.a
 Acceptor_test1: CMakeFiles/Acceptor_test1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable Acceptor_test1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Acceptor_test1.dir/link.txt --verbose=$(VERBOSE)

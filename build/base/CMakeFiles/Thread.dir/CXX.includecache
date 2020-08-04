@@ -6,9 +6,23 @@
 
 #IncludeRegexTransform: 
 
+/root/WebServer/base/CurrentThread.cc
+CurrentThread.h
+/root/WebServer/base/CurrentThread.h
+unistd.h
+-
+sys/syscall.h
+-
+
+/root/WebServer/base/CurrentThread.h
+
 /root/WebServer/base/Thread.cc
 Thread.h
 /root/WebServer/base/Thread.h
+CurrentThread.h
+/root/WebServer/base/CurrentThread.h
+assert.h
+-
 
 /root/WebServer/base/Thread.h
 pthread.h

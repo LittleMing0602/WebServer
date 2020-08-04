@@ -47,6 +47,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Acceptor_test1.dir/DependInfo.cmake"
   "CMakeFiles/EchoServer.dir/DependInfo.cmake"
+  "CMakeFiles/EventLoopThreadPool_test.dir/DependInfo.cmake"
   "CMakeFiles/EventLoop_test1.dir/DependInfo.cmake"
   "CMakeFiles/EventLoop_test2.dir/DependInfo.cmake"
   "CMakeFiles/EventLoop_test3.dir/DependInfo.cmake"

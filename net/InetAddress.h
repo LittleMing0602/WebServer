@@ -15,6 +15,7 @@ public:
     ~InetAddress() {}
 
     std::string toIp() const;
+    std::string toIpPort() const;
     const struct sockaddr_in& getAddrInet() const { return addr_; }
     void setAddrInet(const struct sockaddr_in& addr);
     

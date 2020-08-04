@@ -1,5 +1,6 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/Thread.dir/Thread.cc.o"
+  "CMakeFiles/Thread.dir/CurrentThread.cc.o"
   "libThread.pdb"
   "libThread.a"
 )

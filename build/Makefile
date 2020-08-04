@@ -128,6 +128,19 @@ EchoServer/fast:
 .PHONY : EchoServer/fast
 
 #=============================================================================
+# Target rules for targets named EventLoopThreadPool_test
+
+# Build rule for target.
+EventLoopThreadPool_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EventLoopThreadPool_test
+.PHONY : EventLoopThreadPool_test
+
+# fast build rule for target.
+EventLoopThreadPool_test/fast:
+	$(MAKE) -f CMakeFiles/EventLoopThreadPool_test.dir/build.make CMakeFiles/EventLoopThreadPool_test.dir/build
+.PHONY : EventLoopThreadPool_test/fast
+
+#=============================================================================
 # Target rules for targets named EventLoop_test1
 
 # Build rule for target.
@@ -279,6 +292,30 @@ test/EchoServer.cc.s:
 	$(MAKE) -f CMakeFiles/EchoServer.dir/build.make CMakeFiles/EchoServer.dir/test/EchoServer.cc.s
 .PHONY : test/EchoServer.cc.s
 
+test/EventLoopThreadPool_test.o: test/EventLoopThreadPool_test.cc.o
+.PHONY : test/EventLoopThreadPool_test.o
+
+# target to build an object file
+test/EventLoopThreadPool_test.cc.o:
+	$(MAKE) -f CMakeFiles/EventLoopThreadPool_test.dir/build.make CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o
+.PHONY : test/EventLoopThreadPool_test.cc.o
+
+test/EventLoopThreadPool_test.i: test/EventLoopThreadPool_test.cc.i
+.PHONY : test/EventLoopThreadPool_test.i
+
+# target to preprocess a source file
+test/EventLoopThreadPool_test.cc.i:
+	$(MAKE) -f CMakeFiles/EventLoopThreadPool_test.dir/build.make CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.i
+.PHONY : test/EventLoopThreadPool_test.cc.i
+
+test/EventLoopThreadPool_test.s: test/EventLoopThreadPool_test.cc.s
+.PHONY : test/EventLoopThreadPool_test.s
+
+# target to generate assembly for a file
+test/EventLoopThreadPool_test.cc.s:
+	$(MAKE) -f CMakeFiles/EventLoopThreadPool_test.dir/build.make CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.s
+.PHONY : test/EventLoopThreadPool_test.cc.s
+
 test/EventLoop_test1.o: test/EventLoop_test1.cc.o
 .PHONY : test/EventLoop_test1.o
 
@@ -407,6 +444,7 @@ help:
 	@echo "... depend"
 	@echo "... Acceptor_test1"
 	@echo "... EchoServer"
+	@echo "... EventLoopThreadPool_test"
 	@echo "... EventLoop_test1"
 	@echo "... EventLoop_test2"
 	@echo "... EventLoop_test3"
@@ -423,6 +461,9 @@ help:
 	@echo "... test/EchoServer.o"
 	@echo "... test/EchoServer.i"
 	@echo "... test/EchoServer.s"
+	@echo "... test/EventLoopThreadPool_test.o"
+	@echo "... test/EventLoopThreadPool_test.i"
+	@echo "... test/EventLoopThreadPool_test.s"
 	@echo "... test/EventLoop_test1.o"
 	@echo "... test/EventLoop_test1.i"
 	@echo "... test/EventLoop_test1.s"
