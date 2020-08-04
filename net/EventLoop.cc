@@ -3,8 +3,19 @@
 #include "poll.h"
 #include "Channel.h"
 #include <sys/eventfd.h>
+#include <signal.h>
 
 const int kPollTimeMs = 10000;
+
+class IgnoreSigPipe{
+public:
+    IgnoreSigPipe()
+    {
+        signal(SIGPIPE, SIG_IGN);
+    }
+};
+
+IgnoreSigPipe initObj;  // 全局对象，用于忽略SIGPIPE信号
 
 int createEventfd()
 {
