@@ -31,7 +31,11 @@ public:
     { closeCallback_ = cb; }
     
     void enableReading() { events_ |= kReadEvent; update();}
-    
+
+    void enableWriting() { events_ |= kWriteEvent; update(); }
+
+    void disableWriting() { events_ &= ~kWriteEvent; update(); }
+
     void disableAll() { events_ = kNoneEvent; update();}
 
     void handleEvent(TimeStamp receiveTime);
@@ -44,6 +48,7 @@ public:
     void setIndex(int index) { index_ = index; }
     bool isNoneEvent() const { return events_ == kNoneEvent; }
     void remove();
+    bool isWriting() const { return events_ & kWriteEvent; }
 
 private:
     /* 

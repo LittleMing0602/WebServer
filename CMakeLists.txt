@@ -22,3 +22,9 @@ target_link_libraries(Acceptor_test1 net timer)
 
 add_executable(TcpConnection_test1 test/TcpConnection_test1.cc)
 target_link_libraries(TcpConnection_test1 timer net)
+
+add_executable(EchoServer test/EchoServer.cc)
+target_link_libraries(EchoServer net timer)
+
+add_executable(Send_test test/Send_Test.cc)
+target_link_libraries(Send_test net timer)

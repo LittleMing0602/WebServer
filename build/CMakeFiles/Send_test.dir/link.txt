@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -std=gnu++0x -g    CMakeFiles/Send_test.dir/test/Send_Test.cc.o  -o Send_test -rdynamic net/libnet.a timer/libtimer.a 

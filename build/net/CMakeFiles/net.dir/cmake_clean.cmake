@@ -1,7 +1,6 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/net.dir/CurrentThread.cc.o"
   "CMakeFiles/net.dir/Channel.cc.o"
-  "CMakeFiles/net.dir/TcpConnection.cc.o"
   "CMakeFiles/net.dir/Acceptor.cc.o"
   "CMakeFiles/net.dir/Socket.cc.o"
   "CMakeFiles/net.dir/InetAddress.cc.o"
@@ -9,6 +8,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/net.dir/Buffer.cc.o"
   "CMakeFiles/net.dir/Poller.cc.o"
   "CMakeFiles/net.dir/EventLoop.cc.o"
+  "CMakeFiles/net.dir/TcpConnection.cc.o"
   "libnet.pdb"
   "libnet.a"
 )

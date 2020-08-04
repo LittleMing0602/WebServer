@@ -115,6 +115,19 @@ Acceptor_test1/fast:
 .PHONY : Acceptor_test1/fast
 
 #=============================================================================
+# Target rules for targets named EchoServer
+
+# Build rule for target.
+EchoServer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 EchoServer
+.PHONY : EchoServer
+
+# fast build rule for target.
+EchoServer/fast:
+	$(MAKE) -f CMakeFiles/EchoServer.dir/build.make CMakeFiles/EchoServer.dir/build
+.PHONY : EchoServer/fast
+
+#=============================================================================
 # Target rules for targets named EventLoop_test1
 
 # Build rule for target.
@@ -152,6 +165,19 @@ EventLoop_test3: cmake_check_build_system
 EventLoop_test3/fast:
 	$(MAKE) -f CMakeFiles/EventLoop_test3.dir/build.make CMakeFiles/EventLoop_test3.dir/build
 .PHONY : EventLoop_test3/fast
+
+#=============================================================================
+# Target rules for targets named Send_test
+
+# Build rule for target.
+Send_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Send_test
+.PHONY : Send_test
+
+# fast build rule for target.
+Send_test/fast:
+	$(MAKE) -f CMakeFiles/Send_test.dir/build.make CMakeFiles/Send_test.dir/build
+.PHONY : Send_test/fast
 
 #=============================================================================
 # Target rules for targets named TcpConnection_test1
@@ -229,6 +255,30 @@ test/Acceptor_test1.cc.s:
 	$(MAKE) -f CMakeFiles/Acceptor_test1.dir/build.make CMakeFiles/Acceptor_test1.dir/test/Acceptor_test1.cc.s
 .PHONY : test/Acceptor_test1.cc.s
 
+test/EchoServer.o: test/EchoServer.cc.o
+.PHONY : test/EchoServer.o
+
+# target to build an object file
+test/EchoServer.cc.o:
+	$(MAKE) -f CMakeFiles/EchoServer.dir/build.make CMakeFiles/EchoServer.dir/test/EchoServer.cc.o
+.PHONY : test/EchoServer.cc.o
+
+test/EchoServer.i: test/EchoServer.cc.i
+.PHONY : test/EchoServer.i
+
+# target to preprocess a source file
+test/EchoServer.cc.i:
+	$(MAKE) -f CMakeFiles/EchoServer.dir/build.make CMakeFiles/EchoServer.dir/test/EchoServer.cc.i
+.PHONY : test/EchoServer.cc.i
+
+test/EchoServer.s: test/EchoServer.cc.s
+.PHONY : test/EchoServer.s
+
+# target to generate assembly for a file
+test/EchoServer.cc.s:
+	$(MAKE) -f CMakeFiles/EchoServer.dir/build.make CMakeFiles/EchoServer.dir/test/EchoServer.cc.s
+.PHONY : test/EchoServer.cc.s
+
 test/EventLoop_test1.o: test/EventLoop_test1.cc.o
 .PHONY : test/EventLoop_test1.o
 
@@ -301,6 +351,30 @@ test/EventLoop_test3.cc.s:
 	$(MAKE) -f CMakeFiles/EventLoop_test3.dir/build.make CMakeFiles/EventLoop_test3.dir/test/EventLoop_test3.cc.s
 .PHONY : test/EventLoop_test3.cc.s
 
+test/Send_Test.o: test/Send_Test.cc.o
+.PHONY : test/Send_Test.o
+
+# target to build an object file
+test/Send_Test.cc.o:
+	$(MAKE) -f CMakeFiles/Send_test.dir/build.make CMakeFiles/Send_test.dir/test/Send_Test.cc.o
+.PHONY : test/Send_Test.cc.o
+
+test/Send_Test.i: test/Send_Test.cc.i
+.PHONY : test/Send_Test.i
+
+# target to preprocess a source file
+test/Send_Test.cc.i:
+	$(MAKE) -f CMakeFiles/Send_test.dir/build.make CMakeFiles/Send_test.dir/test/Send_Test.cc.i
+.PHONY : test/Send_Test.cc.i
+
+test/Send_Test.s: test/Send_Test.cc.s
+.PHONY : test/Send_Test.s
+
+# target to generate assembly for a file
+test/Send_Test.cc.s:
+	$(MAKE) -f CMakeFiles/Send_test.dir/build.make CMakeFiles/Send_test.dir/test/Send_Test.cc.s
+.PHONY : test/Send_Test.cc.s
+
 test/TcpConnection_test1.o: test/TcpConnection_test1.cc.o
 .PHONY : test/TcpConnection_test1.o
 
@@ -332,9 +406,11 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... Acceptor_test1"
+	@echo "... EchoServer"
 	@echo "... EventLoop_test1"
 	@echo "... EventLoop_test2"
 	@echo "... EventLoop_test3"
+	@echo "... Send_test"
 	@echo "... TcpConnection_test1"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
@@ -344,6 +420,9 @@ help:
 	@echo "... test/Acceptor_test1.o"
 	@echo "... test/Acceptor_test1.i"
 	@echo "... test/Acceptor_test1.s"
+	@echo "... test/EchoServer.o"
+	@echo "... test/EchoServer.i"
+	@echo "... test/EchoServer.s"
 	@echo "... test/EventLoop_test1.o"
 	@echo "... test/EventLoop_test1.i"
 	@echo "... test/EventLoop_test1.s"
@@ -353,6 +432,9 @@ help:
 	@echo "... test/EventLoop_test3.o"
 	@echo "... test/EventLoop_test3.i"
 	@echo "... test/EventLoop_test3.s"
+	@echo "... test/Send_Test.o"
+	@echo "... test/Send_Test.i"
+	@echo "... test/Send_Test.s"
 	@echo "... test/TcpConnection_test1.o"
 	@echo "... test/TcpConnection_test1.i"
 	@echo "... test/TcpConnection_test1.s"
