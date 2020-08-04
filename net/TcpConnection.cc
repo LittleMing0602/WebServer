@@ -196,3 +196,8 @@ void TcpConnection::send(const std::string& message)
         }
     }
 }
+
+void TcpConnection::setTcpNoDelay(bool on)
+{
+    socket_->setTcpNoDelay(on);
+}

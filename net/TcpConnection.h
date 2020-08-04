@@ -47,12 +47,10 @@ public:
     // 可跨线程调用
     void send(const std::string& message);
 
-    void sendInLoop(const std::string& message);
-
     // 可跨线程调用
     void shutdown();
 
-    void shutdownInLoop();
+    void setTcpNoDelay(bool on);
 
 private:
     enum StateE { kConnecting, kConnected, kDisconnecting, kDisconnected, };
@@ -61,6 +59,8 @@ private:
     void handleWrite();
     void handleClose();
     void handleError();
+    void sendInLoop(const std::string& message);
+    void shutdownInLoop();
     
     EventLoop* loop_; 
     std::unique_ptr<Channel> channel_;
