@@ -9,6 +9,7 @@
 #include "Buffer.h"
 #include "../timer/TimeStamp.h"
 #include <string>
+#include <boost/any.hpp>
 
 class EventLoop;
 
@@ -47,10 +48,21 @@ public:
     // 可跨线程调用
     void send(const std::string& message);
 
+    void send(Buffer* message);
+
     // 可跨线程调用
     void shutdown();
 
     void setTcpNoDelay(bool on);
+
+    void setContext(const boost:: any& context)
+    { context_ = context; }
+
+    const boost::any* getContext() const
+    { return &context_; }
+
+    boost::any* getMutableContext()
+    { return &context_; }
 
 private:
     enum StateE { kConnecting, kConnected, kDisconnecting, kDisconnected, };
@@ -60,6 +72,7 @@ private:
     void handleClose();
     void handleError();
     void sendInLoop(const std::string& message);
+    void sendInLoop(const void* data, size_t len);
     void shutdownInLoop();
     
     EventLoop* loop_; 
@@ -76,6 +89,7 @@ private:
     StateE state_;
     Buffer inputBuffer_;
     Buffer outputBuffer_;
+    boost::any context_;
 };
 
 #endif

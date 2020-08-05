@@ -30,6 +30,11 @@ public:
     static TimeStamp invalid();
 
     std::string toString() const;
+
+    void swap(TimeStamp& that)
+    {
+        std::swap(microseconds_, that.microseconds_);
+    }
     
     static const int kMicrosecondsPerSecond = 1000 * 1000;
 private:

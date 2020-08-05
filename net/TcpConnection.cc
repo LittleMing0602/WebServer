@@ -1,8 +1,8 @@
-#include "TcpConnection.h"
-#include <memory>
 #include <functional>
+#include <memory>
 #include <unistd.h>
 #include "EventLoop.h"
+#include "TcpConnection.h"
 
 int getSocketError(int sockfd)
 {
@@ -166,18 +166,44 @@ void TcpConnection::send(const std::string& message)
     }
 }
 
+void TcpConnection::send(Buffer* buf)
+{
+    if(state_ == kConnected)
+    {
+        if(loop_->isInLoopThread())
+        {
+            sendInLoop(buf->peek(), buf->readableBytes());
+            buf->retrieveAll();
+        }
+
+        else
+        {
+            loop_->runInLoop(std::bind(&TcpConnection::sendInLoop, 
+                                       this, 
+                                       buf->retrieveAllAsString()));
+        }
+    }
+}
+
+
 void TcpConnection::sendInLoop(const std::string& message)
 {
-    loop_->assertInLoopThread();
+    sendInLoop(message.data(), message.size());
+}
 
+void TcpConnection::sendInLoop(const void* data, size_t len)
+{
+    loop_->assertInLoopThread();
+    
+    const char* buf = static_cast<const char*>(data);
     ssize_t nwrote = 0;
 
     if(!channel_->isWriting() && outputBuffer_.readableBytes() == 0)
     {
-        nwrote = write(channel_->fd(), message.data(), message.size());
+        nwrote = write(channel_->fd(), buf, len);
         if(nwrote >= 0)
         {
-            if(static_cast<size_t>(nwrote) < message.size())
+            if(static_cast<size_t>(nwrote) < len)
             {
                 //LOG_TRACE
                 printf("I'm going to write more data\n");
@@ -200,9 +226,9 @@ void TcpConnection::sendInLoop(const std::string& message)
     }
 
     assert(nwrote >= 0);
-    if(static_cast<size_t>(nwrote) < message.size())
+    if(static_cast<size_t>(nwrote) < len)
     {
-        outputBuffer_.append(message.data() + nwrote, message.size() - nwrote);
+        outputBuffer_.append(buf + nwrote, len - nwrote);
         if(!channel_->isWriting())
         {
             channel_->enableWriting();

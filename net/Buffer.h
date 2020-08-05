@@ -5,6 +5,7 @@
 #include <assert.h>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 class Buffer
 {
@@ -51,6 +52,13 @@ public:
     {
         readIndex_ = kCheapPrePend;
         writeIndex_ = kCheapPrePend;
+    }
+
+    void retrieveUntil(const char* end)
+    {
+        assert(peek() < end);
+        assert(end <= begin() + writeIndex_);
+        retrieve(end - peek());
     }
 
     // 以string格式读出len长度的数据
@@ -111,6 +119,20 @@ public:
 
     ssize_t readFd(int fd, int* savedErrno);
 
+    const char* findCRLF() const
+    {
+        const char* crlf = std::search(peek(), begin() + writeIndex_, kCRLF, kCRLF + 2);
+        return crlf == begin() + writeIndex_ ? NULL : crlf;
+    }
+
+    const char* findCRLF(const char* start) const
+    {
+        assert(peek() <= start);
+        assert(start <= begin() + writeIndex_);
+        const char* crlf = std::search(start, begin() + writeIndex_, kCRLF, kCRLF + 2);
+        return crlf == begin() + writeIndex_ ? NULL : crlf;
+    }
+
 private:
     char* begin() { return &*buffer_.begin(); }
     const char* begin() const { return &*buffer_.begin(); }
@@ -135,6 +157,7 @@ private:
     size_t readIndex_;
     size_t writeIndex_;
     std::vector<char> buffer_;
+    static const char kCRLF[];
 };
 
 #endif

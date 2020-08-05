@@ -1,6 +1,8 @@
 #include "Buffer.h"
 #include <sys/uio.h>
 
+const char Buffer::kCRLF[] = "\r\n";
+
 ssize_t Buffer::readFd(int fd, int* savedErrno)
 {
     char extraBuf[65535];
