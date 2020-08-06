@@ -68,6 +68,12 @@ poll.h
 ../timer/TimeStamp.h
 /root/WebServer/timer/TimeStamp.h
 
+/root/WebServer/timer/TimeStamp.cc
+TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
+sys/time.h
+-
+
 /root/WebServer/timer/TimeStamp.h
 stdlib.h
 -

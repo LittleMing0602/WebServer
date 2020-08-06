@@ -19,12 +19,12 @@ int getSocketError(int sockfd)
 }
 
 TcpConnection::TcpConnection(const std::string& name, EventLoop* loop, int sockfd, InetAddress& localAddr, InetAddress& peerAddr):
-    loop_(loop),
     state_(kConnecting),
+    loop_(loop),
     socket_(new Socket(sockfd)),
+    channel_(new Channel(loop, sockfd)),
     localAddr_(localAddr),
     peerAddr_(peerAddr),
-    channel_(new Channel(loop, sockfd)),
     name_(name)
 {
     // connection可读的时候执行的回调函数
@@ -161,7 +161,7 @@ void TcpConnection::send(const std::string& message)
         }
         else
         {
-            loop_->runInLoop(std::bind(&TcpConnection::sendInLoop, this, message));
+            loop_->runInLoop(std::bind((void(TcpConnection::*)(const std::string&))&TcpConnection::sendInLoop, this, message));
         }
     }
 }
@@ -178,7 +178,7 @@ void TcpConnection::send(Buffer* buf)
 
         else
         {
-            loop_->runInLoop(std::bind(&TcpConnection::sendInLoop, 
+            loop_->runInLoop(std::bind((void(TcpConnection::*)(const std::string&))&TcpConnection::sendInLoop, 
                                        this, 
                                        buf->retrieveAllAsString()));
         }

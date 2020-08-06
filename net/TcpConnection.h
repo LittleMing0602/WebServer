@@ -75,9 +75,10 @@ private:
     void sendInLoop(const void* data, size_t len);
     void shutdownInLoop();
     
+    StateE state_;
     EventLoop* loop_; 
-    std::unique_ptr<Channel> channel_;
     std::unique_ptr<Socket> socket_;
+    std::unique_ptr<Channel> channel_;
     InetAddress localAddr_;  // 本地地址
     InetAddress peerAddr_;  // 对端地址
     MessageCallback messageCallback_;  // 绑定的是TcpServer中的messageCallback_
@@ -86,7 +87,6 @@ private:
     WriteCompleteCallback writeCompleteCallback_;
     const std::string name_;
     bool connected_;
-    StateE state_;
     Buffer inputBuffer_;
     Buffer outputBuffer_;
     boost::any context_;

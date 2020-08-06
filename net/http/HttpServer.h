@@ -10,6 +10,7 @@ class HttpServer
 {
 public:
     typedef std::function<void(const HttpRequest&, HttpResponse*)> HttpCallback;
+    
     HttpServer(EventLoop* loop, const InetAddress& listenAddr);
     ~HttpServer();
 

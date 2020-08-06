@@ -5,6 +5,8 @@
 #include <functional>
 #include <boost/any.hpp>
 
+
+// 处理请求行  Get / HTTP/1.1
 bool processRequestLine(const char* begin, const char* end, HttpContext* constext)
 {
     bool succeed = false;
@@ -18,9 +20,10 @@ bool processRequestLine(const char* begin, const char* end, HttpContext* constex
        space = std::find(start, end, ' ');
        if(space != end)
        {
-           request.setPath(start, space);
+           request.setPath(start, space);  // 设置路径
            start = space + 1;
            succeed = end - start == 8 && std::equal(start, end - 1, "HTTP/1.");
+           // 设置版本号
            if(succeed)
            {
                if(*(end - 1) == '1')
@@ -41,6 +44,7 @@ bool processRequestLine(const char* begin, const char* end, HttpContext* constex
     return succeed;
 }
 
+// 解析请求报文
 bool parseRequest(Buffer* buf, HttpContext* context, TimeStamp receiveTime)
 {
     bool ok = true;
@@ -53,7 +57,7 @@ bool parseRequest(Buffer* buf, HttpContext* context, TimeStamp receiveTime)
             const char* crlf = buf->findCRLF();
             if(crlf)
             {
-                ok = processRequestLine(buf->peek(), crlf, context);
+                ok = processRequestLine(buf->peek(), crlf, context);  // 解析请求行
                 if(ok)
                 {
                     context->request().setReceiveTime(receiveTime);
@@ -131,7 +135,7 @@ void HttpServer::onConnection(const TcpConnectionPtr& conn)
 {
     if(conn->connected())
     {
-        conn->setContext(HttpContext());
+        conn->setContext(HttpContext());  // 建立连接，设置连接上下文，包含解析请求处于的状态
     }
 }
 
@@ -158,16 +162,16 @@ void HttpServer::onResquest(const TcpConnectionPtr& conn, const HttpRequest& req
 {
     const std::string& connection = req.getHeader("Connection");
     bool isClose = connection == "close" || (req.getVersion() == HttpRequest::kHttp10 &&
-                                             connection != "Keep-Alive");
+                                             connection != "Keep-Alive");  // 判断是否需要断开连接
 
     HttpResponse response(isClose);
-    httpCallback_(req, &response);
+    httpCallback_(req, &response);  // 回调httpCallback_
     Buffer buf;
-    response.appendToBuffer(&buf);
+    response.appendToBuffer(&buf);  // 将相应报文添加到buf中
     conn->send(&buf);
     if(response.closeConnection())
     {
-        conn->shutdown();
+        conn->shutdown();  // 断开连接
     }
 
 }

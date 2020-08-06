@@ -121,9 +121,32 @@ net/CMakeFiles/net.dir/EventLoopThreadPool.cc.o.provides: net/CMakeFiles/net.dir
 
 net/CMakeFiles/net.dir/EventLoopThreadPool.cc.o.provides.build: net/CMakeFiles/net.dir/EventLoopThreadPool.cc.o
 
+net/CMakeFiles/net.dir/Buffer.cc.o: net/CMakeFiles/net.dir/flags.make
+net/CMakeFiles/net.dir/Buffer.cc.o: ../net/Buffer.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object net/CMakeFiles/net.dir/Buffer.cc.o"
+	cd /root/WebServer/build/net && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/net.dir/Buffer.cc.o -c /root/WebServer/net/Buffer.cc
+
+net/CMakeFiles/net.dir/Buffer.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/net.dir/Buffer.cc.i"
+	cd /root/WebServer/build/net && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/WebServer/net/Buffer.cc > CMakeFiles/net.dir/Buffer.cc.i
+
+net/CMakeFiles/net.dir/Buffer.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/net.dir/Buffer.cc.s"
+	cd /root/WebServer/build/net && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/WebServer/net/Buffer.cc -o CMakeFiles/net.dir/Buffer.cc.s
+
+net/CMakeFiles/net.dir/Buffer.cc.o.requires:
+.PHONY : net/CMakeFiles/net.dir/Buffer.cc.o.requires
+
+net/CMakeFiles/net.dir/Buffer.cc.o.provides: net/CMakeFiles/net.dir/Buffer.cc.o.requires
+	$(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/Buffer.cc.o.provides.build
+.PHONY : net/CMakeFiles/net.dir/Buffer.cc.o.provides
+
+net/CMakeFiles/net.dir/Buffer.cc.o.provides.build: net/CMakeFiles/net.dir/Buffer.cc.o
+
 net/CMakeFiles/net.dir/Socket.cc.o: net/CMakeFiles/net.dir/flags.make
 net/CMakeFiles/net.dir/Socket.cc.o: ../net/Socket.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object net/CMakeFiles/net.dir/Socket.cc.o"
 	cd /root/WebServer/build/net && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/net.dir/Socket.cc.o -c /root/WebServer/net/Socket.cc
 
@@ -146,7 +169,7 @@ net/CMakeFiles/net.dir/Socket.cc.o.provides.build: net/CMakeFiles/net.dir/Socket
 
 net/CMakeFiles/net.dir/EventLoop.cc.o: net/CMakeFiles/net.dir/flags.make
 net/CMakeFiles/net.dir/EventLoop.cc.o: ../net/EventLoop.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object net/CMakeFiles/net.dir/EventLoop.cc.o"
 	cd /root/WebServer/build/net && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/net.dir/EventLoop.cc.o -c /root/WebServer/net/EventLoop.cc
 
@@ -169,7 +192,7 @@ net/CMakeFiles/net.dir/EventLoop.cc.o.provides.build: net/CMakeFiles/net.dir/Eve
 
 net/CMakeFiles/net.dir/EventLoopThread.cc.o: net/CMakeFiles/net.dir/flags.make
 net/CMakeFiles/net.dir/EventLoopThread.cc.o: ../net/EventLoopThread.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object net/CMakeFiles/net.dir/EventLoopThread.cc.o"
 	cd /root/WebServer/build/net && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/net.dir/EventLoopThread.cc.o -c /root/WebServer/net/EventLoopThread.cc
 
@@ -192,7 +215,7 @@ net/CMakeFiles/net.dir/EventLoopThread.cc.o.provides.build: net/CMakeFiles/net.d
 
 net/CMakeFiles/net.dir/InetAddress.cc.o: net/CMakeFiles/net.dir/flags.make
 net/CMakeFiles/net.dir/InetAddress.cc.o: ../net/InetAddress.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_7)
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object net/CMakeFiles/net.dir/InetAddress.cc.o"
 	cd /root/WebServer/build/net && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/net.dir/InetAddress.cc.o -c /root/WebServer/net/InetAddress.cc
 
@@ -215,7 +238,7 @@ net/CMakeFiles/net.dir/InetAddress.cc.o.provides.build: net/CMakeFiles/net.dir/I
 
 net/CMakeFiles/net.dir/TcpServer.cc.o: net/CMakeFiles/net.dir/flags.make
 net/CMakeFiles/net.dir/TcpServer.cc.o: ../net/TcpServer.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_8)
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object net/CMakeFiles/net.dir/TcpServer.cc.o"
 	cd /root/WebServer/build/net && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/net.dir/TcpServer.cc.o -c /root/WebServer/net/TcpServer.cc
 
@@ -235,29 +258,6 @@ net/CMakeFiles/net.dir/TcpServer.cc.o.provides: net/CMakeFiles/net.dir/TcpServer
 .PHONY : net/CMakeFiles/net.dir/TcpServer.cc.o.provides
 
 net/CMakeFiles/net.dir/TcpServer.cc.o.provides.build: net/CMakeFiles/net.dir/TcpServer.cc.o
-
-net/CMakeFiles/net.dir/Buffer.cc.o: net/CMakeFiles/net.dir/flags.make
-net/CMakeFiles/net.dir/Buffer.cc.o: ../net/Buffer.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_9)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object net/CMakeFiles/net.dir/Buffer.cc.o"
-	cd /root/WebServer/build/net && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/net.dir/Buffer.cc.o -c /root/WebServer/net/Buffer.cc
-
-net/CMakeFiles/net.dir/Buffer.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/net.dir/Buffer.cc.i"
-	cd /root/WebServer/build/net && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/WebServer/net/Buffer.cc > CMakeFiles/net.dir/Buffer.cc.i
-
-net/CMakeFiles/net.dir/Buffer.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/net.dir/Buffer.cc.s"
-	cd /root/WebServer/build/net && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/WebServer/net/Buffer.cc -o CMakeFiles/net.dir/Buffer.cc.s
-
-net/CMakeFiles/net.dir/Buffer.cc.o.requires:
-.PHONY : net/CMakeFiles/net.dir/Buffer.cc.o.requires
-
-net/CMakeFiles/net.dir/Buffer.cc.o.provides: net/CMakeFiles/net.dir/Buffer.cc.o.requires
-	$(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/Buffer.cc.o.provides.build
-.PHONY : net/CMakeFiles/net.dir/Buffer.cc.o.provides
-
-net/CMakeFiles/net.dir/Buffer.cc.o.provides.build: net/CMakeFiles/net.dir/Buffer.cc.o
 
 net/CMakeFiles/net.dir/Poller.cc.o: net/CMakeFiles/net.dir/flags.make
 net/CMakeFiles/net.dir/Poller.cc.o: ../net/Poller.cc
@@ -310,12 +310,12 @@ net_OBJECTS = \
 "CMakeFiles/net.dir/Channel.cc.o" \
 "CMakeFiles/net.dir/Acceptor.cc.o" \
 "CMakeFiles/net.dir/EventLoopThreadPool.cc.o" \
+"CMakeFiles/net.dir/Buffer.cc.o" \
 "CMakeFiles/net.dir/Socket.cc.o" \
 "CMakeFiles/net.dir/EventLoop.cc.o" \
 "CMakeFiles/net.dir/EventLoopThread.cc.o" \
 "CMakeFiles/net.dir/InetAddress.cc.o" \
 "CMakeFiles/net.dir/TcpServer.cc.o" \
-"CMakeFiles/net.dir/Buffer.cc.o" \
 "CMakeFiles/net.dir/Poller.cc.o" \
 "CMakeFiles/net.dir/TcpConnection.cc.o"
 
@@ -325,12 +325,12 @@ net_EXTERNAL_OBJECTS =
 net/libnet.a: net/CMakeFiles/net.dir/Channel.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/Acceptor.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/EventLoopThreadPool.cc.o
+net/libnet.a: net/CMakeFiles/net.dir/Buffer.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/Socket.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/EventLoop.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/EventLoopThread.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/InetAddress.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/TcpServer.cc.o
-net/libnet.a: net/CMakeFiles/net.dir/Buffer.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/Poller.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/TcpConnection.cc.o
 net/libnet.a: net/CMakeFiles/net.dir/build.make
@@ -346,12 +346,12 @@ net/CMakeFiles/net.dir/build: net/libnet.a
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/Channel.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/Acceptor.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/EventLoopThreadPool.cc.o.requires
+net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/Buffer.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/Socket.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/EventLoop.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/EventLoopThread.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/InetAddress.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/TcpServer.cc.o.requires
-net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/Buffer.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/Poller.cc.o.requires
 net/CMakeFiles/net.dir/requires: net/CMakeFiles/net.dir/TcpConnection.cc.o.requires
 .PHONY : net/CMakeFiles/net.dir/requires

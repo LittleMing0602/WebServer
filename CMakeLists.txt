@@ -31,3 +31,6 @@ target_link_libraries(Send_test net timer Thread pthread)
 
 add_executable(EventLoopThreadPool_test test/EventLoopThreadPool_test.cc)
 target_link_libraries(EventLoopThreadPool_test net Thread pthread timer)
+
+add_executable(HttpServer_test test/HttpServer_test.cc)
+target_link_libraries(HttpServer_test http)

@@ -13,6 +13,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/2.8.12.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeSystem.cmake"
   "../net/CMakeLists.txt"
+  "../net/http/CMakeLists.txt"
   "../timer/CMakeLists.txt"
   "/usr/share/cmake/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"
@@ -39,6 +40,7 @@ SET(CMAKE_MAKEFILE_OUTPUTS
 SET(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "net/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "net/http/CMakeFiles/CMakeDirectoryInformation.cmake"
   "base/CMakeFiles/CMakeDirectoryInformation.cmake"
   "timer/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
@@ -51,9 +53,11 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/EventLoop_test1.dir/DependInfo.cmake"
   "CMakeFiles/EventLoop_test2.dir/DependInfo.cmake"
   "CMakeFiles/EventLoop_test3.dir/DependInfo.cmake"
+  "CMakeFiles/HttpServer_test.dir/DependInfo.cmake"
   "CMakeFiles/Send_test.dir/DependInfo.cmake"
   "CMakeFiles/TcpConnection_test1.dir/DependInfo.cmake"
   "net/CMakeFiles/net.dir/DependInfo.cmake"
+  "net/http/CMakeFiles/http.dir/DependInfo.cmake"
   "base/CMakeFiles/Thread.dir/DependInfo.cmake"
   "timer/CMakeFiles/timer.dir/DependInfo.cmake"
   )

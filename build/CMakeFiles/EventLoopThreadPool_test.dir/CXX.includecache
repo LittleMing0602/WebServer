@@ -49,6 +49,8 @@ vector
 -
 string
 -
+algorithm
+-
 
 /root/WebServer/net/Callback.h
 memory
@@ -144,6 +146,8 @@ Buffer.h
 ../timer/TimeStamp.h
 /root/WebServer/timer/TimeStamp.h
 string
+-
+boost/any.hpp
 -
 
 /root/WebServer/net/TcpServer.h

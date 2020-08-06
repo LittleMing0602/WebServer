@@ -180,6 +180,19 @@ EventLoop_test3/fast:
 .PHONY : EventLoop_test3/fast
 
 #=============================================================================
+# Target rules for targets named HttpServer_test
+
+# Build rule for target.
+HttpServer_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 HttpServer_test
+.PHONY : HttpServer_test
+
+# fast build rule for target.
+HttpServer_test/fast:
+	$(MAKE) -f CMakeFiles/HttpServer_test.dir/build.make CMakeFiles/HttpServer_test.dir/build
+.PHONY : HttpServer_test/fast
+
+#=============================================================================
 # Target rules for targets named Send_test
 
 # Build rule for target.
@@ -217,6 +230,19 @@ net: cmake_check_build_system
 net/fast:
 	$(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/build
 .PHONY : net/fast
+
+#=============================================================================
+# Target rules for targets named http
+
+# Build rule for target.
+http: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 http
+.PHONY : http
+
+# fast build rule for target.
+http/fast:
+	$(MAKE) -f net/http/CMakeFiles/http.dir/build.make net/http/CMakeFiles/http.dir/build
+.PHONY : http/fast
 
 #=============================================================================
 # Target rules for targets named Thread
@@ -388,6 +414,30 @@ test/EventLoop_test3.cc.s:
 	$(MAKE) -f CMakeFiles/EventLoop_test3.dir/build.make CMakeFiles/EventLoop_test3.dir/test/EventLoop_test3.cc.s
 .PHONY : test/EventLoop_test3.cc.s
 
+test/HttpServer_test.o: test/HttpServer_test.cc.o
+.PHONY : test/HttpServer_test.o
+
+# target to build an object file
+test/HttpServer_test.cc.o:
+	$(MAKE) -f CMakeFiles/HttpServer_test.dir/build.make CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o
+.PHONY : test/HttpServer_test.cc.o
+
+test/HttpServer_test.i: test/HttpServer_test.cc.i
+.PHONY : test/HttpServer_test.i
+
+# target to preprocess a source file
+test/HttpServer_test.cc.i:
+	$(MAKE) -f CMakeFiles/HttpServer_test.dir/build.make CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.i
+.PHONY : test/HttpServer_test.cc.i
+
+test/HttpServer_test.s: test/HttpServer_test.cc.s
+.PHONY : test/HttpServer_test.s
+
+# target to generate assembly for a file
+test/HttpServer_test.cc.s:
+	$(MAKE) -f CMakeFiles/HttpServer_test.dir/build.make CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.s
+.PHONY : test/HttpServer_test.cc.s
+
 test/Send_Test.o: test/Send_Test.cc.o
 .PHONY : test/Send_Test.o
 
@@ -448,11 +498,13 @@ help:
 	@echo "... EventLoop_test1"
 	@echo "... EventLoop_test2"
 	@echo "... EventLoop_test3"
+	@echo "... HttpServer_test"
 	@echo "... Send_test"
 	@echo "... TcpConnection_test1"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... net"
+	@echo "... http"
 	@echo "... Thread"
 	@echo "... timer"
 	@echo "... test/Acceptor_test1.o"
@@ -473,6 +525,9 @@ help:
 	@echo "... test/EventLoop_test3.o"
 	@echo "... test/EventLoop_test3.i"
 	@echo "... test/EventLoop_test3.s"
+	@echo "... test/HttpServer_test.o"
+	@echo "... test/HttpServer_test.i"
+	@echo "... test/HttpServer_test.s"
 	@echo "... test/Send_Test.o"
 	@echo "... test/Send_Test.i"
 	@echo "... test/Send_Test.s"

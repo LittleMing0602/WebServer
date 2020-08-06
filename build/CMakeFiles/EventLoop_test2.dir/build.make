@@ -88,6 +88,7 @@ EventLoop_test2: timer/libtimer.a
 EventLoop_test2: base/libThread.a
 EventLoop_test2: net/libnet.a
 EventLoop_test2: timer/libtimer.a
+EventLoop_test2: base/libThread.a
 EventLoop_test2: CMakeFiles/EventLoop_test2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable EventLoop_test2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/EventLoop_test2.dir/link.txt --verbose=$(VERBOSE)
