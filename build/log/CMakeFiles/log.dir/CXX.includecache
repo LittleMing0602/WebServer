@@ -8,12 +8,6 @@
 
 /root/WebServer/base/CurrentThread.h
 
-/root/WebServer/log/LogStream.cc
-LogStream.h
-/root/WebServer/log/LogStream.h
-algorithm
--
-
 /root/WebServer/log/LogStream.h
 string
 -

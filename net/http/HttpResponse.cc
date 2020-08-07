@@ -3,13 +3,14 @@
 
 void HttpResponse::appendToBuffer(Buffer* output) const
 {
+    // 将状态行添加到output
     char buf[32];
-
     snprintf(buf, sizeof buf, "HTTP/1.1 %d ", statusCode_);
     output->append(buf);
     output->append(statusMessage_);
     output->append("\r\n");
 
+    // 添加响应头
     if(closeConnection_)
     {
         // 如果是短连接，不需要告诉浏览器Content-Length，浏览器也能正确处理
@@ -32,6 +33,9 @@ void HttpResponse::appendToBuffer(Buffer* output) const
         output->append("\r\n");
     }
 
+    //空行
     output->append("\r\n");
+    
+    //添加相应头部
     output->append(body_);
 }

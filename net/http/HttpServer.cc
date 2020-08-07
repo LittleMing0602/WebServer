@@ -52,7 +52,7 @@ bool parseRequest(Buffer* buf, HttpContext* context, TimeStamp receiveTime)
 
     while(hasMore)
     {
-        if(context->expectRequestLine())
+        if(context->expectRequestLine())  // 处于解析请求行状态
         {
             const char* crlf = buf->findCRLF();
             if(crlf)
@@ -62,7 +62,7 @@ bool parseRequest(Buffer* buf, HttpContext* context, TimeStamp receiveTime)
                 {
                     context->request().setReceiveTime(receiveTime);
                     buf->retrieveUntil(crlf + 2);
-                    context->receiveRequestLine();
+                    context->receiveRequestLine();  // 将context的状态改为kExpectHeaders
                 }
                 else
                 {
@@ -74,20 +74,28 @@ bool parseRequest(Buffer* buf, HttpContext* context, TimeStamp receiveTime)
                 hasMore = false;
             }
         }
-        else if(context->expectHeaders())
+        else if(context->expectHeaders())  // 处于解析Headers状态
         {
-            const char* crlf = buf->findCRLF();
+            const char* crlf = buf->findCRLF();  // 找到/r/n的位置
             if(crlf)
             {
-                const char* colon = std::find(buf->peek(), crlf, ':');
+                const char* colon = std::find(buf->peek(), crlf, ':');  // 冒号所在位置
                 if(colon != crlf)
                 {
-                    context->request().addHeader(buf->peek(), colon, crlf);
+                    context->request().addHeader(buf->peek(), colon, crlf);  // 添加请求头
                 }
                 else
                 {
-                    context->receiveHeaders();
+                    if(context->request().method() == HttpRequest::Method::kPost)
+                    {
+                        context->receiveHeaders();  // 将context状态设为kExpectBody
+                    }
+                    else if(context->request().method() == HttpRequest::Method::kGet)
+                    {
+                        context->gotAll(); // 将状态设为kGotALL
+                    }
                     hasMore = !context->gotAll();
+                    
                 }
                 buf->retrieveUntil(crlf + 2);
             }
@@ -96,9 +104,17 @@ bool parseRequest(Buffer* buf, HttpContext* context, TimeStamp receiveTime)
                 hasMore = false;
             }
         }
-        else if(context->expectBody())
+        else if(context->expectBody())  // 处于解析请求体
         {
-
+            //先读走空行
+            buf->retrieve(2);
+            context->request().setBody(buf->retrieveAllAsString());  // 设置请求体
+            context->gotAll();
+            hasMore = !context->gotAll();
+        }
+        else
+        {
+            hasMore = false;
         }
         
     }
@@ -139,6 +155,7 @@ void HttpServer::onConnection(const TcpConnectionPtr& conn)
     }
 }
 
+// 解析收到的请求报文，打包成请求对象HttpRequest, 并调用OnRequest
 void HttpServer::onMessage(const TcpConnectionPtr& conn,
                            Buffer* buf, 
                            TimeStamp receiveTime)
@@ -158,6 +175,8 @@ void HttpServer::onMessage(const TcpConnectionPtr& conn,
     }
 }
 
+// 回调用户注册的请求处理函数httpCallback_, httpCallback_应该生成HttpResponse对象。
+// 将生成的HttpResponse对象发回去。
 void HttpServer::onResquest(const TcpConnectionPtr& conn, const HttpRequest& req)
 {
     const std::string& connection = req.getHeader("Connection");

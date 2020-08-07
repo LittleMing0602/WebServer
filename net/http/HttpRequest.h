@@ -155,12 +155,16 @@ public:
         headers_.swap(that.headers_);
     }
 
+    void setBody(const std::string& body)
+    { body_ = body; }
+
 private:
     Method method_; //请求方法
     Version version_;   //协议版本号1.0/1.1
     std::string path_;  // 请求路径
     TimeStamp receiveTime_; // 请求时间
     std::map<std::string, std::string> headers_; // header列表
+    std::string body_;  // 请求体
 };
 
 #endif

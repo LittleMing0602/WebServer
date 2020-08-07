@@ -48,12 +48,12 @@ public:
     ~HttpResponse() {}
 
 private:
-    std::map<std::string, std::string> headers_;
-    HttpStatusCode statusCode_;
-
-    std::string statusMessage_;
-    bool closeConnection_;
-    std::string body_;
+    std::map<std::string, std::string> headers_;  // 头部
+    HttpStatusCode statusCode_;  // 状态码
+ 
+    std::string statusMessage_;  // 状态说明
+    bool closeConnection_;  // 是否关闭连接
+    std::string body_;  // 响应报文体
 };
 
 #endif

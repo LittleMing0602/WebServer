@@ -36,6 +36,9 @@ public:
     { state_ = kExpectHeaders; }
 
     void receiveHeaders()
+    { state_ = kExpectBody; }
+    
+    void receiveBody()
     { state_ = kGotAll; }
 
     void reset()
