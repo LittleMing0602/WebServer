@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/WebServer/base/CurrentThread.h
+
+/root/WebServer/log/LogStream.cc
+LogStream.h
+/root/WebServer/log/LogStream.h
+algorithm
+-
+
+/root/WebServer/log/LogStream.h
+string
+-
+string.h
+-
+
+/root/WebServer/log/Logging.cc
+Logging.h
+/root/WebServer/log/Logging.h
+assert.h
+-
+../base/CurrentThread.h
+/root/WebServer/base/CurrentThread.h
+
+/root/WebServer/log/Logging.h
+LogStream.h
+/root/WebServer/log/LogStream.h
+../timer/TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
+
+/root/WebServer/timer/TimeStamp.h
+stdlib.h
+-
+string
+-
+time.h
+-
+

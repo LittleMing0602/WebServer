@@ -5,6 +5,8 @@ CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../base/CurrentThread.
 CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../base/Thread.h
 CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../lock/Condition.h
 CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../lock/Mutex.h
+CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../log/LogStream.h
+CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../log/Logging.h
 CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../net/Acceptor.h
 CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../net/Buffer.h
 CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../net/Callback.h

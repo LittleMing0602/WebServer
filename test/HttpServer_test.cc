@@ -2,6 +2,7 @@
 #include "../net/http/HttpRequest.h"
 #include "../net/http/HttpResponse.h"
 #include "../net/EventLoop.h"
+#include "../log/Logging.h"
 
 #include <iostream>
 #include <map>
@@ -62,10 +63,13 @@ void onRequest(const HttpRequest& req, HttpResponse* resp)
 
 int main(int argc, char* argv[])
 {
+  LOG_TRACE << "in main";
   int numThreads = 0;
   if (argc > 1)
   {
     benchmark = true;
+    //Logger::setLogLevel(Logger::WARN);
+    
     numThreads = atoi(argv[1]);
   }
   EventLoop loop;

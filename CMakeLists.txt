@@ -7,6 +7,9 @@ endif()
 add_subdirectory(net)
 add_subdirectory(base)
 add_subdirectory(timer)
+add_subdirectory(log)
+
+# include_directories(log)
 
 add_executable(EventLoop_test1 test/EventLoop_test1.cc)
 target_link_libraries(EventLoop_test1 timer Thread net pthread)
@@ -33,4 +36,4 @@ add_executable(EventLoopThreadPool_test test/EventLoopThreadPool_test.cc)
 target_link_libraries(EventLoopThreadPool_test net Thread pthread timer)
 
 add_executable(HttpServer_test test/HttpServer_test.cc)
-target_link_libraries(HttpServer_test http)
+target_link_libraries(HttpServer_test http log)

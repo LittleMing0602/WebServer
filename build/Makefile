@@ -270,6 +270,19 @@ timer/fast:
 	$(MAKE) -f timer/CMakeFiles/timer.dir/build.make timer/CMakeFiles/timer.dir/build
 .PHONY : timer/fast
 
+#=============================================================================
+# Target rules for targets named log
+
+# Build rule for target.
+log: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 log
+.PHONY : log
+
+# fast build rule for target.
+log/fast:
+	$(MAKE) -f log/CMakeFiles/log.dir/build.make log/CMakeFiles/log.dir/build
+.PHONY : log/fast
+
 test/Acceptor_test1.o: test/Acceptor_test1.cc.o
 .PHONY : test/Acceptor_test1.o
 
@@ -507,6 +520,7 @@ help:
 	@echo "... http"
 	@echo "... Thread"
 	@echo "... timer"
+	@echo "... log"
 	@echo "... test/Acceptor_test1.o"
 	@echo "... test/Acceptor_test1.i"
 	@echo "... test/Acceptor_test1.s"

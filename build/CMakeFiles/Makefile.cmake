@@ -12,6 +12,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/2.8.12.2/CMakeCCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeSystem.cmake"
+  "../log/CMakeLists.txt"
   "../net/CMakeLists.txt"
   "../net/http/CMakeLists.txt"
   "../timer/CMakeLists.txt"
@@ -43,6 +44,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "net/http/CMakeFiles/CMakeDirectoryInformation.cmake"
   "base/CMakeFiles/CMakeDirectoryInformation.cmake"
   "timer/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "log/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -60,4 +62,5 @@ SET(CMAKE_DEPEND_INFO_FILES
   "net/http/CMakeFiles/http.dir/DependInfo.cmake"
   "base/CMakeFiles/Thread.dir/DependInfo.cmake"
   "timer/CMakeFiles/timer.dir/DependInfo.cmake"
+  "log/CMakeFiles/log.dir/DependInfo.cmake"
   )

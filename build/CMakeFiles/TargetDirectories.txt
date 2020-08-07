@@ -9,5 +9,6 @@
 /root/WebServer/build/CMakeFiles/TcpConnection_test1.dir
 /root/WebServer/build/base/CMakeFiles/Thread.dir
 /root/WebServer/build/net/http/CMakeFiles/http.dir
+/root/WebServer/build/log/CMakeFiles/log.dir
 /root/WebServer/build/net/CMakeFiles/net.dir
 /root/WebServer/build/timer/CMakeFiles/timer.dir

@@ -23,12 +23,12 @@ public:
     {
         if(static_cast<size_t>(unused()) > len)
         {
-            memcpy(data_, buf, len);
+            memcpy(cur_, buf, len);
             cur_ += len;
         }
     }
 
-    const char* date() const { return data_; }
+    const char* data() const { return data_; }
 
     int unused() const
     { return static_cast<int>(end() - cur_); }
@@ -71,15 +71,31 @@ public:
 
     self& operator<<(const void*);
 
-    self& operator<<(float);
+    self& operator<<(float v)
+    {
+        *this << static_cast<double>(v);
+        return *this;
+    }
     self& operator<<(double);
 
-    self& operator<<(char);
+    self& operator<<(char v)
+    {
+        buffer_.append(&v, 1);
+        return *this;
+    }
 
-    self& operator<<(const char*);
-    self& operator<<(const string&);
+    self& operator<<(const char* v)
+    {
+        buffer_.append(v, strlen(v));
+        return *this;
+    }
+    self& operator<<(const string& v)
+    {
+        buffer_.append(v.c_str(), v.size());
+        return *this;
+    }
 
-    void append(const char* data, int len);
+    void append(const char* data, int len) { buffer_.append(data, len); }
     const Buffer& buffer() const { return buffer_; }
     void resetBuffer() { buffer_.reset(); }
 
