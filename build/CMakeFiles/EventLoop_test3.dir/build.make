@@ -86,7 +86,7 @@ EventLoop_test3: CMakeFiles/EventLoop_test3.dir/test/EventLoop_test3.cc.o
 EventLoop_test3: CMakeFiles/EventLoop_test3.dir/build.make
 EventLoop_test3: net/libnet.a
 EventLoop_test3: timer/libtimer.a
-EventLoop_test3: base/libThread.a
+EventLoop_test3: base/libthread.a
 EventLoop_test3: CMakeFiles/EventLoop_test3.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable EventLoop_test3"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/EventLoop_test3.dir/link.txt --verbose=$(VERBOSE)

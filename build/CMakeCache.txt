@@ -183,10 +183,19 @@ demo_SOURCE_DIR:STATIC=/root/WebServer
 http_LIB_DEPENDS:STATIC=general;net;
 
 //Dependencies for the target
-log_LIB_DEPENDS:STATIC=general;timer;
+log_LIB_DEPENDS:STATIC=general;timer;general;thread;
 
 //Dependencies for the target
-net_LIB_DEPENDS:STATIC=general;timer;general;Thread;
+mysql_LIB_DEPENDS:STATIC=general;log;general;/usr/lib64/mysql/libmysqlclient.so;
+
+//Path to a library.
+mysqlclient:FILEPATH=/usr/lib64/mysql/libmysqlclient.so
+
+//Dependencies for the target
+net_LIB_DEPENDS:STATIC=general;timer;general;thread;
+
+//Dependencies for the target
+thread_LIB_DEPENDS:STATIC=general;pthread;
 
 //Dependencies for target
 timer_LIB_DEPENDS:STATIC=
@@ -284,7 +293,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=6
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

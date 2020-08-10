@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/WebServer/log/LogStream.h
+string
+-
+string.h
+-
+
+/root/WebServer/log/Logging.h
+LogStream.h
+/root/WebServer/log/LogStream.h
+../timer/TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
+
+/root/WebServer/mysql/MysqlConnection.cc
+MysqlConnection.h
+/root/WebServer/mysql/MysqlConnection.h
+
+/root/WebServer/mysql/MysqlConnection.h
+mysql/mysql.h
+-
+string
+-
+../log/Logging.h
+/root/WebServer/log/Logging.h
+
+/root/WebServer/timer/TimeStamp.h
+stdlib.h
+-
+string
+-
+time.h
+-
+

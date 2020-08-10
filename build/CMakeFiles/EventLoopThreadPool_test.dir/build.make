@@ -85,7 +85,7 @@ EventLoopThreadPool_test_EXTERNAL_OBJECTS =
 EventLoopThreadPool_test: CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o
 EventLoopThreadPool_test: CMakeFiles/EventLoopThreadPool_test.dir/build.make
 EventLoopThreadPool_test: net/libnet.a
-EventLoopThreadPool_test: base/libThread.a
+EventLoopThreadPool_test: base/libthread.a
 EventLoopThreadPool_test: timer/libtimer.a
 EventLoopThreadPool_test: CMakeFiles/EventLoopThreadPool_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable EventLoopThreadPool_test"

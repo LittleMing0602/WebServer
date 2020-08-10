@@ -1,1 +1,1 @@
-/usr/bin/c++    -Wall -std=gnu++0x -g    CMakeFiles/EchoServer.dir/test/EchoServer.cc.o  -o EchoServer -rdynamic net/libnet.a timer/libtimer.a base/libThread.a -lpthread 
+/usr/bin/c++    -Wall -std=gnu++0x -g    CMakeFiles/EchoServer.dir/test/EchoServer.cc.o  -o EchoServer -rdynamic net/libnet.a timer/libtimer.a base/libthread.a -lpthread 

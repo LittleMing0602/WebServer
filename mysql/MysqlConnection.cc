@@ -16,7 +16,7 @@ MysqlConnection::MysqlConnection(const char* ip, unsigned short port, const char
 
     //连接
     if(mysql_real_connect(&mysql_, ip_.c_str(), userName_.c_str(), password_.c_str(), 
-                          dbName_.c_str(), port_, NULL, 0))
+                          dbName_.c_str(), port_, NULL, 0) == NULL)
     {
         LOG_FATAL << "mysql connected failed";
     }
@@ -33,7 +33,7 @@ MysqlConnection::~MysqlConnection()
 }
 
 // 执行sql语句，成功返回0， 失败返回-1
-int MysqlConnection::query(const char* q)
+int MysqlConnection::queryAndStore(const char* q)
     {
         if(mysql_query(&mysql_, q) != 0)
         {
@@ -70,3 +70,31 @@ int MysqlConnection::query(const char* q)
         return 0;
         
     }
+
+int MysqlConnection::fetchRows()
+{
+    if(result_ == NULL)
+    {
+        LOG_DEBUG << "还没有获取结果集";
+        return -1;
+    }
+    
+    MYSQL_ROW row;
+    unsigned int numFields;
+    unsigned int i;
+    
+    numFields = mysql_num_fields(result_);
+    
+    while((row = mysql_fetch_row(result_)))
+    {
+        unsigned long *lengths;
+        lengths = mysql_fetch_lengths(result_);
+        for(i = 0; i < numFields; ++i)
+        {
+            LOG_DEBUG << (row[i] ? row[i] : "NULL");
+        }
+        LOG_DEBUG;
+    }
+    
+    return 0;
+}

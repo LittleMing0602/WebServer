@@ -13,6 +13,8 @@ public:
     ~MysqlConnection();
     
     int query(const char* q);
+    
+    int fetchRows();
 
 private:
     std::string ip_;

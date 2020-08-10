@@ -12,6 +12,6 @@ aux_source_directory(. dir_srcs)
 #set(dir_srcs EventLoop.cc CurrentThread.cc)
 
 add_library(net ${dir_srcs})
-target_link_libraries(net timer Thread)
+target_link_libraries(net timer thread)
 
 add_subdirectory(http)

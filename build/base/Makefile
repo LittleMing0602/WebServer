@@ -102,25 +102,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-base/CMakeFiles/Thread.dir/rule:
-	cd /root/WebServer/build && $(MAKE) -f CMakeFiles/Makefile2 base/CMakeFiles/Thread.dir/rule
-.PHONY : base/CMakeFiles/Thread.dir/rule
+base/CMakeFiles/thread.dir/rule:
+	cd /root/WebServer/build && $(MAKE) -f CMakeFiles/Makefile2 base/CMakeFiles/thread.dir/rule
+.PHONY : base/CMakeFiles/thread.dir/rule
 
 # Convenience name for target.
-Thread: base/CMakeFiles/Thread.dir/rule
-.PHONY : Thread
+thread: base/CMakeFiles/thread.dir/rule
+.PHONY : thread
 
 # fast build rule for target.
-Thread/fast:
-	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/build
-.PHONY : Thread/fast
+thread/fast:
+	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/thread.dir/build.make base/CMakeFiles/thread.dir/build
+.PHONY : thread/fast
 
 CurrentThread.o: CurrentThread.cc.o
 .PHONY : CurrentThread.o
 
 # target to build an object file
 CurrentThread.cc.o:
-	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/CurrentThread.cc.o
+	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/thread.dir/build.make base/CMakeFiles/thread.dir/CurrentThread.cc.o
 .PHONY : CurrentThread.cc.o
 
 CurrentThread.i: CurrentThread.cc.i
@@ -128,7 +128,7 @@ CurrentThread.i: CurrentThread.cc.i
 
 # target to preprocess a source file
 CurrentThread.cc.i:
-	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/CurrentThread.cc.i
+	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/thread.dir/build.make base/CMakeFiles/thread.dir/CurrentThread.cc.i
 .PHONY : CurrentThread.cc.i
 
 CurrentThread.s: CurrentThread.cc.s
@@ -136,7 +136,7 @@ CurrentThread.s: CurrentThread.cc.s
 
 # target to generate assembly for a file
 CurrentThread.cc.s:
-	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/CurrentThread.cc.s
+	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/thread.dir/build.make base/CMakeFiles/thread.dir/CurrentThread.cc.s
 .PHONY : CurrentThread.cc.s
 
 Thread.o: Thread.cc.o
@@ -144,7 +144,7 @@ Thread.o: Thread.cc.o
 
 # target to build an object file
 Thread.cc.o:
-	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/Thread.cc.o
+	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/thread.dir/build.make base/CMakeFiles/thread.dir/Thread.cc.o
 .PHONY : Thread.cc.o
 
 Thread.i: Thread.cc.i
@@ -152,7 +152,7 @@ Thread.i: Thread.cc.i
 
 # target to preprocess a source file
 Thread.cc.i:
-	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/Thread.cc.i
+	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/thread.dir/build.make base/CMakeFiles/thread.dir/Thread.cc.i
 .PHONY : Thread.cc.i
 
 Thread.s: Thread.cc.s
@@ -160,7 +160,7 @@ Thread.s: Thread.cc.s
 
 # target to generate assembly for a file
 Thread.cc.s:
-	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/Thread.cc.s
+	cd /root/WebServer/build && $(MAKE) -f base/CMakeFiles/thread.dir/build.make base/CMakeFiles/thread.dir/Thread.cc.s
 .PHONY : Thread.cc.s
 
 # Help Target
@@ -169,9 +169,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... Thread"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... thread"
 	@echo "... CurrentThread.o"
 	@echo "... CurrentThread.i"
 	@echo "... CurrentThread.s"

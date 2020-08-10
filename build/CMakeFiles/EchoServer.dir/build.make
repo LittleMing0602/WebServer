@@ -86,7 +86,7 @@ EchoServer: CMakeFiles/EchoServer.dir/test/EchoServer.cc.o
 EchoServer: CMakeFiles/EchoServer.dir/build.make
 EchoServer: net/libnet.a
 EchoServer: timer/libtimer.a
-EchoServer: base/libThread.a
+EchoServer: base/libthread.a
 EchoServer: CMakeFiles/EchoServer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable EchoServer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/EchoServer.dir/link.txt --verbose=$(VERBOSE)

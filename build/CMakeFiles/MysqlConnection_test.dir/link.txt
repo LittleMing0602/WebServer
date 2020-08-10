@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -std=gnu++0x -g    CMakeFiles/MysqlConnection_test.dir/test/MysqlConnection_test.cc.o  -o MysqlConnection_test -rdynamic mysql/libmysql.a log/liblog.a timer/libtimer.a base/libthread.a -lpthread /usr/lib64/mysql/libmysqlclient.so -Wl,-rpath,/usr/lib64/mysql 

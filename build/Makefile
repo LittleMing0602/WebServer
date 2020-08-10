@@ -193,6 +193,19 @@ HttpServer_test/fast:
 .PHONY : HttpServer_test/fast
 
 #=============================================================================
+# Target rules for targets named MysqlConnection_test
+
+# Build rule for target.
+MysqlConnection_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 MysqlConnection_test
+.PHONY : MysqlConnection_test
+
+# fast build rule for target.
+MysqlConnection_test/fast:
+	$(MAKE) -f CMakeFiles/MysqlConnection_test.dir/build.make CMakeFiles/MysqlConnection_test.dir/build
+.PHONY : MysqlConnection_test/fast
+
+#=============================================================================
 # Target rules for targets named Send_test
 
 # Build rule for target.
@@ -245,17 +258,17 @@ http/fast:
 .PHONY : http/fast
 
 #=============================================================================
-# Target rules for targets named Thread
+# Target rules for targets named thread
 
 # Build rule for target.
-Thread: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Thread
-.PHONY : Thread
+thread: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 thread
+.PHONY : thread
 
 # fast build rule for target.
-Thread/fast:
-	$(MAKE) -f base/CMakeFiles/Thread.dir/build.make base/CMakeFiles/Thread.dir/build
-.PHONY : Thread/fast
+thread/fast:
+	$(MAKE) -f base/CMakeFiles/thread.dir/build.make base/CMakeFiles/thread.dir/build
+.PHONY : thread/fast
 
 #=============================================================================
 # Target rules for targets named timer
@@ -282,6 +295,19 @@ log: cmake_check_build_system
 log/fast:
 	$(MAKE) -f log/CMakeFiles/log.dir/build.make log/CMakeFiles/log.dir/build
 .PHONY : log/fast
+
+#=============================================================================
+# Target rules for targets named mysql
+
+# Build rule for target.
+mysql: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mysql
+.PHONY : mysql
+
+# fast build rule for target.
+mysql/fast:
+	$(MAKE) -f mysql/CMakeFiles/mysql.dir/build.make mysql/CMakeFiles/mysql.dir/build
+.PHONY : mysql/fast
 
 test/Acceptor_test1.o: test/Acceptor_test1.cc.o
 .PHONY : test/Acceptor_test1.o
@@ -451,6 +477,30 @@ test/HttpServer_test.cc.s:
 	$(MAKE) -f CMakeFiles/HttpServer_test.dir/build.make CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.s
 .PHONY : test/HttpServer_test.cc.s
 
+test/MysqlConnection_test.o: test/MysqlConnection_test.cc.o
+.PHONY : test/MysqlConnection_test.o
+
+# target to build an object file
+test/MysqlConnection_test.cc.o:
+	$(MAKE) -f CMakeFiles/MysqlConnection_test.dir/build.make CMakeFiles/MysqlConnection_test.dir/test/MysqlConnection_test.cc.o
+.PHONY : test/MysqlConnection_test.cc.o
+
+test/MysqlConnection_test.i: test/MysqlConnection_test.cc.i
+.PHONY : test/MysqlConnection_test.i
+
+# target to preprocess a source file
+test/MysqlConnection_test.cc.i:
+	$(MAKE) -f CMakeFiles/MysqlConnection_test.dir/build.make CMakeFiles/MysqlConnection_test.dir/test/MysqlConnection_test.cc.i
+.PHONY : test/MysqlConnection_test.cc.i
+
+test/MysqlConnection_test.s: test/MysqlConnection_test.cc.s
+.PHONY : test/MysqlConnection_test.s
+
+# target to generate assembly for a file
+test/MysqlConnection_test.cc.s:
+	$(MAKE) -f CMakeFiles/MysqlConnection_test.dir/build.make CMakeFiles/MysqlConnection_test.dir/test/MysqlConnection_test.cc.s
+.PHONY : test/MysqlConnection_test.cc.s
+
 test/Send_Test.o: test/Send_Test.cc.o
 .PHONY : test/Send_Test.o
 
@@ -512,15 +562,17 @@ help:
 	@echo "... EventLoop_test2"
 	@echo "... EventLoop_test3"
 	@echo "... HttpServer_test"
+	@echo "... MysqlConnection_test"
 	@echo "... Send_test"
 	@echo "... TcpConnection_test1"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... net"
 	@echo "... http"
-	@echo "... Thread"
+	@echo "... thread"
 	@echo "... timer"
 	@echo "... log"
+	@echo "... mysql"
 	@echo "... test/Acceptor_test1.o"
 	@echo "... test/Acceptor_test1.i"
 	@echo "... test/Acceptor_test1.s"
@@ -542,6 +594,9 @@ help:
 	@echo "... test/HttpServer_test.o"
 	@echo "... test/HttpServer_test.i"
 	@echo "... test/HttpServer_test.s"
+	@echo "... test/MysqlConnection_test.o"
+	@echo "... test/MysqlConnection_test.i"
+	@echo "... test/MysqlConnection_test.s"
 	@echo "... test/Send_Test.o"
 	@echo "... test/Send_Test.i"
 	@echo "... test/Send_Test.s"
