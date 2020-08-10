@@ -4,6 +4,7 @@
 #include "EventLoop.h"
 #include <unistd.h>
 #include <arpa/inet.h>
+#include "../log/Logging.h"
 
 Acceptor::Acceptor(EventLoop* loop, const InetAddress& addr):
     loop_(loop),
@@ -18,10 +19,11 @@ Acceptor::Acceptor(EventLoop* loop, const InetAddress& addr):
 
 void Acceptor::listen()
 {
+    LOG_TRACE << "Acceptor starts listening";
     loop_->assertInLoopThread();
     listening_ = true;
     socket_.listen();
-    channel_.enableReading();
+    channel_.enableReading(); // 将channel_加入到EventLoop中去
 }
 
 

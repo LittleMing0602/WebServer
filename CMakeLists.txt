@@ -9,6 +9,7 @@ add_subdirectory(base)
 add_subdirectory(timer)
 add_subdirectory(log)
 add_subdirectory(mysql)
+add_subdirectory(server)
 
 # include_directories(log)
 
@@ -41,3 +42,6 @@ target_link_libraries(HttpServer_test http log)
 
 add_executable(MysqlConnection_test test/MysqlConnection_test.cc)
 target_link_libraries(MysqlConnection_test mysql)
+
+add_executable(WebServer_test test/WebServer_test.cc)
+target_link_libraries(WebServer_test webserver)

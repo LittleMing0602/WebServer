@@ -87,6 +87,9 @@ EventLoopThreadPool_test: CMakeFiles/EventLoopThreadPool_test.dir/build.make
 EventLoopThreadPool_test: net/libnet.a
 EventLoopThreadPool_test: base/libthread.a
 EventLoopThreadPool_test: timer/libtimer.a
+EventLoopThreadPool_test: log/liblog.a
+EventLoopThreadPool_test: base/libthread.a
+EventLoopThreadPool_test: timer/libtimer.a
 EventLoopThreadPool_test: CMakeFiles/EventLoopThreadPool_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable EventLoopThreadPool_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/EventLoopThreadPool_test.dir/link.txt --verbose=$(VERBOSE)

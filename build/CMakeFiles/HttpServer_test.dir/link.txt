@@ -1,1 +1,1 @@
-/usr/bin/c++    -Wall -std=gnu++0x -g    CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o  -o HttpServer_test -rdynamic net/http/libhttp.a log/liblog.a net/libnet.a timer/libtimer.a base/libthread.a -lpthread 
+/usr/bin/c++    -Wall -std=gnu++0x -g    CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o  -o HttpServer_test -rdynamic net/http/libhttp.a log/liblog.a net/libnet.a log/liblog.a timer/libtimer.a base/libthread.a -lpthread 

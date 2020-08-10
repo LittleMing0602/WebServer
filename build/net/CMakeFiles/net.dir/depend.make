@@ -3,6 +3,8 @@
 
 net/CMakeFiles/net.dir/Acceptor.cc.o: ../base/CurrentThread.h
 net/CMakeFiles/net.dir/Acceptor.cc.o: ../lock/Mutex.h
+net/CMakeFiles/net.dir/Acceptor.cc.o: ../log/LogStream.h
+net/CMakeFiles/net.dir/Acceptor.cc.o: ../log/Logging.h
 net/CMakeFiles/net.dir/Acceptor.cc.o: ../net/Acceptor.cc
 net/CMakeFiles/net.dir/Acceptor.cc.o: ../net/Acceptor.h
 net/CMakeFiles/net.dir/Acceptor.cc.o: ../net/Callback.h
@@ -79,6 +81,8 @@ net/CMakeFiles/net.dir/Socket.cc.o: ../net/Socket.h
 
 net/CMakeFiles/net.dir/TcpConnection.cc.o: ../base/CurrentThread.h
 net/CMakeFiles/net.dir/TcpConnection.cc.o: ../lock/Mutex.h
+net/CMakeFiles/net.dir/TcpConnection.cc.o: ../log/LogStream.h
+net/CMakeFiles/net.dir/TcpConnection.cc.o: ../log/Logging.h
 net/CMakeFiles/net.dir/TcpConnection.cc.o: ../net/Buffer.h
 net/CMakeFiles/net.dir/TcpConnection.cc.o: ../net/Callback.h
 net/CMakeFiles/net.dir/TcpConnection.cc.o: ../net/Channel.h

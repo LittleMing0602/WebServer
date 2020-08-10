@@ -12,7 +12,7 @@ public:
                     const char* userName, const char* password);
     ~MysqlConnection();
     
-    int query(const char* q);
+    int queryAndStore(const char* q);
     
     int fetchRows();
 

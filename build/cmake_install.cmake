@@ -39,6 +39,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/root/WebServer/build/timer/cmake_install.cmake")
   INCLUDE("/root/WebServer/build/log/cmake_install.cmake")
   INCLUDE("/root/WebServer/build/mysql/cmake_install.cmake")
+  INCLUDE("/root/WebServer/build/server/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

@@ -232,6 +232,19 @@ TcpConnection_test1/fast:
 .PHONY : TcpConnection_test1/fast
 
 #=============================================================================
+# Target rules for targets named WebServer_test
+
+# Build rule for target.
+WebServer_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 WebServer_test
+.PHONY : WebServer_test
+
+# fast build rule for target.
+WebServer_test/fast:
+	$(MAKE) -f CMakeFiles/WebServer_test.dir/build.make CMakeFiles/WebServer_test.dir/build
+.PHONY : WebServer_test/fast
+
+#=============================================================================
 # Target rules for targets named net
 
 # Build rule for target.
@@ -308,6 +321,19 @@ mysql: cmake_check_build_system
 mysql/fast:
 	$(MAKE) -f mysql/CMakeFiles/mysql.dir/build.make mysql/CMakeFiles/mysql.dir/build
 .PHONY : mysql/fast
+
+#=============================================================================
+# Target rules for targets named webserver
+
+# Build rule for target.
+webserver: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 webserver
+.PHONY : webserver
+
+# fast build rule for target.
+webserver/fast:
+	$(MAKE) -f server/CMakeFiles/webserver.dir/build.make server/CMakeFiles/webserver.dir/build
+.PHONY : webserver/fast
 
 test/Acceptor_test1.o: test/Acceptor_test1.cc.o
 .PHONY : test/Acceptor_test1.o
@@ -549,6 +575,30 @@ test/TcpConnection_test1.cc.s:
 	$(MAKE) -f CMakeFiles/TcpConnection_test1.dir/build.make CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.s
 .PHONY : test/TcpConnection_test1.cc.s
 
+test/WebServer_test.o: test/WebServer_test.cc.o
+.PHONY : test/WebServer_test.o
+
+# target to build an object file
+test/WebServer_test.cc.o:
+	$(MAKE) -f CMakeFiles/WebServer_test.dir/build.make CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o
+.PHONY : test/WebServer_test.cc.o
+
+test/WebServer_test.i: test/WebServer_test.cc.i
+.PHONY : test/WebServer_test.i
+
+# target to preprocess a source file
+test/WebServer_test.cc.i:
+	$(MAKE) -f CMakeFiles/WebServer_test.dir/build.make CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.i
+.PHONY : test/WebServer_test.cc.i
+
+test/WebServer_test.s: test/WebServer_test.cc.s
+.PHONY : test/WebServer_test.s
+
+# target to generate assembly for a file
+test/WebServer_test.cc.s:
+	$(MAKE) -f CMakeFiles/WebServer_test.dir/build.make CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.s
+.PHONY : test/WebServer_test.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -565,6 +615,7 @@ help:
 	@echo "... MysqlConnection_test"
 	@echo "... Send_test"
 	@echo "... TcpConnection_test1"
+	@echo "... WebServer_test"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... net"
@@ -573,6 +624,7 @@ help:
 	@echo "... timer"
 	@echo "... log"
 	@echo "... mysql"
+	@echo "... webserver"
 	@echo "... test/Acceptor_test1.o"
 	@echo "... test/Acceptor_test1.i"
 	@echo "... test/Acceptor_test1.s"
@@ -603,6 +655,9 @@ help:
 	@echo "... test/TcpConnection_test1.o"
 	@echo "... test/TcpConnection_test1.i"
 	@echo "... test/TcpConnection_test1.s"
+	@echo "... test/WebServer_test.o"
+	@echo "... test/WebServer_test.i"
+	@echo "... test/WebServer_test.s"
 .PHONY : help
 
 

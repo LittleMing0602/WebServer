@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include "EventLoop.h"
 #include "TcpConnection.h"
+#include "../log/Logging.h"
 
 int getSocketError(int sockfd)
 {
@@ -56,43 +57,48 @@ void TcpConnection::handleRead(TimeStamp receiveTime)
     
 }
 
+// 处理写事件
 void TcpConnection::handleWrite()
 {
     loop_->assertInLoopThread();
     if(channel_->isWriting())
     {
+        // 发送outPut_中保存的数据
         ssize_t n = write(channel_->fd(), outputBuffer_.peek(), outputBuffer_.readableBytes());
         if(n > 0)
         {
             outputBuffer_.retrieve(n);
+            // 如果数据全发完了，要取消读事件，否则一直忙询
             if(outputBuffer_.readableBytes() == 0)
             {
-                channel_->disableWriting();
+                channel_->disableWriting(); // 取消写事件
                 
-                if(writeCompleteCallback_)
+                if(writeCompleteCallback_) // 回调writeCompleteCallback_
                 {
                     loop_->queueInLoop(std::bind(writeCompleteCallback_, shared_from_this()));
                 }
-                if(state_ == kDisconnecting)
+
+                if(state_ == kDisconnecting) // 如果想要关闭连接却还有内容发完，那么发完后就关闭连接
                 {
                     shutdownInLoop();
                 }
             }
-            else
+            else // 如果没发完，那么不用取消读事件，等待下一次loop来执行handleWrite_
             {
-                //LOG_TRACE
-                printf("I'm going to write more data\n");
+                LOG_TRACE << "I'm going to write more data";
+                // printf("I'm going to write more data\n");
             }
         }
         else
         {
-                printf("TcpConnection::handleWrite error\n");
-                exit(1);
+            LOG_SYSERR << "TcpConnection::handleWrite error";
+            // printf("TcpConnection::handleWrite error\n");
         }
     }
     else
     {
-        printf("connection is down, no more writing\n");
+        LOG_TRACE << "connection is down, no more writing";
+        // printf("connection is down, no more writing\n");
     }
 }
 
@@ -191,6 +197,8 @@ void TcpConnection::sendInLoop(const std::string& message)
     sendInLoop(message.data(), message.size());
 }
 
+// 首先尝试直接发送数据，如果一次发送完毕就不会启用writeCallback_
+// 如果只发送了部分数据，则把剩余的数据放入outputBuffer_, 并开始关注writable_事件，在handleWrite中发送剩余数据
 void TcpConnection::sendInLoop(const void* data, size_t len)
 {
     loop_->assertInLoopThread();
@@ -198,17 +206,18 @@ void TcpConnection::sendInLoop(const void* data, size_t len)
     const char* buf = static_cast<const char*>(data);
     ssize_t nwrote = 0;
 
+    // 此时还没有关注写事件，表示首次发送数据，先尝试一次发送全部数据
     if(!channel_->isWriting() && outputBuffer_.readableBytes() == 0)
     {
         nwrote = write(channel_->fd(), buf, len);
         if(nwrote >= 0)
         {
-            if(static_cast<size_t>(nwrote) < len)
+            if(static_cast<size_t>(nwrote) < len)  // 数据没发完
             {
-                //LOG_TRACE
-                printf("I'm going to write more data\n");
+                LOG_TRACE << "I'm going to write more data";
+                //printf("I'm going to write more data\n");
             }
-            else if(writeCompleteCallback_)
+            else if(writeCompleteCallback_)  // 数据一次发完了，回调writeCompleteCallback_
             {
                 loop_->queueInLoop(std::bind(writeCompleteCallback_, shared_from_this()));
             }
@@ -218,14 +227,14 @@ void TcpConnection::sendInLoop(const void* data, size_t len)
             nwrote = 0;
             if(errno != EWOULDBLOCK)
             {
-                //LOG_SYSERR
-                printf("TcpConnection::sendInLoop error\n");
-                exit(1);
+                LOG_SYSERR << "TcpConnection::sendInLoop error";
+                // printf("TcpConnection::sendInLoop error\n");
             }
         }
     }
 
     assert(nwrote >= 0);
+    // 一次性没有发送完，就将剩余的数据保存在outPut_中，并注册写事件，留给handleWrite_来做
     if(static_cast<size_t>(nwrote) < len)
     {
         outputBuffer_.append(buf + nwrote, len - nwrote);

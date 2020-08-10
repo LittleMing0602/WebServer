@@ -22,11 +22,11 @@ SET(CMAKE_CXX_COMPILER_ID "GNU")
 SET(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/WebServer/build/timer/CMakeFiles/timer.dir/DependInfo.cmake"
   "/root/WebServer/build/base/CMakeFiles/thread.dir/DependInfo.cmake"
+  "/root/WebServer/build/log/CMakeFiles/log.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
-  "../net/../timer"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 SET(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

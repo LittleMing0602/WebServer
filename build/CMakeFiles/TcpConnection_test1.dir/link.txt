@@ -1,1 +1,1 @@
-/usr/bin/c++    -Wall -std=gnu++0x -g    CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o  -o TcpConnection_test1 -rdynamic timer/libtimer.a net/libnet.a base/libthread.a timer/libtimer.a -lpthread 
+/usr/bin/c++    -Wall -std=gnu++0x -g    CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o  -o TcpConnection_test1 -rdynamic timer/libtimer.a net/libnet.a base/libthread.a log/liblog.a timer/libtimer.a base/libthread.a -lpthread 

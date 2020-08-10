@@ -87,6 +87,7 @@ EventLoop_test1: CMakeFiles/EventLoop_test1.dir/build.make
 EventLoop_test1: timer/libtimer.a
 EventLoop_test1: base/libthread.a
 EventLoop_test1: net/libnet.a
+EventLoop_test1: log/liblog.a
 EventLoop_test1: timer/libtimer.a
 EventLoop_test1: base/libthread.a
 EventLoop_test1: CMakeFiles/EventLoop_test1.dir/link.txt

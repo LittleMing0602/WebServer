@@ -13,6 +13,7 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
   "/root/WebServer/build/timer/CMakeFiles/timer.dir/DependInfo.cmake"
   "/root/WebServer/build/base/CMakeFiles/thread.dir/DependInfo.cmake"
   "/root/WebServer/build/net/CMakeFiles/net.dir/DependInfo.cmake"
+  "/root/WebServer/build/log/CMakeFiles/log.dir/DependInfo.cmake"
   )
 
 # The include file search paths:

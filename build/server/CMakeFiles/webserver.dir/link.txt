@@ -1,0 +1,2 @@
+/usr/bin/ar cr libwebserver.a  CMakeFiles/webserver.dir/WebServer.cc.o
+/usr/bin/ranlib libwebserver.a

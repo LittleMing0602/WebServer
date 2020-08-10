@@ -87,6 +87,7 @@ HttpServer_test: CMakeFiles/HttpServer_test.dir/build.make
 HttpServer_test: net/http/libhttp.a
 HttpServer_test: log/liblog.a
 HttpServer_test: net/libnet.a
+HttpServer_test: log/liblog.a
 HttpServer_test: timer/libtimer.a
 HttpServer_test: base/libthread.a
 HttpServer_test: CMakeFiles/HttpServer_test.dir/link.txt

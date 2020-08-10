@@ -3,6 +3,8 @@
 
 const char Buffer::kCRLF[] = "\r\n";
 
+// 使用scatter/gather IO技术，一部分缓冲区取自栈上，这样输入缓冲区足够大，
+// 通常一次readv就可以读完，减少系统调用次数
 ssize_t Buffer::readFd(int fd, int* savedErrno)
 {
     char extraBuf[65535];

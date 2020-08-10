@@ -87,6 +87,9 @@ Send_test: CMakeFiles/Send_test.dir/build.make
 Send_test: net/libnet.a
 Send_test: timer/libtimer.a
 Send_test: base/libthread.a
+Send_test: log/liblog.a
+Send_test: timer/libtimer.a
+Send_test: base/libthread.a
 Send_test: CMakeFiles/Send_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable Send_test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Send_test.dir/link.txt --verbose=$(VERBOSE)

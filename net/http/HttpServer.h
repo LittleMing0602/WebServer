@@ -31,10 +31,10 @@ private:
     void onMessage(const TcpConnectionPtr& conn,
                    Buffer* buf,
                    TimeStamp receiveTime);  // 绑定为TcpServer的MessageCallback
-    void onResquest(const TcpConnectionPtr&, const HttpRequest&);
+    void onResquest(const TcpConnectionPtr&, const HttpRequest&);  
 
     TcpServer server_;
-    HttpCallback httpCallback_;
+    HttpCallback httpCallback_;  // 在onRequest中调用
 };
 
 #endif

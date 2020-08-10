@@ -87,7 +87,9 @@ TcpConnection_test1: CMakeFiles/TcpConnection_test1.dir/build.make
 TcpConnection_test1: timer/libtimer.a
 TcpConnection_test1: net/libnet.a
 TcpConnection_test1: base/libthread.a
+TcpConnection_test1: log/liblog.a
 TcpConnection_test1: timer/libtimer.a
+TcpConnection_test1: base/libthread.a
 TcpConnection_test1: CMakeFiles/TcpConnection_test1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable TcpConnection_test1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TcpConnection_test1.dir/link.txt --verbose=$(VERBOSE)

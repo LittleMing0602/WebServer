@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -std=gnu++0x -g    CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o  -o WebServer_test -rdynamic server/libwebserver.a net/http/libhttp.a net/libnet.a log/liblog.a timer/libtimer.a base/libthread.a -lpthread 

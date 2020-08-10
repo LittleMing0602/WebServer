@@ -16,6 +16,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "../mysql/CMakeLists.txt"
   "../net/CMakeLists.txt"
   "../net/http/CMakeLists.txt"
+  "../server/CMakeLists.txt"
   "../timer/CMakeLists.txt"
   "/usr/share/cmake/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake/Modules/CMakeCXXInformation.cmake"
@@ -47,6 +48,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "timer/CMakeFiles/CMakeDirectoryInformation.cmake"
   "log/CMakeFiles/CMakeDirectoryInformation.cmake"
   "mysql/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "server/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -61,10 +63,12 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/MysqlConnection_test.dir/DependInfo.cmake"
   "CMakeFiles/Send_test.dir/DependInfo.cmake"
   "CMakeFiles/TcpConnection_test1.dir/DependInfo.cmake"
+  "CMakeFiles/WebServer_test.dir/DependInfo.cmake"
   "net/CMakeFiles/net.dir/DependInfo.cmake"
   "net/http/CMakeFiles/http.dir/DependInfo.cmake"
   "base/CMakeFiles/thread.dir/DependInfo.cmake"
   "timer/CMakeFiles/timer.dir/DependInfo.cmake"
   "log/CMakeFiles/log.dir/DependInfo.cmake"
   "mysql/CMakeFiles/mysql.dir/DependInfo.cmake"
+  "server/CMakeFiles/webserver.dir/DependInfo.cmake"
   )
