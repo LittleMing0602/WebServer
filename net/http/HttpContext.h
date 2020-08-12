@@ -40,6 +40,11 @@ public:
     
     void receiveBody()
     { state_ = kGotAll; }
+    
+    void receiveAll()
+    {
+        state_ = kGotAll;
+    }
 
     void reset()
     {

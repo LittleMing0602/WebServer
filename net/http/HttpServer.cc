@@ -4,6 +4,7 @@
 #include "HttpResponse.h"
 #include <functional>
 #include <boost/any.hpp>
+#include "../../log/Logging.h"
 
 
 // 处理请求行  Get / HTTP/1.1
@@ -92,7 +93,7 @@ bool parseRequest(Buffer* buf, HttpContext* context, TimeStamp receiveTime)
                     }
                     else if(context->request().method() == HttpRequest::Method::kGet)
                     {
-                        context->gotAll(); // 将状态设为kGotALL
+                        context->receiveAll(); // 将状态设为kGotALL
                     }
                     hasMore = !context->gotAll();
                     
@@ -106,10 +107,8 @@ bool parseRequest(Buffer* buf, HttpContext* context, TimeStamp receiveTime)
         }
         else if(context->expectBody())  // 处于解析请求体
         {
-            //先读走空行
-            buf->retrieve(2);
             context->request().setBody(buf->retrieveAllAsString());  // 设置请求体
-            context->gotAll();
+            context->receiveAll();
             hasMore = !context->gotAll();
         }
         else
@@ -151,7 +150,17 @@ void HttpServer::onConnection(const TcpConnectionPtr& conn)
 {
     if(conn->connected())
     {
+        LOG_TRACE << "new connection " << conn->name() << " from " << conn->peerAddr().toIpPort();
+        /*
+        printf("onConnection() : new connection [%s] from %s\n", 
+               conn->name().c_str(), 
+               conn->peerAddr().toIp().c_str());
+               */
         conn->setContext(HttpContext());  // 建立连接，设置连接上下文，包含解析请求处于的状态
+    }
+    else
+    {
+        LOG_TRACE << "connection " << conn->name() << " is down";
     }
 }
 

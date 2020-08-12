@@ -42,6 +42,11 @@ public:
 
     void setBody(const std::string& body)
     { body_ = body; }
+    
+    void setBody(const char* p, size_t len)
+    {
+        setBody(std::string(p, len));
+    }
 
     void appendToBuffer(Buffer* output) const;
 

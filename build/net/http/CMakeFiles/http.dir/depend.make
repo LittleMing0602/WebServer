@@ -8,6 +8,8 @@ net/http/CMakeFiles/http.dir/HttpResponse.cc.o: ../net/http/HttpResponse.h
 net/http/CMakeFiles/http.dir/HttpServer.cc.o: ../base/Thread.h
 net/http/CMakeFiles/http.dir/HttpServer.cc.o: ../lock/Condition.h
 net/http/CMakeFiles/http.dir/HttpServer.cc.o: ../lock/Mutex.h
+net/http/CMakeFiles/http.dir/HttpServer.cc.o: ../log/LogStream.h
+net/http/CMakeFiles/http.dir/HttpServer.cc.o: ../log/Logging.h
 net/http/CMakeFiles/http.dir/HttpServer.cc.o: ../net/Acceptor.h
 net/http/CMakeFiles/http.dir/HttpServer.cc.o: ../net/Buffer.h
 net/http/CMakeFiles/http.dir/HttpServer.cc.o: ../net/Callback.h

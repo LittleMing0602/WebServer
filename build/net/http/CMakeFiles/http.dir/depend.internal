@@ -9,6 +9,8 @@ net/http/CMakeFiles/http.dir/HttpServer.cc.o
  /root/WebServer/base/Thread.h
  /root/WebServer/lock/Condition.h
  /root/WebServer/lock/Mutex.h
+ /root/WebServer/log/LogStream.h
+ /root/WebServer/log/Logging.h
  /root/WebServer/net/Acceptor.h
  /root/WebServer/net/Buffer.h
  /root/WebServer/net/Callback.h
