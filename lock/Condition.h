@@ -18,6 +18,8 @@ public:
         pthread_cond_wait(&cond_, mutex_.getPthreadMutex());
     }
 
+    bool waitForSeconds(int seconds);
+
     void notify()
     {
         pthread_cond_signal(&cond_);

@@ -1,0 +1,2 @@
+/usr/bin/ar cr liblock.a  CMakeFiles/lock.dir/CountDownLatch.cc.o CMakeFiles/lock.dir/Condition.cc.o
+/usr/bin/ranlib liblock.a

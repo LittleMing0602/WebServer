@@ -80,7 +80,7 @@ Logger::Impl::Impl(LogLevel level, int savedErrno, const SourceFile& file, int l
 {
     formatTime();
     tid();
-    stream_ << T(tidString(), 6);
+    stream_ << T(tidString(), 8);
     stream_ << T(LogLevelName[level], 6);
     if(savedErrno != 0)
     {
@@ -95,7 +95,8 @@ void Logger::Impl::formatTime()
     int64_t microSecondsSinceEpoch = time_.microSeconds();
     time_t seconds = static_cast<time_t>(microSecondsSinceEpoch / 1000000);
     int microSeconds = static_cast<int>(microSecondsSinceEpoch % 1000000);
-
+    
+    // 如果在同一秒内，只更新微秒部分
     if(seconds != t_lastSecond)
     {
         t_lastSecond = seconds;
@@ -109,7 +110,7 @@ void Logger::Impl::formatTime()
         assert(len == 17); (void)len;
     }
 
-    Fmt us(".%06dZ ", microSeconds);
+    Fmt us(".%06dZ ", microSeconds);  
 
     stream_ << T(t_time, 17) << T(us.data(), 9);
 }

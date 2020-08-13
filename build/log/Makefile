@@ -115,6 +115,54 @@ log/fast:
 	cd /root/WebServer/build && $(MAKE) -f log/CMakeFiles/log.dir/build.make log/CMakeFiles/log.dir/build
 .PHONY : log/fast
 
+AsyncLogging.o: AsyncLogging.cc.o
+.PHONY : AsyncLogging.o
+
+# target to build an object file
+AsyncLogging.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f log/CMakeFiles/log.dir/build.make log/CMakeFiles/log.dir/AsyncLogging.cc.o
+.PHONY : AsyncLogging.cc.o
+
+AsyncLogging.i: AsyncLogging.cc.i
+.PHONY : AsyncLogging.i
+
+# target to preprocess a source file
+AsyncLogging.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f log/CMakeFiles/log.dir/build.make log/CMakeFiles/log.dir/AsyncLogging.cc.i
+.PHONY : AsyncLogging.cc.i
+
+AsyncLogging.s: AsyncLogging.cc.s
+.PHONY : AsyncLogging.s
+
+# target to generate assembly for a file
+AsyncLogging.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f log/CMakeFiles/log.dir/build.make log/CMakeFiles/log.dir/AsyncLogging.cc.s
+.PHONY : AsyncLogging.cc.s
+
+LogFile.o: LogFile.cc.o
+.PHONY : LogFile.o
+
+# target to build an object file
+LogFile.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f log/CMakeFiles/log.dir/build.make log/CMakeFiles/log.dir/LogFile.cc.o
+.PHONY : LogFile.cc.o
+
+LogFile.i: LogFile.cc.i
+.PHONY : LogFile.i
+
+# target to preprocess a source file
+LogFile.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f log/CMakeFiles/log.dir/build.make log/CMakeFiles/log.dir/LogFile.cc.i
+.PHONY : LogFile.cc.i
+
+LogFile.s: LogFile.cc.s
+.PHONY : LogFile.s
+
+# target to generate assembly for a file
+LogFile.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f log/CMakeFiles/log.dir/build.make log/CMakeFiles/log.dir/LogFile.cc.s
+.PHONY : LogFile.cc.s
+
 LogStream.o: LogStream.cc.o
 .PHONY : LogStream.o
 
@@ -196,6 +244,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... log"
 	@echo "... rebuild_cache"
+	@echo "... AsyncLogging.o"
+	@echo "... AsyncLogging.i"
+	@echo "... AsyncLogging.s"
+	@echo "... LogFile.o"
+	@echo "... LogFile.i"
+	@echo "... LogFile.s"
 	@echo "... LogStream.o"
 	@echo "... LogStream.i"
 	@echo "... LogStream.s"

@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/WebServer/lock/Condition.cc
+Condition.h
+/root/WebServer/lock/Condition.h
+errno.h
+-
+
+/root/WebServer/lock/Condition.h
+pthread.h
+-
+Mutex.h
+/root/WebServer/lock/Mutex.h
+
+/root/WebServer/lock/CountDownLatch.cc
+CountDownLatch.h
+/root/WebServer/lock/CountDownLatch.h
+
+/root/WebServer/lock/CountDownLatch.h
+Mutex.h
+/root/WebServer/lock/Mutex.h
+Condition.h
+/root/WebServer/lock/Condition.h
+
+/root/WebServer/lock/Mutex.h
+pthread.h
+-
+assert.h
+-
+

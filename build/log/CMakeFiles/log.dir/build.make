@@ -121,11 +121,59 @@ log/CMakeFiles/log.dir/Logging.cc.o.provides: log/CMakeFiles/log.dir/Logging.cc.
 
 log/CMakeFiles/log.dir/Logging.cc.o.provides.build: log/CMakeFiles/log.dir/Logging.cc.o
 
+log/CMakeFiles/log.dir/LogFile.cc.o: log/CMakeFiles/log.dir/flags.make
+log/CMakeFiles/log.dir/LogFile.cc.o: ../log/LogFile.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object log/CMakeFiles/log.dir/LogFile.cc.o"
+	cd /root/WebServer/build/log && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/log.dir/LogFile.cc.o -c /root/WebServer/log/LogFile.cc
+
+log/CMakeFiles/log.dir/LogFile.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/log.dir/LogFile.cc.i"
+	cd /root/WebServer/build/log && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/WebServer/log/LogFile.cc > CMakeFiles/log.dir/LogFile.cc.i
+
+log/CMakeFiles/log.dir/LogFile.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/log.dir/LogFile.cc.s"
+	cd /root/WebServer/build/log && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/WebServer/log/LogFile.cc -o CMakeFiles/log.dir/LogFile.cc.s
+
+log/CMakeFiles/log.dir/LogFile.cc.o.requires:
+.PHONY : log/CMakeFiles/log.dir/LogFile.cc.o.requires
+
+log/CMakeFiles/log.dir/LogFile.cc.o.provides: log/CMakeFiles/log.dir/LogFile.cc.o.requires
+	$(MAKE) -f log/CMakeFiles/log.dir/build.make log/CMakeFiles/log.dir/LogFile.cc.o.provides.build
+.PHONY : log/CMakeFiles/log.dir/LogFile.cc.o.provides
+
+log/CMakeFiles/log.dir/LogFile.cc.o.provides.build: log/CMakeFiles/log.dir/LogFile.cc.o
+
+log/CMakeFiles/log.dir/AsyncLogging.cc.o: log/CMakeFiles/log.dir/flags.make
+log/CMakeFiles/log.dir/AsyncLogging.cc.o: ../log/AsyncLogging.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object log/CMakeFiles/log.dir/AsyncLogging.cc.o"
+	cd /root/WebServer/build/log && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/log.dir/AsyncLogging.cc.o -c /root/WebServer/log/AsyncLogging.cc
+
+log/CMakeFiles/log.dir/AsyncLogging.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/log.dir/AsyncLogging.cc.i"
+	cd /root/WebServer/build/log && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/WebServer/log/AsyncLogging.cc > CMakeFiles/log.dir/AsyncLogging.cc.i
+
+log/CMakeFiles/log.dir/AsyncLogging.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/log.dir/AsyncLogging.cc.s"
+	cd /root/WebServer/build/log && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/WebServer/log/AsyncLogging.cc -o CMakeFiles/log.dir/AsyncLogging.cc.s
+
+log/CMakeFiles/log.dir/AsyncLogging.cc.o.requires:
+.PHONY : log/CMakeFiles/log.dir/AsyncLogging.cc.o.requires
+
+log/CMakeFiles/log.dir/AsyncLogging.cc.o.provides: log/CMakeFiles/log.dir/AsyncLogging.cc.o.requires
+	$(MAKE) -f log/CMakeFiles/log.dir/build.make log/CMakeFiles/log.dir/AsyncLogging.cc.o.provides.build
+.PHONY : log/CMakeFiles/log.dir/AsyncLogging.cc.o.provides
+
+log/CMakeFiles/log.dir/AsyncLogging.cc.o.provides.build: log/CMakeFiles/log.dir/AsyncLogging.cc.o
+
 # Object files for target log
 log_OBJECTS = \
 "CMakeFiles/log.dir/log.cc.o" \
 "CMakeFiles/log.dir/LogStream.cc.o" \
-"CMakeFiles/log.dir/Logging.cc.o"
+"CMakeFiles/log.dir/Logging.cc.o" \
+"CMakeFiles/log.dir/LogFile.cc.o" \
+"CMakeFiles/log.dir/AsyncLogging.cc.o"
 
 # External object files for target log
 log_EXTERNAL_OBJECTS =
@@ -133,6 +181,8 @@ log_EXTERNAL_OBJECTS =
 log/liblog.a: log/CMakeFiles/log.dir/log.cc.o
 log/liblog.a: log/CMakeFiles/log.dir/LogStream.cc.o
 log/liblog.a: log/CMakeFiles/log.dir/Logging.cc.o
+log/liblog.a: log/CMakeFiles/log.dir/LogFile.cc.o
+log/liblog.a: log/CMakeFiles/log.dir/AsyncLogging.cc.o
 log/liblog.a: log/CMakeFiles/log.dir/build.make
 log/liblog.a: log/CMakeFiles/log.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library liblog.a"
@@ -146,6 +196,8 @@ log/CMakeFiles/log.dir/build: log/liblog.a
 log/CMakeFiles/log.dir/requires: log/CMakeFiles/log.dir/log.cc.o.requires
 log/CMakeFiles/log.dir/requires: log/CMakeFiles/log.dir/LogStream.cc.o.requires
 log/CMakeFiles/log.dir/requires: log/CMakeFiles/log.dir/Logging.cc.o.requires
+log/CMakeFiles/log.dir/requires: log/CMakeFiles/log.dir/LogFile.cc.o.requires
+log/CMakeFiles/log.dir/requires: log/CMakeFiles/log.dir/AsyncLogging.cc.o.requires
 .PHONY : log/CMakeFiles/log.dir/requires
 
 log/CMakeFiles/log.dir/clean:

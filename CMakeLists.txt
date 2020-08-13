@@ -10,6 +10,7 @@ add_subdirectory(timer)
 add_subdirectory(log)
 add_subdirectory(mysql)
 add_subdirectory(server)
+add_subdirectory(lock)
 
 # include_directories(log)
 
@@ -45,3 +46,6 @@ target_link_libraries(MysqlConnection_test mysql)
 
 add_executable(WebServer_test test/WebServer_test.cc)
 target_link_libraries(WebServer_test webserver)
+
+add_executable(AsyncLogging_test test/AsyncLogging_test.cc)
+target_link_libraries(AsyncLogging_test log lock)

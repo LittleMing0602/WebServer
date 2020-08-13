@@ -32,6 +32,7 @@ public:
 
     int unused() const
     { return static_cast<int>(end() - cur_); }
+    
     int length() const 
     { return static_cast<int>(cur_ - data_); }
 

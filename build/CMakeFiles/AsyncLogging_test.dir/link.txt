@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -std=gnu++0x -g    CMakeFiles/AsyncLogging_test.dir/test/AsyncLogging_test.cc.o  -o AsyncLogging_test -rdynamic log/liblog.a lock/liblock.a timer/libtimer.a base/libthread.a -lpthread 

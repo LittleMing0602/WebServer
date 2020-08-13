@@ -80,7 +80,7 @@ LogFile::LogFile(const string& basename, size_t rollSize, bool threadSafe, int f
     lastRoll_(0),
     lastFlush_(0)
 {
-    assert(basename.find("/" == string::npos));
+    assert(basename.find("/") == string::npos);
     rollFile();
 }
 
@@ -104,6 +104,7 @@ void LogFile::rollFile()
     }
 }
 
+// 日志名格式：basename.20200813-165512.hostname.pid.log
 string LogFile::getLogFileName(const string& basename, time_t* now)
 {
     string filename;
@@ -156,13 +157,13 @@ void LogFile::flush()
 void LogFile::appendUnlocked(const char* logline, int len)
 {
     file_->append(logline, len);
-    if(file_->writtenBytes() > rollSize_)
+    if(file_->writtenBytes() > rollSize_)  // 如果文件大小大于rollSize_, 则滚动日志
     {
         rollFile();
     }
     else
     {
-        if(count_ > kCheckTimeRoll_)
+        if(count_ > kCheckTimeRoll_)  // 如果记录的日志超过kCheckTimeRoll_行，则检查是否需要滚动日志，以及是否需要刷新
         {
             count_ = 0;
             time_t now = time(NULL);

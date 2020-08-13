@@ -21,8 +21,8 @@ void cacheTid()
     if(t_cachedTid == 0)
     {
         t_cachedTid = gettid();
-        int n = snprintf(t_tidString, sizeof t_tidString, "%5d ", t_cachedTid);
-        assert(n == 6); (void)n;
+        int n = snprintf(t_tidString, sizeof t_tidString, "%7d ", t_cachedTid);
+        assert(n == 8); (void)n;
     }
 }
 

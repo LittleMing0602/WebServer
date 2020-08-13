@@ -115,6 +115,19 @@ Acceptor_test1/fast:
 .PHONY : Acceptor_test1/fast
 
 #=============================================================================
+# Target rules for targets named AsyncLogging_test
+
+# Build rule for target.
+AsyncLogging_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 AsyncLogging_test
+.PHONY : AsyncLogging_test
+
+# fast build rule for target.
+AsyncLogging_test/fast:
+	$(MAKE) -f CMakeFiles/AsyncLogging_test.dir/build.make CMakeFiles/AsyncLogging_test.dir/build
+.PHONY : AsyncLogging_test/fast
+
+#=============================================================================
 # Target rules for targets named EchoServer
 
 # Build rule for target.
@@ -335,6 +348,19 @@ webserver/fast:
 	$(MAKE) -f server/CMakeFiles/webserver.dir/build.make server/CMakeFiles/webserver.dir/build
 .PHONY : webserver/fast
 
+#=============================================================================
+# Target rules for targets named lock
+
+# Build rule for target.
+lock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lock
+.PHONY : lock
+
+# fast build rule for target.
+lock/fast:
+	$(MAKE) -f lock/CMakeFiles/lock.dir/build.make lock/CMakeFiles/lock.dir/build
+.PHONY : lock/fast
+
 test/Acceptor_test1.o: test/Acceptor_test1.cc.o
 .PHONY : test/Acceptor_test1.o
 
@@ -358,6 +384,30 @@ test/Acceptor_test1.s: test/Acceptor_test1.cc.s
 test/Acceptor_test1.cc.s:
 	$(MAKE) -f CMakeFiles/Acceptor_test1.dir/build.make CMakeFiles/Acceptor_test1.dir/test/Acceptor_test1.cc.s
 .PHONY : test/Acceptor_test1.cc.s
+
+test/AsyncLogging_test.o: test/AsyncLogging_test.cc.o
+.PHONY : test/AsyncLogging_test.o
+
+# target to build an object file
+test/AsyncLogging_test.cc.o:
+	$(MAKE) -f CMakeFiles/AsyncLogging_test.dir/build.make CMakeFiles/AsyncLogging_test.dir/test/AsyncLogging_test.cc.o
+.PHONY : test/AsyncLogging_test.cc.o
+
+test/AsyncLogging_test.i: test/AsyncLogging_test.cc.i
+.PHONY : test/AsyncLogging_test.i
+
+# target to preprocess a source file
+test/AsyncLogging_test.cc.i:
+	$(MAKE) -f CMakeFiles/AsyncLogging_test.dir/build.make CMakeFiles/AsyncLogging_test.dir/test/AsyncLogging_test.cc.i
+.PHONY : test/AsyncLogging_test.cc.i
+
+test/AsyncLogging_test.s: test/AsyncLogging_test.cc.s
+.PHONY : test/AsyncLogging_test.s
+
+# target to generate assembly for a file
+test/AsyncLogging_test.cc.s:
+	$(MAKE) -f CMakeFiles/AsyncLogging_test.dir/build.make CMakeFiles/AsyncLogging_test.dir/test/AsyncLogging_test.cc.s
+.PHONY : test/AsyncLogging_test.cc.s
 
 test/EchoServer.o: test/EchoServer.cc.o
 .PHONY : test/EchoServer.o
@@ -606,6 +656,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... Acceptor_test1"
+	@echo "... AsyncLogging_test"
 	@echo "... EchoServer"
 	@echo "... EventLoopThreadPool_test"
 	@echo "... EventLoop_test1"
@@ -625,9 +676,13 @@ help:
 	@echo "... log"
 	@echo "... mysql"
 	@echo "... webserver"
+	@echo "... lock"
 	@echo "... test/Acceptor_test1.o"
 	@echo "... test/Acceptor_test1.i"
 	@echo "... test/Acceptor_test1.s"
+	@echo "... test/AsyncLogging_test.o"
+	@echo "... test/AsyncLogging_test.i"
+	@echo "... test/AsyncLogging_test.s"
 	@echo "... test/EchoServer.o"
 	@echo "... test/EchoServer.i"
 	@echo "... test/EchoServer.s"

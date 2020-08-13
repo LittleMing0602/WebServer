@@ -22,17 +22,3 @@ pthread.h
 
 /root/WebServer/base/CurrentThread.h
 
-/root/WebServer/base/Thread.cc
-Thread.h
-/root/WebServer/base/Thread.h
-CurrentThread.h
-/root/WebServer/base/CurrentThread.h
-assert.h
--
-
-/root/WebServer/base/Thread.h
-pthread.h
--
-functional
--
-

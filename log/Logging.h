@@ -18,6 +18,7 @@ public:
         NUM_LOG_LEVELS,
     };
 
+    // 用于编译期确认源文件名
     class SourceFile
     {
     public:

@@ -4,6 +4,8 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
+  "/root/WebServer/log/AsyncLogging.cc" "/root/WebServer/build/log/CMakeFiles/log.dir/AsyncLogging.cc.o"
+  "/root/WebServer/log/LogFile.cc" "/root/WebServer/build/log/CMakeFiles/log.dir/LogFile.cc.o"
   "/root/WebServer/log/LogStream.cc" "/root/WebServer/build/log/CMakeFiles/log.dir/LogStream.cc.o"
   "/root/WebServer/log/Logging.cc" "/root/WebServer/build/log/CMakeFiles/log.dir/Logging.cc.o"
   "/root/WebServer/log/log.cc" "/root/WebServer/build/log/CMakeFiles/log.dir/log.cc.o"

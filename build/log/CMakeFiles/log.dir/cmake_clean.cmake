@@ -2,6 +2,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/log.dir/log.cc.o"
   "CMakeFiles/log.dir/LogStream.cc.o"
   "CMakeFiles/log.dir/Logging.cc.o"
+  "CMakeFiles/log.dir/LogFile.cc.o"
+  "CMakeFiles/log.dir/AsyncLogging.cc.o"
   "liblog.pdb"
   "liblog.a"
 )
