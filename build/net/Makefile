@@ -187,6 +187,54 @@ Channel.cc.s:
 	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/Channel.cc.s
 .PHONY : Channel.cc.s
 
+DefaultPoller.o: DefaultPoller.cc.o
+.PHONY : DefaultPoller.o
+
+# target to build an object file
+DefaultPoller.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/DefaultPoller.cc.o
+.PHONY : DefaultPoller.cc.o
+
+DefaultPoller.i: DefaultPoller.cc.i
+.PHONY : DefaultPoller.i
+
+# target to preprocess a source file
+DefaultPoller.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/DefaultPoller.cc.i
+.PHONY : DefaultPoller.cc.i
+
+DefaultPoller.s: DefaultPoller.cc.s
+.PHONY : DefaultPoller.s
+
+# target to generate assembly for a file
+DefaultPoller.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/DefaultPoller.cc.s
+.PHONY : DefaultPoller.cc.s
+
+EpollPoller.o: EpollPoller.cc.o
+.PHONY : EpollPoller.o
+
+# target to build an object file
+EpollPoller.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EpollPoller.cc.o
+.PHONY : EpollPoller.cc.o
+
+EpollPoller.i: EpollPoller.cc.i
+.PHONY : EpollPoller.i
+
+# target to preprocess a source file
+EpollPoller.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EpollPoller.cc.i
+.PHONY : EpollPoller.cc.i
+
+EpollPoller.s: EpollPoller.cc.s
+.PHONY : EpollPoller.s
+
+# target to generate assembly for a file
+EpollPoller.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/EpollPoller.cc.s
+.PHONY : EpollPoller.cc.s
+
 EventLoop.o: EventLoop.cc.o
 .PHONY : EventLoop.o
 
@@ -282,6 +330,30 @@ InetAddress.s: InetAddress.cc.s
 InetAddress.cc.s:
 	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/InetAddress.cc.s
 .PHONY : InetAddress.cc.s
+
+PollPoller.o: PollPoller.cc.o
+.PHONY : PollPoller.o
+
+# target to build an object file
+PollPoller.cc.o:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/PollPoller.cc.o
+.PHONY : PollPoller.cc.o
+
+PollPoller.i: PollPoller.cc.i
+.PHONY : PollPoller.i
+
+# target to preprocess a source file
+PollPoller.cc.i:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/PollPoller.cc.i
+.PHONY : PollPoller.cc.i
+
+PollPoller.s: PollPoller.cc.s
+.PHONY : PollPoller.s
+
+# target to generate assembly for a file
+PollPoller.cc.s:
+	cd /root/WebServer/build && $(MAKE) -f net/CMakeFiles/net.dir/build.make net/CMakeFiles/net.dir/PollPoller.cc.s
+.PHONY : PollPoller.cc.s
 
 Poller.o: Poller.cc.o
 .PHONY : Poller.o
@@ -397,6 +469,12 @@ help:
 	@echo "... Channel.o"
 	@echo "... Channel.i"
 	@echo "... Channel.s"
+	@echo "... DefaultPoller.o"
+	@echo "... DefaultPoller.i"
+	@echo "... DefaultPoller.s"
+	@echo "... EpollPoller.o"
+	@echo "... EpollPoller.i"
+	@echo "... EpollPoller.s"
 	@echo "... EventLoop.o"
 	@echo "... EventLoop.i"
 	@echo "... EventLoop.s"
@@ -409,6 +487,9 @@ help:
 	@echo "... InetAddress.o"
 	@echo "... InetAddress.i"
 	@echo "... InetAddress.s"
+	@echo "... PollPoller.o"
+	@echo "... PollPoller.i"
+	@echo "... PollPoller.s"
 	@echo "... Poller.o"
 	@echo "... Poller.i"
 	@echo "... Poller.s"

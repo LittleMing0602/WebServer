@@ -32,7 +32,7 @@ EventLoop::EventLoop():
     threadId_(tid()),
     looping_(false),
     quit_(false),
-    poller_(new Poller(this)),
+    poller_(Poller::newDefaultPoller(this)),
     activeChannels_(),
     callingPendingFunctors_(false),
     wakeupFd_(createEventfd()),
