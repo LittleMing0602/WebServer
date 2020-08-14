@@ -75,9 +75,12 @@ net/CMakeFiles/net.dir/Poller.cc.o: ../net/Poller.cc
 net/CMakeFiles/net.dir/Poller.cc.o: ../net/Poller.h
 net/CMakeFiles/net.dir/Poller.cc.o: ../timer/TimeStamp.h
 
+net/CMakeFiles/net.dir/Socket.cc.o: ../log/LogStream.h
+net/CMakeFiles/net.dir/Socket.cc.o: ../log/Logging.h
 net/CMakeFiles/net.dir/Socket.cc.o: ../net/InetAddress.h
 net/CMakeFiles/net.dir/Socket.cc.o: ../net/Socket.cc
 net/CMakeFiles/net.dir/Socket.cc.o: ../net/Socket.h
+net/CMakeFiles/net.dir/Socket.cc.o: ../timer/TimeStamp.h
 
 net/CMakeFiles/net.dir/TcpConnection.cc.o: ../base/CurrentThread.h
 net/CMakeFiles/net.dir/TcpConnection.cc.o: ../lock/Mutex.h

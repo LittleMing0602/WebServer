@@ -76,9 +76,12 @@ net/CMakeFiles/net.dir/Poller.cc.o
  /root/WebServer/net/Poller.h
  /root/WebServer/timer/TimeStamp.h
 net/CMakeFiles/net.dir/Socket.cc.o
+ /root/WebServer/log/LogStream.h
+ /root/WebServer/log/Logging.h
  /root/WebServer/net/InetAddress.h
  /root/WebServer/net/Socket.cc
  /root/WebServer/net/Socket.h
+ /root/WebServer/timer/TimeStamp.h
 net/CMakeFiles/net.dir/TcpConnection.cc.o
  /root/WebServer/base/CurrentThread.h
  /root/WebServer/lock/Mutex.h

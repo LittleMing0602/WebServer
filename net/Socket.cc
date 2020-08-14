@@ -9,6 +9,7 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <netinet/tcp.h>
+#include "../log/Logging.h"
 
 int createNonblockingSocket()
 {
@@ -20,7 +21,7 @@ int createNonblockingSocket()
     }
 }
 
-// Socket¸ºÔğ¹ÜÀí£¬Ò»¶¨ÒªÔÚÎö¹¹º¯ÊıÖĞ¹Ø±ÕËù¹ÜÀísocketÃèÊö·û
+// Socketè´Ÿè´£ç®¡ç†ï¼Œä¸€å®šè¦åœ¨ææ„å‡½æ•°ä¸­å…³é—­æ‰€ç®¡ç†socketæè¿°ç¬¦
 Socket::~Socket()
 {
     close(sockfd_);
@@ -77,11 +78,13 @@ int Socket::accept(InetAddress* addr)
         case ENOMEM:
         case ENOTSOCK:
         case EOPNOTSUPP:
-            printf("fatal : unexpected error of ::accept\n");
-            exit(1);
+            LOG_FATAL << "unexpected error of ::accept " << savedErrno;
+            // printf("fatal : unexpected error of ::accept\n");
+            // exit(1);
             break;
         default:
-            printf("fatal : unknown error of ::accept\n");
+            LOG_FATAL << "unknown error of ::accept " << savedErrno;
+            // printf("fatal : unknown error of ::accept\n");
             break;
 
         }
@@ -94,8 +97,9 @@ void Socket::shutdownWrite()
 {
     if(::shutdown(sockfd_, SHUT_WR) < 0)
     {
-        printf("error: Sock::shutdownWrite");
-        exit(1);
+        LOG_SYSERR << "Sock::shutdownWrite error";
+        // printf("error: Sock::shutdownWrite");
+        // exit(1);
     }
 }
 
