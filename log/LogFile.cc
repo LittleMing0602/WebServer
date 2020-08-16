@@ -23,6 +23,7 @@ public:
         setbuffer(fp_, buffer_, sizeof buffer_);
     }
 
+    // 析构函数需要将内容刷新到文件
     ~File()
     {
         fclose(fp_);
@@ -65,8 +66,8 @@ private:
     }
 
     FILE* fp_;
-    char buffer_[64*1024];
-    size_t writtenBytes_;
+    char buffer_[64*1024];  // 文件缓冲区
+    size_t writtenBytes_;  // 记录文件已经写入的字节
 };
 
 
@@ -93,14 +94,15 @@ void LogFile::rollFile()
 {
     time_t now = 0;
     string filename = getLogFileName(basename_, &now);
-    time_t start = now / kRollPerSeconds_ * kRollPerSeconds_;
+    time_t start = now / kRollPerSeconds_ * kRollPerSeconds_;  //start为当前时间所处的那天的0点
 
+    // 更新
     if(now > lastRoll_)
     {
         lastRoll_ = now;
         lastFlush_ = now;
         startOfPeriod_ = start;
-        file_.reset(new File(filename));
+        file_.reset(new File(filename));  // 调用unique_ptr的reset函数，放弃原来的对象控制权，接管新的对象，原对象会自动析构
     }
 }
 
@@ -168,11 +170,11 @@ void LogFile::appendUnlocked(const char* logline, int len)
             count_ = 0;
             time_t now = time(NULL);
             time_t thisPeriod = now / kRollPerSeconds_ * kRollPerSeconds_;
-            if(thisPeriod != startOfPeriod_)
+            if(thisPeriod != startOfPeriod_) // 如果隔天了，就要滚动日志
             {
                 rollFile();
             }
-            else if(now - lastFlush_ > flushInterval_)
+            else if(now - lastFlush_ > flushInterval_)  // 如果满足刷新条件了，就及时刷入文件
             {
                 lastFlush_ = now;
                 file_->flush();

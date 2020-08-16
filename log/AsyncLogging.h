@@ -51,8 +51,8 @@ private:
     bool running_;
     string basename_;
     size_t rollSize_;
-    Thread thread_;
-    MutexLock mutex_;
+    Thread thread_;  // 异步日志，需要起一个线程来接收日志，写入磁盘
+    MutexLock mutex_;  
     Condition cond_;
     CountDownLatch latch_; // 用于等待线程启动
     BufferPtr currentBuffer_;
