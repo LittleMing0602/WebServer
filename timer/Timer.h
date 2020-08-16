@@ -45,8 +45,8 @@ public:
     }
     
 private:
-    TimeStamp expiration_;
-    const TimerCallback callback_;
+    TimeStamp expiration_;  // 超时时间
+    const TimerCallback callback_;  // 超时以后的动作，回调函数
     const double interval_; // 超时时间间隔，如果是一次性定时器，则设为0
     const bool repeat_; // 是否重复
 };

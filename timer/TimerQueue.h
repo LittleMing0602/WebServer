@@ -39,13 +39,14 @@ private:
     void handleRead();
     void addTimerInLoop(Timer* timer);
     bool insert(Timer* timer);
-    
-    EventLoop* loop_;
-    const int timerfd_;
-    Channel timerfdChannel_;
-    TimerList timers_;
     std::vector<Entry> getExpired(TimeStamp now);
     void reset(const std::vector<Entry>& expired, TimeStamp now);
+    
+    EventLoop* loop_;
+    const int timerfd_;  // 使用timerfd作为定时器
+    Channel timerfdChannel_;
+    TimerList timers_;  // 用红黑树管理，以时间排序
+
 
 
 };
