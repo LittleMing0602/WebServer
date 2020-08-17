@@ -13,7 +13,6 @@ CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../net/EventLoop.h
 CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../net/EventLoopThread.h
 CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../net/EventLoopThreadPool.h
 CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../net/InetAddress.h
-CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../net/Poller.h
 CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../net/Socket.h
 CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../net/TcpConnection.h
 CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../net/TcpServer.h

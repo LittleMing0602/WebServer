@@ -2,6 +2,7 @@
 #include "../base/CurrentThread.h"
 #include "poll.h"
 #include "Channel.h"
+#include "Poller.h"
 #include <sys/eventfd.h>
 #include <signal.h>
 

@@ -2,7 +2,6 @@
 #define POLLER_H
 
 #include "../timer/TimeStamp.h"
-#include <vector>
 #include "EventLoop.h"
 
 class Channel;

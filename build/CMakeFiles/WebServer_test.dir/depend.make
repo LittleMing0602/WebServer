@@ -13,7 +13,6 @@ CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/EventLoop.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/EventLoopThread.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/EventLoopThreadPool.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/InetAddress.h
-CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/Poller.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/Socket.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/TcpConnection.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/TcpServer.h

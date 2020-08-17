@@ -79,8 +79,6 @@ vector
 -
 memory
 -
-Poller.h
-/root/WebServer/net/Poller.h
 ../lock/Mutex.h
 /root/WebServer/lock/Mutex.h
 Channel.h
@@ -115,16 +113,6 @@ arpa/inet.h
 -
 string
 -
-
-/root/WebServer/net/Poller.h
-vector
--
-map
--
-poll.h
--
-../timer/TimeStamp.h
-/root/WebServer/timer/TimeStamp.h
 
 /root/WebServer/net/Socket.h
 InetAddress.h

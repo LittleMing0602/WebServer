@@ -7,11 +7,12 @@ timer/CMakeFiles/timer.dir/TimeStamp.cc.o
 timer/CMakeFiles/timer.dir/TimerQueue.cc.o
  /root/WebServer/base/CurrentThread.h
  /root/WebServer/lock/Mutex.h
+ /root/WebServer/log/LogStream.h
+ /root/WebServer/log/Logging.h
  /root/WebServer/net/Callback.h
  /root/WebServer/net/Channel.h
  /root/WebServer/net/EventLoop.h
  /root/WebServer/net/InetAddress.h
- /root/WebServer/net/Poller.h
  /root/WebServer/timer/TimeStamp.h
  /root/WebServer/timer/Timer.h
  /root/WebServer/timer/TimerQueue.cc

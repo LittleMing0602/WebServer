@@ -15,7 +15,6 @@ server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/EventLoop.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/EventLoopThread.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/EventLoopThreadPool.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/InetAddress.h
-server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/Poller.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/Socket.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/TcpConnection.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/TcpServer.h

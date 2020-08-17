@@ -15,7 +15,6 @@ CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../net/EventLoop.h
 CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../net/EventLoopThread.h
 CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../net/EventLoopThreadPool.h
 CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../net/InetAddress.h
-CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../net/Poller.h
 CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../net/Socket.h
 CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../net/TcpConnection.h
 CMakeFiles/HttpServer_test.dir/test/HttpServer_test.cc.o: ../net/TcpServer.h

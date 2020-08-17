@@ -13,7 +13,6 @@ CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../net/EventLoop.h
 CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../net/EventLoopThread.h
 CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../net/EventLoopThreadPool.h
 CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../net/InetAddress.h
-CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../net/Poller.h
 CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../net/Socket.h
 CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../net/TcpConnection.h
 CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../net/TcpServer.h

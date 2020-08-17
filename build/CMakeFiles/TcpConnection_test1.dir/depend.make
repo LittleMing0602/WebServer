@@ -13,7 +13,6 @@ CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/EventLo
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/EventLoopThread.h
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/EventLoopThreadPool.h
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/InetAddress.h
-CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/Poller.h
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/Socket.h
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/TcpConnection.h
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/TcpServer.h

@@ -14,7 +14,6 @@ CMakeFiles/EchoServer.dir/test/EchoServer.cc.o
  /root/WebServer/net/EventLoopThread.h
  /root/WebServer/net/EventLoopThreadPool.h
  /root/WebServer/net/InetAddress.h
- /root/WebServer/net/Poller.h
  /root/WebServer/net/Socket.h
  /root/WebServer/net/TcpConnection.h
  /root/WebServer/net/TcpServer.h

@@ -7,11 +7,13 @@
 #include <stdio.h>
 #include <vector>
 #include <memory>
-#include "Poller.h"
+// #include "Poller.h"
 #include "../lock/Mutex.h"
 #include "Channel.h"
 #include <functional>
 #include "../timer/TimeStamp.h"
+
+class Poller;
 
 /*
  * one loop per thread

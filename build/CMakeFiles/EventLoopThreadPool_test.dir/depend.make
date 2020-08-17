@@ -13,7 +13,6 @@ CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../n
 CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../net/EventLoopThread.h
 CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../net/EventLoopThreadPool.h
 CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../net/InetAddress.h
-CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../net/Poller.h
 CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../net/Socket.h
 CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../net/TcpConnection.h
 CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../net/TcpServer.h

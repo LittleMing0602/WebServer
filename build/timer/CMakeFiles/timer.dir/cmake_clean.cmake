@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/timer.dir/TimerQueue.cc.o"
   "CMakeFiles/timer.dir/TimeStamp.cc.o"
+  "CMakeFiles/timer.dir/TimerQueue.cc.o"
   "libtimer.pdb"
   "libtimer.a"
 )

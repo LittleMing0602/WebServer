@@ -12,7 +12,6 @@ net/CMakeFiles/net.dir/Acceptor.cc.o
  /root/WebServer/net/Channel.h
  /root/WebServer/net/EventLoop.h
  /root/WebServer/net/InetAddress.h
- /root/WebServer/net/Poller.h
  /root/WebServer/net/Socket.h
  /root/WebServer/timer/TimeStamp.h
 net/CMakeFiles/net.dir/Buffer.cc.o
@@ -24,6 +23,30 @@ net/CMakeFiles/net.dir/Channel.cc.o
  /root/WebServer/net/Callback.h
  /root/WebServer/net/Channel.cc
  /root/WebServer/net/Channel.h
+ /root/WebServer/net/EventLoop.h
+ /root/WebServer/net/InetAddress.h
+ /root/WebServer/timer/TimeStamp.h
+net/CMakeFiles/net.dir/DefaultPoller.cc.o
+ /root/WebServer/base/CurrentThread.h
+ /root/WebServer/lock/Mutex.h
+ /root/WebServer/net/Callback.h
+ /root/WebServer/net/Channel.h
+ /root/WebServer/net/DefaultPoller.cc
+ /root/WebServer/net/EpollPoller.h
+ /root/WebServer/net/EventLoop.h
+ /root/WebServer/net/InetAddress.h
+ /root/WebServer/net/PollPoller.h
+ /root/WebServer/net/Poller.h
+ /root/WebServer/timer/TimeStamp.h
+net/CMakeFiles/net.dir/EpollPoller.cc.o
+ /root/WebServer/base/CurrentThread.h
+ /root/WebServer/lock/Mutex.h
+ /root/WebServer/log/LogStream.h
+ /root/WebServer/log/Logging.h
+ /root/WebServer/net/Callback.h
+ /root/WebServer/net/Channel.h
+ /root/WebServer/net/EpollPoller.cc
+ /root/WebServer/net/EpollPoller.h
  /root/WebServer/net/EventLoop.h
  /root/WebServer/net/InetAddress.h
  /root/WebServer/net/Poller.h
@@ -49,7 +72,6 @@ net/CMakeFiles/net.dir/EventLoopThread.cc.o
  /root/WebServer/net/EventLoopThread.cc
  /root/WebServer/net/EventLoopThread.h
  /root/WebServer/net/InetAddress.h
- /root/WebServer/net/Poller.h
  /root/WebServer/timer/TimeStamp.h
 net/CMakeFiles/net.dir/EventLoopThreadPool.cc.o
  /root/WebServer/base/CurrentThread.h
@@ -63,14 +85,29 @@ net/CMakeFiles/net.dir/EventLoopThreadPool.cc.o
  /root/WebServer/net/EventLoopThreadPool.cc
  /root/WebServer/net/EventLoopThreadPool.h
  /root/WebServer/net/InetAddress.h
- /root/WebServer/net/Poller.h
  /root/WebServer/timer/TimeStamp.h
 net/CMakeFiles/net.dir/InetAddress.cc.o
  /root/WebServer/net/InetAddress.cc
  /root/WebServer/net/InetAddress.h
-net/CMakeFiles/net.dir/Poller.cc.o
+net/CMakeFiles/net.dir/PollPoller.cc.o
+ /root/WebServer/base/CurrentThread.h
+ /root/WebServer/lock/Mutex.h
+ /root/WebServer/log/LogStream.h
+ /root/WebServer/log/Logging.h
  /root/WebServer/net/Callback.h
  /root/WebServer/net/Channel.h
+ /root/WebServer/net/EventLoop.h
+ /root/WebServer/net/InetAddress.h
+ /root/WebServer/net/PollPoller.cc
+ /root/WebServer/net/PollPoller.h
+ /root/WebServer/net/Poller.h
+ /root/WebServer/timer/TimeStamp.h
+net/CMakeFiles/net.dir/Poller.cc.o
+ /root/WebServer/base/CurrentThread.h
+ /root/WebServer/lock/Mutex.h
+ /root/WebServer/net/Callback.h
+ /root/WebServer/net/Channel.h
+ /root/WebServer/net/EventLoop.h
  /root/WebServer/net/InetAddress.h
  /root/WebServer/net/Poller.cc
  /root/WebServer/net/Poller.h
@@ -92,7 +129,6 @@ net/CMakeFiles/net.dir/TcpConnection.cc.o
  /root/WebServer/net/Channel.h
  /root/WebServer/net/EventLoop.h
  /root/WebServer/net/InetAddress.h
- /root/WebServer/net/Poller.h
  /root/WebServer/net/Socket.h
  /root/WebServer/net/TcpConnection.cc
  /root/WebServer/net/TcpConnection.h
@@ -110,7 +146,6 @@ net/CMakeFiles/net.dir/TcpServer.cc.o
  /root/WebServer/net/EventLoopThread.h
  /root/WebServer/net/EventLoopThreadPool.h
  /root/WebServer/net/InetAddress.h
- /root/WebServer/net/Poller.h
  /root/WebServer/net/Socket.h
  /root/WebServer/net/TcpConnection.h
  /root/WebServer/net/TcpServer.cc

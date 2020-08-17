@@ -52,32 +52,9 @@ include timer/CMakeFiles/timer.dir/progress.make
 # Include the compile flags for this target's objects.
 include timer/CMakeFiles/timer.dir/flags.make
 
-timer/CMakeFiles/timer.dir/TimerQueue.cc.o: timer/CMakeFiles/timer.dir/flags.make
-timer/CMakeFiles/timer.dir/TimerQueue.cc.o: ../timer/TimerQueue.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object timer/CMakeFiles/timer.dir/TimerQueue.cc.o"
-	cd /root/WebServer/build/timer && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/timer.dir/TimerQueue.cc.o -c /root/WebServer/timer/TimerQueue.cc
-
-timer/CMakeFiles/timer.dir/TimerQueue.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/timer.dir/TimerQueue.cc.i"
-	cd /root/WebServer/build/timer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/WebServer/timer/TimerQueue.cc > CMakeFiles/timer.dir/TimerQueue.cc.i
-
-timer/CMakeFiles/timer.dir/TimerQueue.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/timer.dir/TimerQueue.cc.s"
-	cd /root/WebServer/build/timer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/WebServer/timer/TimerQueue.cc -o CMakeFiles/timer.dir/TimerQueue.cc.s
-
-timer/CMakeFiles/timer.dir/TimerQueue.cc.o.requires:
-.PHONY : timer/CMakeFiles/timer.dir/TimerQueue.cc.o.requires
-
-timer/CMakeFiles/timer.dir/TimerQueue.cc.o.provides: timer/CMakeFiles/timer.dir/TimerQueue.cc.o.requires
-	$(MAKE) -f timer/CMakeFiles/timer.dir/build.make timer/CMakeFiles/timer.dir/TimerQueue.cc.o.provides.build
-.PHONY : timer/CMakeFiles/timer.dir/TimerQueue.cc.o.provides
-
-timer/CMakeFiles/timer.dir/TimerQueue.cc.o.provides.build: timer/CMakeFiles/timer.dir/TimerQueue.cc.o
-
 timer/CMakeFiles/timer.dir/TimeStamp.cc.o: timer/CMakeFiles/timer.dir/flags.make
 timer/CMakeFiles/timer.dir/TimeStamp.cc.o: ../timer/TimeStamp.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object timer/CMakeFiles/timer.dir/TimeStamp.cc.o"
 	cd /root/WebServer/build/timer && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/timer.dir/TimeStamp.cc.o -c /root/WebServer/timer/TimeStamp.cc
 
@@ -98,16 +75,39 @@ timer/CMakeFiles/timer.dir/TimeStamp.cc.o.provides: timer/CMakeFiles/timer.dir/T
 
 timer/CMakeFiles/timer.dir/TimeStamp.cc.o.provides.build: timer/CMakeFiles/timer.dir/TimeStamp.cc.o
 
+timer/CMakeFiles/timer.dir/TimerQueue.cc.o: timer/CMakeFiles/timer.dir/flags.make
+timer/CMakeFiles/timer.dir/TimerQueue.cc.o: ../timer/TimerQueue.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object timer/CMakeFiles/timer.dir/TimerQueue.cc.o"
+	cd /root/WebServer/build/timer && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/timer.dir/TimerQueue.cc.o -c /root/WebServer/timer/TimerQueue.cc
+
+timer/CMakeFiles/timer.dir/TimerQueue.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/timer.dir/TimerQueue.cc.i"
+	cd /root/WebServer/build/timer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/WebServer/timer/TimerQueue.cc > CMakeFiles/timer.dir/TimerQueue.cc.i
+
+timer/CMakeFiles/timer.dir/TimerQueue.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/timer.dir/TimerQueue.cc.s"
+	cd /root/WebServer/build/timer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/WebServer/timer/TimerQueue.cc -o CMakeFiles/timer.dir/TimerQueue.cc.s
+
+timer/CMakeFiles/timer.dir/TimerQueue.cc.o.requires:
+.PHONY : timer/CMakeFiles/timer.dir/TimerQueue.cc.o.requires
+
+timer/CMakeFiles/timer.dir/TimerQueue.cc.o.provides: timer/CMakeFiles/timer.dir/TimerQueue.cc.o.requires
+	$(MAKE) -f timer/CMakeFiles/timer.dir/build.make timer/CMakeFiles/timer.dir/TimerQueue.cc.o.provides.build
+.PHONY : timer/CMakeFiles/timer.dir/TimerQueue.cc.o.provides
+
+timer/CMakeFiles/timer.dir/TimerQueue.cc.o.provides.build: timer/CMakeFiles/timer.dir/TimerQueue.cc.o
+
 # Object files for target timer
 timer_OBJECTS = \
-"CMakeFiles/timer.dir/TimerQueue.cc.o" \
-"CMakeFiles/timer.dir/TimeStamp.cc.o"
+"CMakeFiles/timer.dir/TimeStamp.cc.o" \
+"CMakeFiles/timer.dir/TimerQueue.cc.o"
 
 # External object files for target timer
 timer_EXTERNAL_OBJECTS =
 
-timer/libtimer.a: timer/CMakeFiles/timer.dir/TimerQueue.cc.o
 timer/libtimer.a: timer/CMakeFiles/timer.dir/TimeStamp.cc.o
+timer/libtimer.a: timer/CMakeFiles/timer.dir/TimerQueue.cc.o
 timer/libtimer.a: timer/CMakeFiles/timer.dir/build.make
 timer/libtimer.a: timer/CMakeFiles/timer.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library libtimer.a"
@@ -118,8 +118,8 @@ timer/libtimer.a: timer/CMakeFiles/timer.dir/link.txt
 timer/CMakeFiles/timer.dir/build: timer/libtimer.a
 .PHONY : timer/CMakeFiles/timer.dir/build
 
-timer/CMakeFiles/timer.dir/requires: timer/CMakeFiles/timer.dir/TimerQueue.cc.o.requires
 timer/CMakeFiles/timer.dir/requires: timer/CMakeFiles/timer.dir/TimeStamp.cc.o.requires
+timer/CMakeFiles/timer.dir/requires: timer/CMakeFiles/timer.dir/TimerQueue.cc.o.requires
 .PHONY : timer/CMakeFiles/timer.dir/requires
 
 timer/CMakeFiles/timer.dir/clean:
