@@ -2,10 +2,13 @@
 #define HTTPCONTEXT_H
 
 #include "HttpRequest.h"
+class Entry;
 
 class HttpContext
 {
 public:
+    typedef std::shared_ptr<Entry> EntryPtr;
+    
     enum HttpRequestParseState
     {
         kExpectRequestLine,
@@ -58,10 +61,14 @@ public:
 
     HttpRequest& request()
     { return request_; }
+    
+    void setEntry(const EntryPtr& entry)
+    { entry_ = entry; }
 
 private:
     HttpRequestParseState state_;
     HttpRequest request_;
+    std::weak_ptr<Entry> entry_;
 };
 
 #endif
