@@ -110,7 +110,7 @@ void EventLoop::doPendingFunctors()
     callingPendingFunctors_ = true;
     std::vector<Functor> functors;
 
-    //将functors交换出来，缩小临界区，避免死锁
+    //将functors交换出来，缩小临界区，避免死锁(因为Functor可能再调用queueInLoop)
     {
         MutexLockGuard lock(mutex_);
         functors.swap(pendingFunctors_);
