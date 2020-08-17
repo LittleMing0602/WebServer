@@ -10,4 +10,6 @@ CMakeFiles/EventLoop_test3.dir/test/EventLoop_test3.cc.o: ../net/InetAddress.h
 CMakeFiles/EventLoop_test3.dir/test/EventLoop_test3.cc.o: ../net/Poller.h
 CMakeFiles/EventLoop_test3.dir/test/EventLoop_test3.cc.o: ../test/EventLoop_test3.cc
 CMakeFiles/EventLoop_test3.dir/test/EventLoop_test3.cc.o: ../timer/TimeStamp.h
+CMakeFiles/EventLoop_test3.dir/test/EventLoop_test3.cc.o: ../timer/Timer.h
+CMakeFiles/EventLoop_test3.dir/test/EventLoop_test3.cc.o: ../timer/TimerQueue.h
 

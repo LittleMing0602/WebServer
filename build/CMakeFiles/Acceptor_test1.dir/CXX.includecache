@@ -63,6 +63,8 @@ functional
 -
 ../timer/TimeStamp.h
 /root/WebServer/timer/TimeStamp.h
+../timer/TimerQueue.h
+/root/WebServer/timer/TimerQueue.h
 
 /root/WebServer/net/InetAddress.h
 arpa/inet.h
@@ -96,5 +98,27 @@ stdlib.h
 string
 -
 time.h
+-
+
+/root/WebServer/timer/Timer.h
+time.h
+-
+functional
+-
+TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
+
+/root/WebServer/timer/TimerQueue.h
+Timer.h
+/root/WebServer/timer/Timer.h
+TimeStamp.h
+/root/WebServer/timer/TimeStamp.h
+../net/Channel.h
+/root/WebServer/net/Channel.h
+set
+-
+functional
+-
+vector
 -
 

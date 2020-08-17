@@ -1,27 +1,19 @@
-#ifndef TIMERQUEUE_H
-#define TIMERQUEUE_H
+#ifndef TIMER_QUEUE_H
+#define TIMER_QUEUE_H
 
 #include "Timer.h"
 #include "TimeStamp.h"
-#include "../net/EventLoop.h"
 #include "../net/Channel.h"
 #include <set>
 #include <functional>
-#include <sys/timerfd.h>
+
+#include <vector>
+
+class EventLoop;
 
 typedef std::function<void()> TimerCallback;
 
-int createTimerfd()
-{
-    int timerfd = ::timerfd_create(CLOCK_MONOTONIC, TFD_CLOEXEC|TFD_NONBLOCK);
-    if(timerfd < 0)
-    {
-        printf("failed in timerfd_create\n");
-        exit(1);
-    }
 
-    return timerfd;
-}
 
 class TimerQueue
 {

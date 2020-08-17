@@ -20,4 +20,6 @@ CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/http/HttpServer.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../server/WebServer.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../test/WebServer_test.cc
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../timer/TimeStamp.h
+CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../timer/Timer.h
+CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../timer/TimerQueue.h
 

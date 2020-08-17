@@ -11,3 +11,5 @@ CMakeFiles/EventLoop_test2.dir/test/EventLoop_test2.cc.o
  /root/WebServer/net/InetAddress.h
  /root/WebServer/test/EventLoop_test2.cc
  /root/WebServer/timer/TimeStamp.h
+ /root/WebServer/timer/Timer.h
+ /root/WebServer/timer/TimerQueue.h

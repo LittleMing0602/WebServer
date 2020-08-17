@@ -11,4 +11,6 @@ CMakeFiles/Acceptor_test1.dir/test/Acceptor_test1.cc.o: ../net/InetAddress.h
 CMakeFiles/Acceptor_test1.dir/test/Acceptor_test1.cc.o: ../net/Socket.h
 CMakeFiles/Acceptor_test1.dir/test/Acceptor_test1.cc.o: ../test/Acceptor_test1.cc
 CMakeFiles/Acceptor_test1.dir/test/Acceptor_test1.cc.o: ../timer/TimeStamp.h
+CMakeFiles/Acceptor_test1.dir/test/Acceptor_test1.cc.o: ../timer/Timer.h
+CMakeFiles/Acceptor_test1.dir/test/Acceptor_test1.cc.o: ../timer/TimerQueue.h
 

@@ -152,12 +152,6 @@ string
 assert.h
 -
 
-/root/WebServer/net/http/HttpResponse.cc
-HttpResponse.h
-/root/WebServer/net/http/HttpResponse.h
-../Buffer.h
-/root/WebServer/net/Buffer.h
-
 /root/WebServer/net/http/HttpResponse.h
 string
 -

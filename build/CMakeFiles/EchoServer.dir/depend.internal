@@ -19,3 +19,5 @@ CMakeFiles/EchoServer.dir/test/EchoServer.cc.o
  /root/WebServer/net/TcpServer.h
  /root/WebServer/test/EchoServer.cc
  /root/WebServer/timer/TimeStamp.h
+ /root/WebServer/timer/Timer.h
+ /root/WebServer/timer/TimerQueue.h

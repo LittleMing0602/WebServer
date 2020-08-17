@@ -18,4 +18,6 @@ CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../net/TcpConnection.h
 CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../net/TcpServer.h
 CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../test/Send_Test.cc
 CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../timer/TimeStamp.h
+CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../timer/Timer.h
+CMakeFiles/Send_test.dir/test/Send_Test.cc.o: ../timer/TimerQueue.h
 

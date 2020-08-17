@@ -18,4 +18,6 @@ CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../net/TcpConnection.h
 CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../net/TcpServer.h
 CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../test/EchoServer.cc
 CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../timer/TimeStamp.h
+CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../timer/Timer.h
+CMakeFiles/EchoServer.dir/test/EchoServer.cc.o: ../timer/TimerQueue.h
 

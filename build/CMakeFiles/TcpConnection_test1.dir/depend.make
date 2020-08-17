@@ -18,4 +18,6 @@ CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/TcpConn
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../net/TcpServer.h
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../test/TcpConnection_test1.cc
 CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../timer/TimeStamp.h
+CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../timer/Timer.h
+CMakeFiles/TcpConnection_test1.dir/test/TcpConnection_test1.cc.o: ../timer/TimerQueue.h
 

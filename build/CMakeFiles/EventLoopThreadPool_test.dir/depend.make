@@ -18,4 +18,6 @@ CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../n
 CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../net/TcpServer.h
 CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../test/EventLoopThreadPool_test.cc
 CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../timer/TimeStamp.h
+CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../timer/Timer.h
+CMakeFiles/EventLoopThreadPool_test.dir/test/EventLoopThreadPool_test.cc.o: ../timer/TimerQueue.h
 

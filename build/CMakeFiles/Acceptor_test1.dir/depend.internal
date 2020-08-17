@@ -12,3 +12,5 @@ CMakeFiles/Acceptor_test1.dir/test/Acceptor_test1.cc.o
  /root/WebServer/net/Socket.h
  /root/WebServer/test/Acceptor_test1.cc
  /root/WebServer/timer/TimeStamp.h
+ /root/WebServer/timer/Timer.h
+ /root/WebServer/timer/TimerQueue.h

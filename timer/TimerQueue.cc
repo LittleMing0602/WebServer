@@ -3,6 +3,19 @@
 #include "../log/Logging.h"
 #include "functional"
 #include "string.h"
+#include <sys/timerfd.h>
+
+int createTimerfd()
+{
+    int timerfd = ::timerfd_create(CLOCK_MONOTONIC, TFD_CLOEXEC|TFD_NONBLOCK);
+    if(timerfd < 0)
+    {
+        printf("failed in timerfd_create\n");
+        exit(1);
+    }
+
+    return timerfd;
+}
 
 void readTimerfd(int timerfd, TimeStamp now)
 {

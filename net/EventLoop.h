@@ -12,6 +12,7 @@
 #include "Channel.h"
 #include <functional>
 #include "../timer/TimeStamp.h"
+#include "../timer/TimerQueue.h"
 
 class Poller;
 
@@ -60,8 +61,16 @@ public:
     void queueInLoop(const Functor& cb);
     
     void removeChannel(Channel* channel);
+    
+    void runAt(const TimeStamp& time, const TimerCallback& cb);
+    
+    void runAfter(double delay, const TimerCallback& cb);
+    
+    void runEvery(double interval, const TimerCallback& cb);
 
 private:
+    void handleRead();
+    
     typedef std::vector<Channel*> ChannelList;
 
     std::unique_ptr<Poller> poller_;
@@ -75,8 +84,9 @@ private:
     MutexLock mutex_;
     std::vector<Functor> pendingFunctors_;
     TimeStamp pollReturnTime_;
+    std::unique_ptr<TimerQueue> timerQueue_;
 
-    void handleRead();
+    
     void doPendingFunctors();
     void wakeup();
     

@@ -19,3 +19,5 @@ CMakeFiles/Send_test.dir/test/Send_Test.cc.o
  /root/WebServer/net/TcpServer.h
  /root/WebServer/test/Send_Test.cc
  /root/WebServer/timer/TimeStamp.h
+ /root/WebServer/timer/Timer.h
+ /root/WebServer/timer/TimerQueue.h

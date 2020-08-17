@@ -11,3 +11,5 @@ CMakeFiles/EventLoop_test3.dir/test/EventLoop_test3.cc.o
  /root/WebServer/net/Poller.h
  /root/WebServer/test/EventLoop_test3.cc
  /root/WebServer/timer/TimeStamp.h
+ /root/WebServer/timer/Timer.h
+ /root/WebServer/timer/TimerQueue.h

@@ -20,6 +20,7 @@ typedef std::function<void (const TcpConnectionPtr&, Buffer*, TimeStamp)> Messag
 typedef std::function<void(int, InetAddress& addr)> NewConnectionCallback;
 typedef std::function<void(const TcpConnectionPtr&)> WriteCompleteCallback;
 typedef std::function<void(EventLoop*)> ThreadInitCallback;
+typedef std::function<void()> TimerCallback;
 
 #endif
 

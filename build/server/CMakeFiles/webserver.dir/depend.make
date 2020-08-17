@@ -24,4 +24,6 @@ server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/http/HttpServer.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../server/WebServer.cc
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../server/WebServer.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../timer/TimeStamp.h
+server/CMakeFiles/webserver.dir/WebServer.cc.o: ../timer/Timer.h
+server/CMakeFiles/webserver.dir/WebServer.cc.o: ../timer/TimerQueue.h
 

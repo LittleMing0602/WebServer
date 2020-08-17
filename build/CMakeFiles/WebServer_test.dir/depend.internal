@@ -21,3 +21,5 @@ CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o
  /root/WebServer/server/WebServer.h
  /root/WebServer/test/WebServer_test.cc
  /root/WebServer/timer/TimeStamp.h
+ /root/WebServer/timer/Timer.h
+ /root/WebServer/timer/TimerQueue.h
