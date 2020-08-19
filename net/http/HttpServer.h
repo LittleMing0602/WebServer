@@ -9,7 +9,7 @@ class HttpResponse;
 class HttpServer
 {
 public:
-    typedef std::function<void(const HttpRequest&, HttpResponse*)> HttpCallback;
+    typedef std::function<void(const HttpRequest&, HttpResponse*, const TcpConnectionPtr& conn)> HttpCallback;
     
     HttpServer(EventLoop* loop, const InetAddress& listenAddr);
     ~HttpServer();
@@ -23,6 +23,9 @@ public:
     {
         server_.setThreadNum(numThreads);
     }
+    
+    void setConnectionCallback(const ConnectionCallback& cb)
+    { connectionCallback_ = cb; }
 
     void start();
 
@@ -35,6 +38,7 @@ private:
 
     TcpServer server_;
     HttpCallback httpCallback_;  // 在onRequest中调用
+    ConnectionCallback connectionCallback_; // 在onConnection调用
 };
 
 #endif

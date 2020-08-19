@@ -2,7 +2,8 @@
 #define HTTPCONTEXT_H
 
 #include "HttpRequest.h"
-class Entry;
+#include <boost/any.hpp>
+
 
 class HttpContext
 {
@@ -59,10 +60,20 @@ public:
 
     HttpRequest& request()
     { return request_; }
+    
+    void setContext(const boost:: any& context)
+    { context_ = context; }
+    
+    const boost::any* getContext() const
+    { return &context_; }
+
+    boost::any* getMutableContext()
+    { return &context_; }
 
 private:
     HttpRequestParseState state_;
     HttpRequest request_;
+    boost::any context_;
 };
 
 #endif

@@ -52,32 +52,9 @@ include lock/CMakeFiles/lock.dir/progress.make
 # Include the compile flags for this target's objects.
 include lock/CMakeFiles/lock.dir/flags.make
 
-lock/CMakeFiles/lock.dir/Condition.cc.o: lock/CMakeFiles/lock.dir/flags.make
-lock/CMakeFiles/lock.dir/Condition.cc.o: ../lock/Condition.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lock/CMakeFiles/lock.dir/Condition.cc.o"
-	cd /root/WebServer/build/lock && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lock.dir/Condition.cc.o -c /root/WebServer/lock/Condition.cc
-
-lock/CMakeFiles/lock.dir/Condition.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lock.dir/Condition.cc.i"
-	cd /root/WebServer/build/lock && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/WebServer/lock/Condition.cc > CMakeFiles/lock.dir/Condition.cc.i
-
-lock/CMakeFiles/lock.dir/Condition.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lock.dir/Condition.cc.s"
-	cd /root/WebServer/build/lock && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/WebServer/lock/Condition.cc -o CMakeFiles/lock.dir/Condition.cc.s
-
-lock/CMakeFiles/lock.dir/Condition.cc.o.requires:
-.PHONY : lock/CMakeFiles/lock.dir/Condition.cc.o.requires
-
-lock/CMakeFiles/lock.dir/Condition.cc.o.provides: lock/CMakeFiles/lock.dir/Condition.cc.o.requires
-	$(MAKE) -f lock/CMakeFiles/lock.dir/build.make lock/CMakeFiles/lock.dir/Condition.cc.o.provides.build
-.PHONY : lock/CMakeFiles/lock.dir/Condition.cc.o.provides
-
-lock/CMakeFiles/lock.dir/Condition.cc.o.provides.build: lock/CMakeFiles/lock.dir/Condition.cc.o
-
 lock/CMakeFiles/lock.dir/CountDownLatch.cc.o: lock/CMakeFiles/lock.dir/flags.make
 lock/CMakeFiles/lock.dir/CountDownLatch.cc.o: ../lock/CountDownLatch.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lock/CMakeFiles/lock.dir/CountDownLatch.cc.o"
 	cd /root/WebServer/build/lock && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lock.dir/CountDownLatch.cc.o -c /root/WebServer/lock/CountDownLatch.cc
 
@@ -98,16 +75,39 @@ lock/CMakeFiles/lock.dir/CountDownLatch.cc.o.provides: lock/CMakeFiles/lock.dir/
 
 lock/CMakeFiles/lock.dir/CountDownLatch.cc.o.provides.build: lock/CMakeFiles/lock.dir/CountDownLatch.cc.o
 
+lock/CMakeFiles/lock.dir/Condition.cc.o: lock/CMakeFiles/lock.dir/flags.make
+lock/CMakeFiles/lock.dir/Condition.cc.o: ../lock/Condition.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /root/WebServer/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object lock/CMakeFiles/lock.dir/Condition.cc.o"
+	cd /root/WebServer/build/lock && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/lock.dir/Condition.cc.o -c /root/WebServer/lock/Condition.cc
+
+lock/CMakeFiles/lock.dir/Condition.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/lock.dir/Condition.cc.i"
+	cd /root/WebServer/build/lock && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /root/WebServer/lock/Condition.cc > CMakeFiles/lock.dir/Condition.cc.i
+
+lock/CMakeFiles/lock.dir/Condition.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/lock.dir/Condition.cc.s"
+	cd /root/WebServer/build/lock && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /root/WebServer/lock/Condition.cc -o CMakeFiles/lock.dir/Condition.cc.s
+
+lock/CMakeFiles/lock.dir/Condition.cc.o.requires:
+.PHONY : lock/CMakeFiles/lock.dir/Condition.cc.o.requires
+
+lock/CMakeFiles/lock.dir/Condition.cc.o.provides: lock/CMakeFiles/lock.dir/Condition.cc.o.requires
+	$(MAKE) -f lock/CMakeFiles/lock.dir/build.make lock/CMakeFiles/lock.dir/Condition.cc.o.provides.build
+.PHONY : lock/CMakeFiles/lock.dir/Condition.cc.o.provides
+
+lock/CMakeFiles/lock.dir/Condition.cc.o.provides.build: lock/CMakeFiles/lock.dir/Condition.cc.o
+
 # Object files for target lock
 lock_OBJECTS = \
-"CMakeFiles/lock.dir/Condition.cc.o" \
-"CMakeFiles/lock.dir/CountDownLatch.cc.o"
+"CMakeFiles/lock.dir/CountDownLatch.cc.o" \
+"CMakeFiles/lock.dir/Condition.cc.o"
 
 # External object files for target lock
 lock_EXTERNAL_OBJECTS =
 
-lock/liblock.a: lock/CMakeFiles/lock.dir/Condition.cc.o
 lock/liblock.a: lock/CMakeFiles/lock.dir/CountDownLatch.cc.o
+lock/liblock.a: lock/CMakeFiles/lock.dir/Condition.cc.o
 lock/liblock.a: lock/CMakeFiles/lock.dir/build.make
 lock/liblock.a: lock/CMakeFiles/lock.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library liblock.a"
@@ -118,8 +118,8 @@ lock/liblock.a: lock/CMakeFiles/lock.dir/link.txt
 lock/CMakeFiles/lock.dir/build: lock/liblock.a
 .PHONY : lock/CMakeFiles/lock.dir/build
 
-lock/CMakeFiles/lock.dir/requires: lock/CMakeFiles/lock.dir/Condition.cc.o.requires
 lock/CMakeFiles/lock.dir/requires: lock/CMakeFiles/lock.dir/CountDownLatch.cc.o.requires
+lock/CMakeFiles/lock.dir/requires: lock/CMakeFiles/lock.dir/Condition.cc.o.requires
 .PHONY : lock/CMakeFiles/lock.dir/requires
 
 lock/CMakeFiles/lock.dir/clean:

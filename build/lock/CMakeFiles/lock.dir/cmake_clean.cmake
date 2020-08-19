@@ -1,6 +1,6 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/lock.dir/Condition.cc.o"
   "CMakeFiles/lock.dir/CountDownLatch.cc.o"
+  "CMakeFiles/lock.dir/Condition.cc.o"
   "liblock.pdb"
   "liblock.a"
 )

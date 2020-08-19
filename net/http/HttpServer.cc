@@ -157,6 +157,10 @@ void HttpServer::onConnection(const TcpConnectionPtr& conn)
                conn->peerAddr().toIp().c_str());
                */
         conn->setContext(HttpContext());  // 建立连接，设置连接上下文，包含解析请求处于的状态
+        if(connectionCallback_)
+        {
+            connectionCallback_(conn);  // 回调connectionCallback_
+        }
     }
     else
     {
@@ -193,7 +197,7 @@ void HttpServer::onResquest(const TcpConnectionPtr& conn, const HttpRequest& req
                                              connection != "Keep-Alive");  // 判断是否需要断开连接
 
     HttpResponse response(isClose);
-    httpCallback_(req, &response);  // 回调httpCallback_
+    httpCallback_(req, &response, conn);  // 回调httpCallback_
     Buffer buf;
     response.appendToBuffer(&buf);  // 将相应报文添加到buf中
     conn->send(&buf);

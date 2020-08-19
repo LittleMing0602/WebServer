@@ -6,22 +6,10 @@
 
 #IncludeRegexTransform: 
 
-/root/WebServer/base/CurrentThread.h
-
 /root/WebServer/base/Thread.h
 pthread.h
 -
 functional
--
-
-/root/WebServer/lock/BoundedBlockQueue.h
-deque
--
-Mutex.h
-/root/WebServer/lock/Mutex.h
-Condition.h
-/root/WebServer/lock/Condition.h
-assert.h
 -
 
 /root/WebServer/lock/Condition.h
@@ -86,59 +74,17 @@ string
 ../lock/Mutex.h
 /root/WebServer/lock/Mutex.h
 
-/root/WebServer/log/LogStream.cc
-LogStream.h
-/root/WebServer/log/LogStream.h
-algorithm
--
-
 /root/WebServer/log/LogStream.h
 string
 -
 string.h
 -
-
-/root/WebServer/log/Logging.cc
-Logging.h
-/root/WebServer/log/Logging.h
-assert.h
--
-../base/CurrentThread.h
-/root/WebServer/base/CurrentThread.h
 
 /root/WebServer/log/Logging.h
 LogStream.h
 /root/WebServer/log/LogStream.h
 ../timer/TimeStamp.h
 /root/WebServer/timer/TimeStamp.h
-
-/root/WebServer/log/log.cc
-log.h
-/root/WebServer/log/log.h
-string.h
--
-pthread.h
--
-time.h
--
-sys/time.h
--
-string
--
-../lock/BoundedBlockQueue.h
-/root/WebServer/lock/BoundedBlockQueue.h
-stdarg.h
--
-
-/root/WebServer/log/log.h
-stdio.h
--
-../lock/Mutex.h
-/root/WebServer/lock/Mutex.h
-../lock/BoundedBlockQueue.h
-/root/WebServer/lock/BoundedBlockQueue.h
-string
--
 
 /root/WebServer/timer/TimeStamp.h
 stdlib.h
