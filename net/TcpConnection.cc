@@ -33,6 +33,7 @@ TcpConnection::TcpConnection(const std::string& name, EventLoop* loop, int sockf
     channel_->setWriteCallback(std::bind(&TcpConnection::handleWrite, this));
     channel_->setCloseCallback(std::bind(&TcpConnection::handleClose, this));
     channel_->setErrorCallback(std::bind(&TcpConnection::handleError, this));
+    // 开启传输层心跳
     socket_->setKeepAlive(true);
 }
 

@@ -14,11 +14,10 @@ public:
     {
         server_.setHttpCallback(std::bind(&WebServer::onRequest, this, 
                                           std::placeholders::_1,
-                                          std::placeholders::_2,
-                                          std::placeholders::_3));
+                                          std::placeholders::_2));
         
-        server_.setConnectionCallback(std::bind(&WebServer::onConnection, this, 
-                                                std::placeholders::_1));
+        // server_.setConnectionCallback(std::bind(&WebServer::onConnection, this, 
+        //                                         std::placeholders::_1));
     }
 
     void setThreadNum(int numThreads)
@@ -28,16 +27,18 @@ public:
 
     ~WebServer() {}
 
-    void onRequest(const HttpRequest& req, HttpResponse* resp, const TcpConnectionPtr& conn);
+    void onRequest(const HttpRequest& req, HttpResponse* resp);
     
-    void onWriteComplete(const TcpConnectionPtr& conn);
+    void readFile(const char* path, HttpResponse* resp);
+    
+    // void onWriteComplete(const TcpConnectionPtr& conn);
      
-    void onConnection(const TcpConnectionPtr& conn);
+    // void onConnection(const TcpConnectionPtr& conn);
 
 private:
     EventLoop loop_;
     HttpServer server_;
-    static const int kBufSize_ = 64 *1024;
+    static const int kBufSize_ = 64 * 1024;
 };
 
 #endif

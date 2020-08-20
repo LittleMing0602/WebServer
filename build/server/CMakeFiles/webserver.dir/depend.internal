@@ -19,11 +19,13 @@ server/CMakeFiles/webserver.dir/WebServer.cc.o
  /root/WebServer/net/Socket.h
  /root/WebServer/net/TcpConnection.h
  /root/WebServer/net/TcpServer.h
+ /root/WebServer/net/http/HttpContext.h
  /root/WebServer/net/http/HttpRequest.h
  /root/WebServer/net/http/HttpResponse.h
  /root/WebServer/net/http/HttpServer.h
  /root/WebServer/server/WebServer.cc
  /root/WebServer/server/WebServer.h
+ /root/WebServer/server/WebServerContext.h
  /root/WebServer/timer/TimeStamp.h
  /root/WebServer/timer/Timer.h
  /root/WebServer/timer/TimerQueue.h

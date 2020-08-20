@@ -21,7 +21,7 @@ public:
     FILE* fp() const
     { return fp_; }
     
-    void setFp(const FILE* fp)
+    void setFp(FILE* fp)
     { fp_ = fp; }
 
 private:

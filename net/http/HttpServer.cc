@@ -197,7 +197,7 @@ void HttpServer::onResquest(const TcpConnectionPtr& conn, const HttpRequest& req
                                              connection != "Keep-Alive");  // 判断是否需要断开连接
 
     HttpResponse response(isClose);
-    httpCallback_(req, &response, conn);  // 回调httpCallback_
+    httpCallback_(req, &response);  // 回调httpCallback_
     Buffer buf;
     response.appendToBuffer(&buf);  // 将相应报文添加到buf中
     conn->send(&buf);

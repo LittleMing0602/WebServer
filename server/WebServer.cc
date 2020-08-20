@@ -17,55 +17,32 @@ void WebServer::start()
     loop_.loop();
 }
 
-void WebServer::onRequest(const HttpRequest& req, HttpResponse* resp, const TcpConnectionPtr& conn)
+void WebServer::onRequest(const HttpRequest& req, HttpResponse* resp)
 {
-    HttpContext* httpContext = boost::any_cast<HttpContext>(conn->getMutableContext());
-    WebServerContext* context = boost::any_cast<WebServerContext>(httpContext->getMutableContext()); 
+    
     if(req.path() == "/")
     {
         resp->setStatusCode(HttpResponse::k200Ok);
         resp->setStatusMessage("OK");
         resp->setContentType("text/html");
         resp->addHeader("Server", "WebServer");
-        int fd = open("../root/welcome.html", O_RDONLY);
-        if(fd == -1)
-        {
-            char buf[128] = {0};
-            LOG_TRACE << getcwd(buf, sizeof buf);
-            LOG_SYSFATAL << "open error";
-        }
-        struct stat statbuff;
-        int ret = stat("../root/welcome.html", &statbuff);
-        if(ret == -1)
-        {
-            LOG_SYSFATAL << "stat error";
-        }
-        
-        char* p = (char *)mmap(0, statbuff.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
-        resp->setBody(p, statbuff.st_size);
-        munmap(p, statbuff.st_size);
-        close(fd);
+        readFile("../root/welcome.html", resp);
     }
     else if(req.path() == "/5")
     {
         resp->setStatusCode(HttpResponse::k200Ok);
         resp->setStatusMessage("OK");
-        resp->setContentType("image/*");
+        resp->setContentType("image/jpg");
         resp->addHeader("Server", "WebServer");
-
-        assert(context->fp() == NULL);
-        FILE* fp = fopen("../root/xxx.jpg", "rb");
-        if(fp)
-        {
-            context->setFp(fp);
-            char buf[kBufSize_];
-            size_t nread = fread(buf, 1, sizeof buf, fp);
-            resp->setBody(buf, nread);
-        }
-        else
-        {
-            LOG_SYSERR << "WebServer::onRequest()";
-        }
+        readFile("../root/xxx.jpg", resp);
+    }
+    else if(req.path() == "/6")
+    {
+        resp->setStatusCode(HttpResponse::k200Ok);
+        resp->setStatusMessage("OK");
+        resp->setContentType("video/mpeg4");
+        resp->addHeader("Server", "WebServer");
+        readFile("../root/xxx.mp4", resp);
     }
     else
     {
@@ -75,31 +52,24 @@ void WebServer::onRequest(const HttpRequest& req, HttpResponse* resp, const TcpC
     }
 }
 
-
-void WebServer::onWriteComplete(const TcpConnectionPtr& conn)
+void WebServer::readFile(const char* path, HttpResponse* resp)
 {
-    HttpContext* httpContext = boost::any_cast<HttpContext>(conn->getMutableContext());
-    WebServerContext* context = boost::any_cast<WebServerContext>(httpContext->getMutableContext()); 
-    FILE* fp = context->fp();
-    char buf[kBufSize_];
-    size_t nread = fread(buf, 1, sizeof buf, fp);
-    if(nread > 0)
+    int fd = open(path, O_RDONLY);
+    if(fd == -1)
     {
-        resp->setBody(buf, nread);
+        char buf[128] = {0};
+        LOG_TRACE << getcwd(buf, sizeof buf);
+        LOG_SYSFATAL << "open error";
     }
-    else
+    struct stat statbuff;
+    int ret = stat(path, &statbuff);
+    if(ret == -1)
     {
-        fclose(fp_);
-        fp_ = NULL;
-        LOG_INFO << "file send over";
+        LOG_SYSFATAL << "stat error";
     }
+    
+    char* p = (char *)mmap(0, statbuff.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
+    resp->setBody(p, statbuff.st_size);
+    munmap(p, statbuff.st_size);
+    close(fd);
 }
-
-
-void WebServer::onConnection(const TcpConnectionPtr& conn)
-{
-    assert(conn->connected());
-    HttpContext* context = boost::any_cast<HttpContext>(conn->getMutableContext());
-    context->setContext(WebServerContext());
-}
-

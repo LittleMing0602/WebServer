@@ -34,7 +34,8 @@ TimeStamp EpollPoller::poll(int timeoutMs, ChannelList* activeChannels)
     if(numEvents > 0)
     {
         fillActiveChannels(numEvents, activeChannels);
-        if(static_cast<size_t>(numEvents) == events_.size())
+        // 如果当前活动的fd填满了events_，那么events就扩容为2倍
+        if(static_cast<size_t>(numEvents) == events_.size())  
         {
             events_.resize(events_.size() * 2);
         }

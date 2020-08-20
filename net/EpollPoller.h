@@ -27,7 +27,7 @@ private:
     typedef std::map<int, Channel*> ChannelMap;
 
     int epollfd_;
-    EventList events_;
+    EventList events_;  // epoll_event的列表，用来存储epoll_wait返回的套接字
     ChannelMap channels_;
 };
 
