@@ -10,6 +10,7 @@ class HttpServer
 {
 public:
     typedef std::function<void(const HttpRequest&, HttpResponse*)> HttpCallback;
+    typedef std::function<void(const TcpConnectionPtr)> MessageCompleteCallback;
     
     HttpServer(EventLoop* loop, const InetAddress& listenAddr);
     ~HttpServer();
@@ -26,6 +27,9 @@ public:
     
     void setConnectionCallback(const ConnectionCallback& cb)
     { connectionCallback_ = cb; }
+    
+    void setMessageCompleteCallback(const MessageCompleteCallback& cb)
+    { messageCompleteCallback_ = cb; }
 
     void start();
 
@@ -39,6 +43,7 @@ private:
     TcpServer server_;
     HttpCallback httpCallback_;  // 在onRequest中调用
     ConnectionCallback connectionCallback_; // 在onConnection调用
+    MessageCompleteCallback messageCompleteCallback_; // onMessage处理消息后调用 
 };
 
 #endif

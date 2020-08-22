@@ -10,6 +10,22 @@
 #include "../net/http/HttpContext.h"
 #include "WebServerContext.h"
 
+WebServer::WebServer(const InetAddress& listenAddr, int idleSeconds):
+        loop_(),
+        server_(&loop_, listenAddr),
+        connectionBuckets_(idleSeconds)
+    {
+        server_.setHttpCallback(std::bind(&WebServer::onRequest, this, 
+                                          std::placeholders::_1,
+                                          std::placeholders::_2));
+        
+        server_.setConnectionCallback(std::bind(&WebServer::onConnection, this, 
+                                                 std::placeholders::_1));
+                                                 
+        server_.setMessageCompleteCallback(std::bind(&WebServer::onMessageComplete, this, 
+                                                 std::placeholders::_1));
+    }
+
 void WebServer::start()
 {
     LOG_TRACE << "WebServer starts";
@@ -72,4 +88,32 @@ void WebServer::readFile(const char* path, HttpResponse* resp)
     resp->setBody(p, statbuff.st_size);
     munmap(p, statbuff.st_size);
     close(fd);
+}
+
+// 将conn添加到timeing wheel中区
+void WebServer::onConnection(const TcpConnectionPtr& conn)
+{
+    if(conn->connected()) 
+    {
+        EntryPtr entry(std::make_shared<Entry>(conn));
+        connectionBuckets_.back().insert(entry);
+        WeakEntryPtr weakEntry(entry);
+        HttpContext* context = boost::any_cast<HttpContext>(conn->getMutableContext());
+        context->setContext(weakEntry);
+    }
+    else
+    { 
+    }
+
+}
+
+void WebServer::onMessageComplete(const TcpConnectionPtr& conn)
+{
+    HttpContext* context = boost::any_cast<HttpContext>(conn->getMutableContext());
+    WeakEntryPtr weakEntry(*boost::any_cast<WeakEntryPtr>(context->getMutableContext()));
+    EntryPtr entry = weakEntry.lock();
+    if(entry)
+    {
+        connectionBuckets_.back().insert(entry);
+    }
 }

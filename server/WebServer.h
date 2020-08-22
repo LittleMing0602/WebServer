@@ -3,22 +3,14 @@
 
 #include "../net/http/HttpServer.h"
 #include "../net/EventLoop.h"
+#include "CircularBuffer.h"
 #include <functional>
+#include <unordered_set>
 
 class WebServer
 {
 public:
-    WebServer(const InetAddress& listenAddr):
-        loop_(),
-        server_(&loop_, listenAddr)
-    {
-        server_.setHttpCallback(std::bind(&WebServer::onRequest, this, 
-                                          std::placeholders::_1,
-                                          std::placeholders::_2));
-        
-        // server_.setConnectionCallback(std::bind(&WebServer::onConnection, this, 
-        //                                         std::placeholders::_1));
-    }
+    WebServer(const InetAddress& listenAddr, int idleSeconds);
 
     void setThreadNum(int numThreads)
     { server_.setThreadNum(numThreads); }
@@ -33,12 +25,40 @@ public:
     
     // void onWriteComplete(const TcpConnectionPtr& conn);
      
-    // void onConnection(const TcpConnectionPtr& conn);
-
+    void onConnection(const TcpConnectionPtr& conn);
+    
+    void onMessageComplete(const TcpConnectionPtr& conn);
+    
+    typedef std::weak_ptr<TcpConnection> WeakTcpConnectionPtr;
+    struct Entry
+    {
+        explicit Entry(const WeakTcpConnectionPtr& weakConn):
+            weakConn(weakConn_)
+            { }
+        ~Entry()
+        {
+            TcpConnectionPtr conn = weakConn_.lock();
+            if(conn)
+            {
+                conn->shutdown();
+            }
+        }
+        
+        WeakTcpConnectionPtr weakConn_;
+    };
+    
+    typedef std::shared_ptr<Entry> EntryPtr;
+    typedef std::weak_ptr<Entry> WeakEntryPtr;
+    typedef std::unordered_set<EntryPtr> Bucket;
+    typedef CircularBuffer<Bucket> WeakConnectionList;
+    
 private:
     EventLoop loop_;
     HttpServer server_;
     static const int kBufSize_ = 64 * 1024;
+    
+    WeakConnectionList connectionBuckets_;
+    
 };
 
 #endif

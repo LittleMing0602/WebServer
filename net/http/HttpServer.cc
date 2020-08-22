@@ -155,7 +155,7 @@ void HttpServer::onConnection(const TcpConnectionPtr& conn)
         printf("onConnection() : new connection [%s] from %s\n", 
                conn->name().c_str(), 
                conn->peerAddr().toIp().c_str());
-               */
+        */
         conn->setContext(HttpContext());  // 建立连接，设置连接上下文，包含解析请求处于的状态
         if(connectionCallback_)
         {
@@ -165,6 +165,10 @@ void HttpServer::onConnection(const TcpConnectionPtr& conn)
     else
     {
         LOG_TRACE << "connection " << conn->name() << " is down";
+        if(connectionCallback_)
+        {
+            connectionCallback_(conn);  // 回调connectionCallback_
+        }
     }
 }
 
@@ -185,6 +189,11 @@ void HttpServer::onMessage(const TcpConnectionPtr& conn,
     {
         onResquest(conn, context->request());
         context->reset(); // 本次请求处理完毕，重置HttpContext，适用于长连接
+    }
+    
+    if(messageCompleteCallback_)
+    {
+        messageCompleteCallback_(conn);
     }
 }
 
