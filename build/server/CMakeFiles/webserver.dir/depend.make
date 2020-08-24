@@ -22,6 +22,7 @@ server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/http/HttpContext.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/http/HttpRequest.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/http/HttpResponse.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../net/http/HttpServer.h
+server/CMakeFiles/webserver.dir/WebServer.cc.o: ../server/CircularBuffer.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../server/WebServer.cc
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../server/WebServer.h
 server/CMakeFiles/webserver.dir/WebServer.cc.o: ../server/WebServerContext.h

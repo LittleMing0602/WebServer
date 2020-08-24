@@ -17,6 +17,7 @@ CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/Socket.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/TcpConnection.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/TcpServer.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../net/http/HttpServer.h
+CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../server/CircularBuffer.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../server/WebServer.h
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../test/WebServer_test.cc
 CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o: ../timer/TimeStamp.h

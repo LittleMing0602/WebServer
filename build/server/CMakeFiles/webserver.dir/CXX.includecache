@@ -190,6 +190,12 @@ map
 ../TcpServer.h
 /root/WebServer/net/TcpServer.h
 
+/root/WebServer/server/CircularBuffer.h
+vector
+-
+../lock/Mutex.h
+/root/WebServer/lock/Mutex.h
+
 /root/WebServer/server/WebServer.cc
 WebServer.h
 /root/WebServer/server/WebServer.h
@@ -219,7 +225,11 @@ WebServerContext.h
 /root/WebServer/net/http/HttpServer.h
 ../net/EventLoop.h
 /root/WebServer/net/EventLoop.h
+CircularBuffer.h
+/root/WebServer/server/CircularBuffer.h
 functional
+-
+unordered_set
 -
 
 /root/WebServer/server/WebServerContext.h

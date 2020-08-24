@@ -4,6 +4,10 @@
 #include <vector>
 #include "../lock/Mutex.h"
 
+// 循环队列，用于timing wheel来踢掉空闲连接
+// 需求：循环结构，capacity满后自动删除队首元素
+// 需求：线程安全
+
 template<class T>
 class CircularBuffer
 {
@@ -36,11 +40,14 @@ public:
     
     int size() const
     {
+        MutexLockGuard lock(mutex_);
         return size_;
     }
     
-    T& back() const
+    // 返回的不是const引用，所以不加const
+    T& back()  
     {
+        MutexLockGuard lock(mutex_);
         int backIndex = end_ - 1;
         if(backIndex < 0)
         {
@@ -55,7 +62,7 @@ private:
     int size_;
     int end_;
     std::vector<T> data_;
-    MutexLock mutex_;
+    mutable MutexLock mutex_; 
 };
 
 #endif

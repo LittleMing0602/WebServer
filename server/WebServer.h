@@ -29,11 +29,14 @@ public:
     
     void onMessageComplete(const TcpConnectionPtr& conn);
     
+    void onTimer();
+    
     typedef std::weak_ptr<TcpConnection> WeakTcpConnectionPtr;
+    
     struct Entry
     {
         explicit Entry(const WeakTcpConnectionPtr& weakConn):
-            weakConn(weakConn_)
+            weakConn_(weakConn)
             { }
         ~Entry()
         {

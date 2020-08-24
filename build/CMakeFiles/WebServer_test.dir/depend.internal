@@ -18,6 +18,7 @@ CMakeFiles/WebServer_test.dir/test/WebServer_test.cc.o
  /root/WebServer/net/TcpConnection.h
  /root/WebServer/net/TcpServer.h
  /root/WebServer/net/http/HttpServer.h
+ /root/WebServer/server/CircularBuffer.h
  /root/WebServer/server/WebServer.h
  /root/WebServer/test/WebServer_test.cc
  /root/WebServer/timer/TimeStamp.h

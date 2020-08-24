@@ -24,6 +24,8 @@ WebServer::WebServer(const InetAddress& listenAddr, int idleSeconds):
                                                  
         server_.setMessageCompleteCallback(std::bind(&WebServer::onMessageComplete, this, 
                                                  std::placeholders::_1));
+                                                 
+        loop_.runEvery(1.0, std::bind(&WebServer::onTimer, this));
     }
 
 void WebServer::start()
@@ -107,6 +109,7 @@ void WebServer::onConnection(const TcpConnectionPtr& conn)
 
 }
 
+// 每次收到消息，要更新TcpConnection的最新活动时间
 void WebServer::onMessageComplete(const TcpConnectionPtr& conn)
 {
     HttpContext* context = boost::any_cast<HttpContext>(conn->getMutableContext());
@@ -116,4 +119,11 @@ void WebServer::onMessageComplete(const TcpConnectionPtr& conn)
     {
         connectionBuckets_.back().insert(entry);
     }
+}
+
+// 定时器回调函数，往循环队列中加入空的Bucket，使得队首的Bucket析构，减少TcpConnection的引用计数
+void WebServer::onTimer()
+{
+    connectionBuckets_.push(Bucket());
+    LOG_TRACE << "push Bucket()";
 }
