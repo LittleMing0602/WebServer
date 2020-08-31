@@ -4,7 +4,7 @@
 
 int main()
 {
-    WebServer server(InetAddress(8000), 5);
+    WebServer server(InetAddress(8000), 3);
     server.start();
 }
 

@@ -58,6 +58,15 @@ void WebServer::onRequest(const HttpRequest& req, HttpResponse* resp)
     {
         resp->setStatusCode(HttpResponse::k200Ok);
         resp->setStatusMessage("OK");
+        resp->setContentType("text/html");
+        resp->addHeader("Server", "WebServer");
+        readFile("../root/video.html", resp);
+
+    }
+    else if(req.path() == "/xxx.mp4")
+    {
+        resp->setStatusCode(HttpResponse::k200Ok);
+        resp->setStatusMessage("OK");
         resp->setContentType("video/mpeg4");
         resp->addHeader("Server", "WebServer");
         readFile("../root/xxx.mp4", resp);
